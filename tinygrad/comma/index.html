@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794390304532">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794426705368">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.794390304532" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.794426705368" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794390304532" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794426705368" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794390304532" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794426705368" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -182,7 +182,46 @@
 </doc-anchor-target>
 <p>Página para alojar la documentación e investación de la utlización de un modelo
 de YOLO en el proyecto Comma3X de la empresa Comma.ai</p>
-<p><em>Manu aquí vas</em></p>
+<doc-anchor-target id="uso-de-la-clase-thneed-implementada-en-python-vs-c">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uso-de-la-clase-thneed-implementada-en-python-vs-c">#</doc-anchor-trigger>
+        <span>Uso de la clase Thneed implementada en Python vs C++</span>
+    </h2>
+</doc-anchor-target>
+<p>En el proyecto <strong>openpilot</strong>, la clase <strong>Thneed</strong> se utiliza para ejecutar modelos compilados.<br />
+Existen implementaciones tanto en <strong>Python</strong> como en <strong>C++</strong>, y aunque ambas comparten el mismo propósito,<br />
+son <strong>independientes</strong> en su implementación.</p>
+<doc-anchor-target id="independencia">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#independencia">#</doc-anchor-trigger>
+        <span>Independencia</span>
+    </h3>
+</doc-anchor-target>
+<p>Las implementaciones de <strong>Thneed</strong> en <strong>Python</strong> y <strong>C++</strong> son <strong>independientes</strong>.<br />
+Aunque ambas tienen el mismo propósito (ejecutar modelos de aprendizaje automático),<br />
+están diseñadas para <strong>diferentes entornos y casos de uso</strong>:</p>
+<ul>
+<li><p><strong>C++</strong>:</p>
+<ul>
+<li>La implementación en <strong>C++</strong> está optimizada para el rendimiento en <strong>dispositivos embebidos</strong>, utilizando <strong>OpenCL</strong> para el procesamiento paralelo.</li>
+<li>Es probable que ofrezca un <strong>rendimiento superior</strong> en términos de <strong>velocidad de ejecución</strong> y <strong>eficiencia</strong> en el uso de recursos en dispositivos embebidos.</li>
+</ul>
+</li>
+<li><p><strong>Python</strong>:</p>
+<ul>
+<li>Aunque la implementación en <strong>Python</strong> también utiliza <strong>OpenCL</strong>, puede no estar tan <strong>optimizada</strong> como la implementación en <strong>C++</strong> para dispositivos embebidos.</li>
+<li><strong>Python</strong>, siendo un <strong>lenguaje de alto nivel</strong>, puede introducir cierta <strong>sobrecarga</strong> en comparación con <strong>C++</strong>, lo que puede afectar el <strong>rendimiento</strong> en tareas <strong>intensivas en recursos</strong>.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="uso-en-thneedmodel">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uso-en-thneedmodel">#</doc-anchor-trigger>
+        <span>Uso en <strong>ThneedModel</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>La clase <strong>ThneedModel</strong> en <strong>C++</strong>, utilizada dentro del código <a href="https://github.com/covenant-org/openpilot/blob/release3/selfdrive/modeld/modeld.py"><strong>modeld.py</strong></a>, que ejecuta el modelo original de Comma, &quot;supercombo&quot;, emplea la implementación de <strong>Thneed en C++</strong> para la ejecución de modelos.
+No existe una <strong>dependencia directa</strong> entre <strong>ThneedModel</strong> y la implementación de <strong>Thneed en Python</strong>.</p>
 
                                 
                                 <!-- Required only on API pages -->
