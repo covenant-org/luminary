@@ -9,33 +9,33 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>YOLO en Comma3X</title>
-    <meta name="title" content="YOLO en Comma3X">
-    <meta name="description" content="Página para alojar la documentación e investación de la utlización de un modelo de YOLO en el proyecto Comma3X de la empresa Comma.ai">
+    <title>Datasets</title>
+    <meta name="title" content="Datasets">
+    <meta name="description" content="Entrenamos un modelo de YOLO para encontrar objetos comunes en la construcción">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/tinygrad/comma/">
+    <link rel="canonical" href="/datasets/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/tinygrad/comma/">
-    <meta property="og:title" content="YOLO en Comma3X">
-    <meta property="og:description" content="Página para alojar la documentación e investación de la utlización de un modelo de YOLO en el proyecto Comma3X de la empresa Comma.ai">
+    <meta property="og:url" content="/datasets/">
+    <meta property="og:title" content="Datasets">
+    <meta property="og:description" content="Entrenamos un modelo de YOLO para encontrar objetos comunes en la construcción">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/tinygrad/comma/">
-    <meta property="twitter:title" content="YOLO en Comma3X">
-    <meta property="twitter:description" content="Página para alojar la documentación e investación de la utlización de un modelo de YOLO en el proyecto Comma3X de la empresa Comma.ai">
+    <meta property="twitter:url" content="/datasets/">
+    <meta property="twitter:title" content="Datasets">
+    <meta property="twitter:description" content="Entrenamos un modelo de YOLO para encontrar objetos comunes en la construcción">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.794446964756" rel="stylesheet">
+    <link href="../static/nuclea-logo.png" rel="icon">
+    <link href="../resources/css/retype.css?v=3.6.0.794446964756" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794446964756" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794446964756" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.794446964756" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.794446964756" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -50,10 +50,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-2xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/nuclea-logo.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../../static/nuclea-logo.png">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../static/nuclea-logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../static/nuclea-logo.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Covenant</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
@@ -174,54 +174,14 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="yolo-en-comma3x" class="break-words">
+<doc-anchor-target id="datasets" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#yolo-en-comma3x">#</doc-anchor-trigger>
-        <span>YOLO en Comma3X</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#datasets">#</doc-anchor-trigger>
+        <span>Datasets</span>
     </h1>
 </doc-anchor-target>
-<p>Página para alojar la documentación e investación de la utlización de un modelo
-de YOLO en el proyecto Comma3X de la empresa Comma.ai</p>
-<doc-anchor-target id="uso-de-la-clase-thneed-implementada-en-python-vs-c">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#uso-de-la-clase-thneed-implementada-en-python-vs-c">#</doc-anchor-trigger>
-        <span>Uso de la clase Thneed implementada en Python vs C++</span>
-    </h2>
-</doc-anchor-target>
-<p>En el proyecto <strong>openpilot</strong>, la clase <strong>Thneed</strong> se utiliza para ejecutar modelos compilados.<br />
-Existen implementaciones tanto en <strong>Python</strong> como en <strong>C++</strong>, y aunque ambas comparten el mismo propósito,<br />
-son <strong>independientes</strong> en su implementación.</p>
-<doc-anchor-target id="independencia">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#independencia">#</doc-anchor-trigger>
-        <span>Independencia</span>
-    </h3>
-</doc-anchor-target>
-<p>Las implementaciones de <strong>Thneed</strong> en <strong>Python</strong> y <strong>C++</strong> son <strong>independientes</strong>.<br />
-Aunque ambas tienen el mismo propósito (ejecutar modelos de aprendizaje automático),<br />
-están diseñadas para <strong>diferentes entornos y casos de uso</strong>:</p>
-<ul>
-<li><p><strong>C++</strong>:</p>
-<ul>
-<li>La implementación en <strong>C++</strong> está optimizada para el rendimiento en <strong>dispositivos embebidos</strong>, utilizando <strong>OpenCL</strong> para el procesamiento paralelo.</li>
-<li>Es probable que ofrezca un <strong>rendimiento superior</strong> en términos de <strong>velocidad de ejecución</strong> y <strong>eficiencia</strong> en el uso de recursos en dispositivos embebidos.</li>
-</ul>
-</li>
-<li><p><strong>Python</strong>:</p>
-<ul>
-<li>Aunque la implementación en <strong>Python</strong> también utiliza <strong>OpenCL</strong>, puede no estar tan <strong>optimizada</strong> como la implementación en <strong>C++</strong> para dispositivos embebidos.</li>
-<li><strong>Python</strong>, siendo un <strong>lenguaje de alto nivel</strong>, puede introducir cierta <strong>sobrecarga</strong> en comparación con <strong>C++</strong>, lo que puede afectar el <strong>rendimiento</strong> en tareas <strong>intensivas en recursos</strong>.</li>
-</ul>
-</li>
-</ul>
-<doc-anchor-target id="uso-en-thneedmodel">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#uso-en-thneedmodel">#</doc-anchor-trigger>
-        <span>Uso en <strong>ThneedModel</strong></span>
-    </h3>
-</doc-anchor-target>
-<p>La clase <strong>ThneedModel</strong> en <strong>C++</strong>, utilizada dentro del código <a href="https://github.com/covenant-org/openpilot/blob/release3/selfdrive/modeld/modeld.py"><strong>modeld.py</strong></a>, que ejecuta el modelo original de Comma, &quot;supercombo&quot;, emplea la implementación de <strong>Thneed en C++</strong> para la ejecución de modelos.
-No existe una <strong>dependencia directa</strong> entre <strong>ThneedModel</strong> y la implementación de <strong>Thneed en Python</strong>.</p>
+<p>Entrenamos un modelo de YOLO para encontrar objetos comunes en la construcción</p>
+<hr>
 
                                 
                                 <!-- Required only on API pages -->
@@ -231,16 +191,23 @@ No existe una <strong>dependencia directa</strong> entre <strong>ThneedModel</st
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../tinygrad/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Tinygrad en Covenant</span>
+                                                <span class="block mt-1">Bienvenido al Covenant</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../datasets/avances/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Avances</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -281,6 +248,6 @@ No existe una <strong>dependencia directa</strong> entre <strong>ThneedModel</st
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "YOLO en Comma3X", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Datasets", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
