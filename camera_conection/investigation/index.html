@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794551970159">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794617038226">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.794551970159" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.794617038226" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794551970159" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794617038226" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794551970159" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794617038226" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -186,58 +186,112 @@
         <span><strong>Configuración de cámara</strong></span>
     </h2>
 </doc-anchor-target>
-<p>Acceder a la interfaz web de la cámara</p>
-<p>Asignar una ip estática</p>
-<p>Habilitar ONVIF</p>
-<p>Configurar credenciales</p>
-<p>Configurar resolución, fps, bitrate, formato de compresión, etc.</p>
-<p>Testear cámaras con ONVIF Device Manager</p>
+<ul>
+<li><p>Acceder a la interfaz web de la cámara</p>
+</li>
+<li><p>Asignar una ip estática</p>
+</li>
+<li><p>Habilitar ONVIF</p>
+</li>
+<li><p>Configurar credenciales</p>
+</li>
+<li><p>Configurar resolución, fps, bitrate, formato de compresión, etc.</p>
+</li>
+<li><p>Testear cámaras con ONVIF Device Manager</p>
+</li>
+</ul>
 <doc-anchor-target id="configuración-de-nvr">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#configuración-de-nvr">#</doc-anchor-trigger>
         <span><strong>Configuración de NVR</strong></span>
     </h2>
 </doc-anchor-target>
-<p>NVR en la misma red que las cámaras</p>
-<p>Configurar con mismas credenciales que cámaras</p>
-<p>Usar auto-discovery para encontrar cámaras con ONVIF (agregar ip manualmente de ser necesario)</p>
+<ul>
+<li><p>NVR en la misma red que las cámaras</p>
+</li>
+<li><p>Configurar con mismas credenciales que cámaras</p>
+</li>
+<li><p>Usar auto-discovery para encontrar cámaras con ONVIF (agregar ip manualmente de ser necesario)</p>
+</li>
+</ul>
 <doc-anchor-target id="configuración-de-grabaciones">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#configuración-de-grabaciones">#</doc-anchor-trigger>
         <span><strong>Configuración de grabaciones</strong></span>
     </h2>
 </doc-anchor-target>
-<p>Configurar grabación contínua o provocada por una acción(ej detección de movimiento)</p>
-<p>Dividir las grabaciones en segmentos más pequeños (5 min - 10 min) con herramientas como FFmpeg.</p>
+<ul>
+<li><p>Configurar grabación contínua o provocada por una acción(ej detección de movimiento) o cada cierto tiempo</p>
+</li>
+<li><p>Dividir las grabaciones en segmentos más pequeños (5 min - 10 min) con herramientas como FFmpeg.</p>
+</li>
+</ul>
 <doc-anchor-target id="configuración-de-aws">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#configuración-de-aws">#</doc-anchor-trigger>
         <span><strong>Configuración de AWS</strong></span>
     </h2>
 </doc-anchor-target>
-<p>Crear bucket en el servicio de S3</p>
-<p>Configurar permisos de acceso</p>
-<p>AWS Transfer Family soporta FTP, FTPS y SFTP para integrar directamente con s3</p>
-<p>Configurar servidor FTP con AWS Transfer Family</p>
-<p>Guardar archivos en bucked de AWS</p>
-<doc-anchor-target id="configuración-de-nvr---aws-">
+<ul>
+<li><p>Crear bucket en el servicio de S3</p>
+</li>
+<li><p>Configurar permisos de acceso</p>
+</li>
+<li><p>AWS Transfer Family soporta FTP, FTPS y SFTP para integrar directamente con s3</p>
+</li>
+<li><p>Configurar servidor FTP con AWS Transfer Family</p>
+</li>
+<li><p>Guardar archivos en bucked de AWS</p>
+</li>
+</ul>
+<doc-anchor-target id="configuración-de-nvr---aws">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuración-de-nvr---aws-">#</doc-anchor-trigger>
-        <span>**Configuración de NVR - AWS **</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configuración-de-nvr---aws">#</doc-anchor-trigger>
+        <span><strong>Configuración de NVR - AWS</strong></span>
     </h2>
 </doc-anchor-target>
-<p>Acceder a interfaz administrativa de NVR</p>
-<p>Ingresar dirección del servidor FTP proveída por AWS Transfer Family</p>
-<p>Ingresar credenciales para autenticación</p>
-<p>Específicar directorio destino dependiendo de la estructura</p>
-<p>Testear conexiones</p>
-<doc-anchor-target id="configuración-de-nvr---aws--1">
+<ul>
+<li><p>Acceder a interfaz administrativa de NVR</p>
+</li>
+<li><p>Ingresar dirección del servidor FTP proveída por AWS Transfer Family (si disponible)</p>
+</li>
+<li><p>Configurar script o AWS CLI en dispositivo externo para hacer la carga</p>
+</li>
+<li><p>Ingresar credenciales para autenticación</p>
+</li>
+<li><p>Específicar directorio destino dependiendo de la estructura</p>
+</li>
+<li><p>Testear conexiones</p>
+</li>
+</ul>
+<doc-anchor-target id="conexión-con-label-studio">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuración-de-nvr---aws--1">#</doc-anchor-trigger>
-        <span>**Configuración de NVR - AWS **</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#conexión-con-label-studio">#</doc-anchor-trigger>
+        <span><strong>Conexión con Label Studio</strong></span>
     </h2>
 </doc-anchor-target>
-<p>Acceder a interfaz administrativa de NVR</p>
+<ul>
+<li><p>Llamar a una función (ej AWS Lambda) cuando un video se suba</p>
+</li>
+<li><p>Generar URL para cada archivo de video</p>
+</li>
+<li><p>En la llamada a la función hacer un HTTP POST a Label Studio API para crear una tarea</p>
+</li>
+<li><p>Incluir URL, metadata</p>
+</li>
+</ul>
+<doc-anchor-target id="configuración-de-label-studio">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configuración-de-label-studio">#</doc-anchor-trigger>
+        <span><strong>Configuración de Label Studio</strong></span>
+    </h1>
+</doc-anchor-target>
+<ul>
+<li><p>Configurar el projecto para manejar videos y definir ripo de etiquetado</p>
+</li>
+<li><p>Unir resultado (ej archivo JSON) al dataset</p>
+</li>
+</ul>
 <doc-anchor-target id="conceptos">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#conceptos">#</doc-anchor-trigger>
@@ -280,7 +334,26 @@
     </h2>
 </doc-anchor-target>
 <p>Usa el Hypertext Transfer Protocol, normalmente en métodos como HTTP POST para mandar archivos a un servidor web o servicio en la nube, puede simplificar la integración con APIs basadas en web y servicios.</p>
-<p><a href="https://chatgpt.com/share/67c8574d-e450-800c-837a-db9e1f3935ef">https://chatgpt.com/share/67c8574d-e450-800c-837a-db9e1f3935ef</a></p>
+<doc-anchor-target id="fuentes">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fuentes">#</doc-anchor-trigger>
+        <span>Fuentes</span>
+    </h1>
+</doc-anchor-target>
+<ul>
+<li><p><a href="https://www.dvraid.com/guide/network-video-recorder-complete-setup-guide/#:%7E:text=Here%E2%80%99s%20a%20simple%20step-by-step%20process%3A%201%201.Unbox%20the,This%20allows%20you%20to%20access%20the%20NVR%20remotely">https://www.dvraid.com/guide/network-video-recorder-complete-setup-guide/#:~:text=Here%E2%80%99s%20a%20simple%20step-by-step%20process%3A%201%201.Unbox%20the,This%20allows%20you%20to%20access%20the%20NVR%20remotely</a>.</p>
+</li>
+<li><p><a href="https://chatgpt.com/share/67c8574d-e450-800c-837a-db9e1f3935ef">https://chatgpt.com/share/67c8574d-e450-800c-837a-db9e1f3935ef</a></p>
+</li>
+<li><p><a href="https://www.videoexpertsgroup.com/glossary/how-to-connect-camera-to-onvif#:%7E:text=How%20to%20Connect%20an%20IP%20Camera%20via%20ONVIF%3A,Step%205%3A%20Test%20and%20Monitor%20the%20Connection%20">https://www.videoexpertsgroup.com/glossary/how-to-connect-camera-to-onvif#:~:text=How%20to%20Connect%20an%20IP%20Camera%20via%20ONVIF%3A,Step%205%3A%20Test%20and%20Monitor%20the%20Connection%20</a></p>
+</li>
+<li><p><a href="https://aws.amazon.com/es/blogs/storage/collecting-archiving-and-retrieving-surveillance-footage-with-aws/">https://aws.amazon.com/es/blogs/storage/collecting-archiving-and-retrieving-surveillance-footage-with-aws/</a></p>
+</li>
+<li><p><a href="https://aws.amazon.com/es/blogs/iot/build-a-cloud-gateway-to-ingest-rtsp-video-to-amazon-kinesis-video-streams/">https://aws.amazon.com/es/blogs/iot/build-a-cloud-gateway-to-ingest-rtsp-video-to-amazon-kinesis-video-streams/</a></p>
+</li>
+<li><p><a href="http://labelstud.io.s3-website-us-east-1.amazonaws.com/guide/storage.html#Amazon-S3">http://labelstud.io.s3-website-us-east-1.amazonaws.com/guide/storage.html#Amazon-S3</a></p>
+</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
