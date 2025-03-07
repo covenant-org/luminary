@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794617038226">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794695892704">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.794617038226" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.794695892704" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794617038226" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794695892704" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794617038226" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794695892704" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -182,46 +182,150 @@
 </doc-anchor-target>
 <p>Página para alojar la documentación e investación de la utlización de un modelo
 de YOLO en el proyecto Comma3X de la empresa Comma.ai</p>
-<doc-anchor-target id="uso-de-la-clase-thneed-implementada-en-python-vs-c">
+<doc-anchor-target id="reporte-de-rendimiento-del-modelo-de-tinygrad-en-la-comma">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#reporte-de-rendimiento-del-modelo-de-tinygrad-en-la-comma">#</doc-anchor-trigger>
+        <span>Reporte de Rendimiento del Modelo de Tinygrad en la Comma</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="introducción">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#uso-de-la-clase-thneed-implementada-en-python-vs-c">#</doc-anchor-trigger>
-        <span>Uso de la clase Thneed implementada en Python vs C++</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#introducción">#</doc-anchor-trigger>
+        <span>Introducción</span>
     </h2>
 </doc-anchor-target>
-<p>En el proyecto <strong>openpilot</strong>, la clase <strong>Thneed</strong> se utiliza para ejecutar modelos compilados.<br />
-Existen implementaciones tanto en <strong>Python</strong> como en <strong>C++</strong>, y aunque ambas comparten el mismo propósito,<br />
-son <strong>independientes</strong> en su implementación.</p>
-<doc-anchor-target id="independencia">
+<p>Este reporte analiza el rendimiento de dos enfoques distintos para la ejecución de modelos de YOLO en la plataforma Comma. Se compararon:</p>
+<ol>
+<li><strong>Compilación JIT en Tinygrad</strong>: Se utilizó el repositorio de Tinygrad con la herramienta de compilación Just-In-Time (JIT) para optimizar la ejecución del modelo en tiempo real.</li>
+<li><strong>Compilación a Thneed</strong>: Se empleó el repositorio de OpenPilot con un proceso de compilación adaptado a la Comma, transformando el modelo en el formato Thneed para mejorar su eficiencia.</li>
+</ol>
+<doc-anchor-target id="compilación-jit-en-tinygrad">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#compilación-jit-en-tinygrad">#</doc-anchor-trigger>
+        <span>Compilación JIT en Tinygrad</span>
+    </h2>
+</doc-anchor-target>
+<p>La compilación Just-In-Time (JIT) permite optimizar la ejecución del modelo en tiempo real, aplicando optimizaciones específicas según el contexto de uso. El codigo de ejemplo de su uso puede verse en el archivo <a href="https://github.com/covenant-org/tinygrad/blob/master/examples/yolov8_onnx_jit.py#L275"><code v-pre>yolov8_onnx_jit.py</code></a>.</p>
+<doc-anchor-target id="funcionamiento-en-tinygrad">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#independencia">#</doc-anchor-trigger>
-        <span>Independencia</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#funcionamiento-en-tinygrad">#</doc-anchor-trigger>
+        <span>Funcionamiento en Tinygrad</span>
     </h3>
 </doc-anchor-target>
-<p>Las implementaciones de <strong>Thneed</strong> en <strong>Python</strong> y <strong>C++</strong> son <strong>independientes</strong>.<br />
-Aunque ambas tienen el mismo propósito (ejecutar modelos de aprendizaje automático),<br />
-están diseñadas para <strong>diferentes entornos y casos de uso</strong>:</p>
 <ul>
-<li><p><strong>C++</strong>:</p>
-<ul>
-<li>La implementación en <strong>C++</strong> está optimizada para el rendimiento en <strong>dispositivos embebidos</strong>, utilizando <strong>OpenCL</strong> para el procesamiento paralelo.</li>
-<li>Es probable que ofrezca un <strong>rendimiento superior</strong> en términos de <strong>velocidad de ejecución</strong> y <strong>eficiencia</strong> en el uso de recursos en dispositivos embebidos.</li>
+<li><strong>Captura de operaciones</strong>: Tinygrad usa TinyJit para almacenar operaciones en <strong>jit_cache</strong> en lugar de ejecutarlas inmediatamente.</li>
+<li><strong>Optimización</strong>: Se aplican técnicas como fusión de operaciones, eliminación de redundancias y planificación de memoria.</li>
+<li><strong>Compilación de kernels</strong>: Se generan kernels optimizados para la GPU utilizando compiladores especializados (por ejemplo, NVCC para CUDA).</li>
+<li><strong>Ejecución</strong>: Los kernels se ejecutan en la GPU, asegurando un alto rendimiento.</li>
+<li><strong>Reutilización</strong>: Se almacenan resultados previos en caché para evitar cálculos innecesarios.</li>
 </ul>
-</li>
-<li><p><strong>Python</strong>:</p>
-<ul>
-<li>Aunque la implementación en <strong>Python</strong> también utiliza <strong>OpenCL</strong>, puede no estar tan <strong>optimizada</strong> como la implementación en <strong>C++</strong> para dispositivos embebidos.</li>
-<li><strong>Python</strong>, siendo un <strong>lenguaje de alto nivel</strong>, puede introducir cierta <strong>sobrecarga</strong> en comparación con <strong>C++</strong>, lo que puede afectar el <strong>rendimiento</strong> en tareas <strong>intensivas en recursos</strong>.</li>
-</ul>
-</li>
-</ul>
-<doc-anchor-target id="uso-en-thneedmodel">
+<doc-anchor-target id="compilación-thneed-en-openpilot">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#compilación-thneed-en-openpilot">#</doc-anchor-trigger>
+        <span>Compilación Thneed en OpenPilot</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="introducción-1">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#uso-en-thneedmodel">#</doc-anchor-trigger>
-        <span>Uso en <strong>ThneedModel</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#introducción-1">#</doc-anchor-trigger>
+        <span>Introducción</span>
     </h3>
 </doc-anchor-target>
-<p>La clase <strong>ThneedModel</strong> en <strong>C++</strong>, utilizada dentro del código <a href="https://github.com/covenant-org/openpilot/blob/release3/selfdrive/modeld/modeld.py"><strong>modeld.py</strong></a>, que ejecuta el modelo original de Comma, &quot;supercombo&quot;, emplea la implementación de <strong>Thneed en C++</strong> para la ejecución de modelos.
-No existe una <strong>dependencia directa</strong> entre <strong>ThneedModel</strong> y la implementación de <strong>Thneed en Python</strong>.</p>
+<p>El script <a href="https://github.com/covenant-org/openpilot/blob/30fe7be623366d5f12dd8b4f98f44cbaead074a9/tinygrad_repo/openpilot/compile2_nuclea.py"><code v-pre>compile2_nuclea.py</code></a> permite la conversión de modelos ONNX al formato Thneed, optimizando su ejecución en la plataforma Comma.</p>
+<doc-anchor-target id="proceso-de-compilación">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#proceso-de-compilación">#</doc-anchor-trigger>
+        <span>Proceso de Compilación</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Carga del Modelo</strong>:
+<ul>
+<li>Se obtiene el modelo ONNX desde una URL o un archivo local.</li>
+</ul>
+</li>
+<li><strong>Generación del Plan de Ejecución (Schedule)</strong>:
+<ul>
+<li>Se ejecuta el modelo con una imagen de entrada.</li>
+<li>Se extrae un plan de ejecución optimizado, eliminando operaciones innecesarias.</li>
+</ul>
+</li>
+<li><strong>Transformación a Formato Thneed</strong>:
+<ul>
+<li>Se convierte el plan de ejecución en un formato compatible con Thneed.</li>
+<li>Se guarda el modelo compilado en un archivo.</li>
+</ul>
+</li>
+<li><strong>Pruebas y Validación</strong>:
+<ul>
+<li>Se compara el modelo Thneed con el modelo ONNX para garantizar la consistencia de los resultados.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="funciones-clave">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#funciones-clave">#</doc-anchor-trigger>
+        <span>Funciones Clave</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>get_schedule</code>: Obtiene el plan de ejecución del modelo.</li>
+<li><code v-pre>schedule_to_thneed</code>: Transforma el plan en formato Thneed.</li>
+<li><code v-pre>thneed_test_onnx</code>: Valida la consistencia entre ONNX y Thneed.</li>
+</ul>
+<doc-anchor-target id="resultados-de-rendimiento">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#resultados-de-rendimiento">#</doc-anchor-trigger>
+        <span>Resultados de Rendimiento</span>
+    </h2>
+</doc-anchor-target>
+<p>Se evaluaron ambos enfoques utilizando modelos de YOLO en formato ONNX con tres tamaños diferentes: mediano, pequeño y nano. Los tiempos de ejecución obtenidos fueron los siguientes:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Tamaño del Modelo</th>
+<th>JIT en Tinygrad</th>
+<th>Compilación Thneed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Medium</td>
+<td>914 ms</td>
+<td>2.1 s</td>
+</tr>
+<tr>
+<td>Small</td>
+<td>822 ms</td>
+<td>951 ms</td>
+</tr>
+<tr>
+<td>Nano</td>
+<td>308 ms</td>
+<td>355 ms</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="análisis-de-rendimiento">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#análisis-de-rendimiento">#</doc-anchor-trigger>
+        <span>Análisis de Rendimiento</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>La ejecución con <strong>JIT en Tinygrad</strong> fue en promedio un <strong>13% más rápida</strong> que la compilación con <strong>Thneed</strong>, sobre todo en modelos pequeños que no tienen mucho que optimizar.</li>
+<li>En general, la ejecución con JIT en Tinygrad fue en promedio más rápida que la compilación con Thneed, aprovechando mejor la GPU en cargas de trabajo más grandes como puede notarse con el modelo Medium.</li>
+</ul>
+<doc-anchor-target id="conclusión">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#conclusión">#</doc-anchor-trigger>
+        <span>Conclusión</span>
+    </h2>
+</doc-anchor-target>
+<p>Los resultados muestran que ambos enfoques son viables para la ejecución de modelos en la Comma, con tiempos de respuesta eficientes en los tres tamaños de YOLO probados. Sin embargo, la compilación JIT en Tinygrad aprovechó mejor la GPU, obteniendo un rendimiento significativamente superior en modelos más grandes en comparación con Thneed.</p>
+<p>Esto sugiere que, en aplicaciones donde la latencia es crítica, Tinygrad con JIT puede ser una opción más adecuada.</p>
 
                                 
                                 <!-- Required only on API pages -->
