@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795672851055">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795753418119">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.795672851055" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.795753418119" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795672851055" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795753418119" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795672851055" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795753418119" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -235,6 +235,131 @@
 <li>Python version</li>
 <li>Libraries version</li>
 <li>Use SAM to implement whole procedure</li>
+</ul>
+<doc-anchor-target id="19032025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#19032025">#</doc-anchor-trigger>
+        <span>19/03/2025</span>
+    </h1>
+</doc-anchor-target>
+<ul>
+<li>Configured SAM and reconfigured lambda function</li>
+<li>Solved permisssion errors in AWS user (used all available for needed services, might need to leave only the must-have)</li>
+<li>Changed python version from 3.11 to 3.9.21</li>
+<li>Changed versions of requirements libraires</li>
+<li>Forked repo to develop custom code for the application</li>
+<li>Current error:</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Traceback (most recent call last):  File &quot;/var/runtime/bootstrap.py&quot;, line 60, in &lt;module&gt;
+main()
+File &quot;/var/runtime/bootstrap.py&quot;, line 57, in main
+awslambdaricmain.main([os.environ[&quot;LAMBDA_TASK_ROOT&quot;], os.environ[&quot;_HANDLER&quot;]])
+File &quot;/var/runtime/awslambdaric/__main__.py&quot;, line 21, in main
+bootstrap.run(app_root, handler, lambda_runtime_api_addr)
+File &quot;/var/runtime/awslambdaric/bootstrap.py&quot;, line 497, in run
+request_handler = _get_handler(handler)
+File &quot;/var/runtime/awslambdaric/bootstrap.py&quot;, line 53, in _get_handler
+m = importlib.import_module(modname.replace(&quot;/&quot;, &quot;.&quot;))
+File &quot;/var/lang/lib/python3.9/importlib/__init__.py&quot;, line 127, in import_module
+return _bootstrap._gcd_import(name[level:], package, level)
+File &quot;/var/task/app.py&quot;, line 1, in &lt;module&gt;
+from yolo_onnx.yolov8_onnx import YOLOv8
+File &quot;/var/task/yolo_onnx/yolov8_onnx.py&quot;, line 1, in &lt;module&gt;
+import onnxruntime
+File &quot;/var/task/onnxruntime/__init__.py&quot;, line 23, in &lt;module&gt;
+from onnxruntime.capi._pybind_state import ExecutionMode  # noqa: F401
+File &quot;/var/task/onnxruntime/capi/_pybind_state.py&quot;, line 32, in &lt;module&gt;
+from .onnxruntime_pybind11_state import *  # noqa
+AttributeError: _ARRAY_API not found
+ImportError: numpy.core.multiarray failed to import
+The above exception was the direct cause of the following exception:
+SystemError: &lt;built-in function __import__&gt; returned a result with an error set
+START RequestId: 88ea7d05-610c-46f5-9d6a-b354f6209651 Version: $LATEST
+LAMBDA_WARNING: Unhandled exception. The most likely cause is an issue in the function code. However, in rare cases, a Lambda runtime update can cause unexpected function behavior. For functions using managed runtimes, runtime updates can be triggered by a function change, or can be applied automatically. To determine if the runtime has been updated, check the runtime version in the INIT_START log entry. If this error correlates with a change in the runtime version, you may be able to mitigate this error by temporarily rolling back to the previous runtime version. For more information, see https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html
+[ERROR] KeyError: 'body'
+Traceback (most recent call last):
+  File &quot;/var/task/app.py&quot;, line 13, in main
+    body = json.loads(event['body'])</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Analysis and possible solution from AmazonQ</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Analysis
+The error message indicates that the Lambda function is unable to find the 'body' key in the event object passed to the function. This suggests that the input data being passed to the function does not have the expected structure or format.</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">1. Review the Lambda function code:
+   - Open the Lambda function 'people-counting-YOLOV8Function-ELz4sr3ve5ZU' in the AWS Lambda console
+   - Navigate to the 'Code' tab
+   - Locate the `main` function in the `app.py` file
+
+2. Modify the event handling:
+   - Update the code to handle cases where the 'body' key might not be present in the event
+   - Add a check for the existence of the 'body' key before accessing it
+   - Example modification:
+     ```python
+     def main(event, context):
+         if 'body' not in event:
+             return {
+                 'statusCode': 400,
+                 'body': json.dumps('Missing body in the event')
+             }
+         body = json.loads(event['body'])
+         # Rest of the function code
+     ```
+
+3. Address the NumPy version compatibility issue:
+   - In the Lambda function configuration, scroll down to the 'Runtime settings' section
+   - Click 'Edit' and change the runtime to 'Python 3.8' (which is compatible with NumPy 1.x)
+   - Click 'Save' to apply the changes
+
+4. Update the function's dependencies:
+   - In the Lambda function 'Code' tab, scroll down to the 'Runtime settings' section
+   - Click on 'Edit' next to 'Layers'
+   - Add a layer that includes compatible versions of NumPy, onnxruntime, and other required libraries
+   - If a suitable layer doesn't exist, create a new one with the compatible library versions
+
+5. Test the Lambda function:
+   - In the Lambda console, go to the 'Test' tab
+   - Create a new test event that includes a 'body' key with a JSON string value
+   - Run the test to verify that the function now handles the input correctly
+
+6. If you don't have permissions to do the following changes, contact your AWS Administrator:
+   - Request to update the IAM role 'people-counting-YOLOV8FunctionRole-Kg1AxRQDEJIx' with the following inline policy:
+     ```json
+     {
+         &quot;Version&quot;: &quot;2012-10-17&quot;,
+         &quot;Statement&quot;: [
+             {
+                 &quot;Effect&quot;: &quot;Allow&quot;,
+                 &quot;Action&quot;: [
+                     &quot;logs:CreateLogGroup&quot;,
+                     &quot;logs:CreateLogStream&quot;,
+                     &quot;logs:PutLogEvents&quot;
+                 ],
+                 &quot;Resource&quot;: &quot;arn:aws:logs:us-east-1:615299755417:log-group:/aws/lambda/people-counting-YOLOV8Function-ELz4sr3ve5ZU:*&quot;
+             }
+         ]
+     }
+     ```
+
+7. Monitor the function:
+   - After making these changes, test the function again
+   - Check the CloudWatch logs for any remaining errors or issues</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="todo-2">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#todo-2">#</doc-anchor-trigger>
+        <span>Todo:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Check functionality of app.py and debug</li>
+<li>Check possible compatibility issues with libraries</li>
+<li>Test with test_api.py</li>
+<li>Test using s3 images</li>
 </ul>
 
                                 
