@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795842936890">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795846416679">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.795842936890" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.795846416679" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795842936890" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795846416679" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795842936890" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.795842936890" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795846416679" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.795846416679" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -207,7 +207,7 @@ Sigue pendiente hacer la prueba con el dron ya en vuelo normal.</li>
 La dirección del servidor es: <code v-pre>http://159.54.131.60:8889/comma/</code> para webrtc
 y <code v-pre>rtsp://159.54.131.60:8554/comma/</code> para rtsp (util en qground)
 <strong>!!! Estas direcciones van a cambiar en el futuro !!!</strong></li>
-<li>@fairbrok y @jeduardofr: Validación de connexión mediante red celular.
+<li>@fairbrook y @jeduardofr: Validación de connexión mediante red celular.
 La comma no detectaba la tarjeta SIM, el modem no detectaba la SIM.
 El problema fue que el puerto SIM estaba dañado, al revisar a detalle, uno de los
 pines del puerto estaba doblado y no hacía contacto correctamente.
@@ -224,6 +224,25 @@ mmcli -m --messaging-list-sms # Listar sms (recibidos y enviados)
 mmcli -m 0 -s 0 # Mostrar información del mensaje 0
 mmcli -m 0 -s 0 --send # Enviar sms 0</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="20---mar---2025">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#20---mar---2025">#</doc-anchor-trigger>
+        <span>20 - Mar - 2025</span>
+    </h2>
+</doc-anchor-target>
+<p>Este día fue mucho trabajo en equipo para hacer la prueba de vuelo con el dron
+anclado al suelo.</p>
+<ul>
+<li>Configuración de sistema de poleas y cuerdas para mantener al dron dento de
+un rango de movimiento seguro</li>
+<li>Prueba de vuelo exitosa con el sistema de poleas para prevenir caidas del dron al
+activar el &quot;kill switch&quot;</li>
+<li>Prueba de vuelo exitosa con el sistema de cuerdas para prevenir colisiones
+con paredes, objetos y personas</li>
+<li>Prueba de vuelo exitosa con el control remoto. Utilizando dos equipos
+(mavproxy y QGC) y mando de xbox. <em>El fallo de la semana anterior fue que el
+dron no tenía espacio de movimiento en el eje Z</em></li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
