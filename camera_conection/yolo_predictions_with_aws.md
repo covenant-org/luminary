@@ -137,3 +137,12 @@ The error message indicates that the Lambda function is unable to find the 'body
 - Check possible compatibility issues with libraries
 - Test with test_api.py
 - Test using s3 images
+
+# 20/03/2025
+- Solved all compatibility errors from yesterday
+- Changed numpy version from 2.x.x to 1.x.x
+- Testes with test_api.py and worked correctly
+
+## Todo: 
+- Implement automatic activation of function when a new image is added in s3 bukcet
+- Figure out what to do with results
