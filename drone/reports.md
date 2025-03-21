@@ -21,7 +21,7 @@ Registro de las pruebas de vuelo que se realizan cada semana
 La dirección del servidor es: `http://159.54.131.60:8889/comma/` para webrtc 
 y `rtsp://159.54.131.60:8554/comma/` para rtsp (util en qground) 
 __!!! Estas direcciones van a cambiar en el futuro !!!__
-- @fairbrok y @jeduardofr: Validación de connexión mediante red celular.
+- @fairbrook y @jeduardofr: Validación de connexión mediante red celular.
 La comma no detectaba la tarjeta SIM, el modem no detectaba la SIM. 
 El problema fue que el puerto SIM estaba dañado, al revisar a detalle, uno de los
 pines del puerto estaba doblado y no hacía contacto correctamente.
@@ -38,3 +38,18 @@ mmcli -m --messaging-list-sms # Listar sms (recibidos y enviados)
 mmcli -m 0 -s 0 # Mostrar información del mensaje 0
 mmcli -m 0 -s 0 --send # Enviar sms 0
 ```
+
+## 20 - Mar - 2025
+
+Este día fue mucho trabajo en equipo para hacer la prueba de vuelo con el dron 
+anclado al suelo.
+
+- Configuración de sistema de poleas y cuerdas para mantener al dron dento de 
+un rango de movimiento seguro
+- Prueba de vuelo exitosa con el sistema de poleas para prevenir caidas del dron al
+activar el "kill switch"
+- Prueba de vuelo exitosa con el sistema de cuerdas para prevenir colisiones
+con paredes, objetos y personas
+- Prueba de vuelo exitosa con el control remoto. Utilizando dos equipos 
+(mavproxy y QGC) y mando de xbox. _El fallo de la semana anterior fue que el
+dron no tenía espacio de movimiento en el eje Z_
