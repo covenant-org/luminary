@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795846416679">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795937337638">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.795846416679" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.795937337638" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795846416679" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795937337638" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795846416679" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795937337638" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -381,6 +381,46 @@ The error message indicates that the Lambda function is unable to find the 'body
 <ul>
 <li>Implement automatic activation of function when a new image is added in s3 bukcet</li>
 <li>Figure out what to do with results</li>
+</ul>
+<doc-anchor-target id="21032025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#21032025">#</doc-anchor-trigger>
+        <span>21/03/2025</span>
+    </h1>
+</doc-anchor-target>
+<ul>
+<li>Added code to handle when a new image is added to s3 bucket</li>
+<li>Made tests by manually adding image</li>
+</ul>
+<doc-anchor-target id="todo-4">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#todo-4">#</doc-anchor-trigger>
+        <span>Todo:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Correrct following errors:</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">  [ERROR]	2025-03-22T05:34:57.537Z	62797663-ce1f-49ee-ab49-98ee2587ee11	Error: An error occurred (AccessDenied) when calling the GetObject operation: User: arn:aws:sts::615299755417:assumed-role/people-counting-YOLOV8FunctionRole-Kg1AxRQDEJIx/people-counting-YOLOV8Function-ELz4sr3ve5ZU is not authorized to perform: s3:GetObject on resource: &quot;arn:aws:s3:::vicmangt-bucket/videos/frames/manufacturing-plant-leadership.png&quot; because no identity-based policy allows the s3:GetObject action</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">[ERROR] ClientError: An error occurred (AccessDenied) when calling the GetObject operation: User: arn:aws:sts::615299755417:assumed-role/people-counting-YOLOV8FunctionRole-Kg1AxRQDEJIx/people-counting-YOLOV8Function-ELz4sr3ve5ZU is not authorized to perform: s3:GetObject on resource: &quot;arn:aws:s3:::vicmangt-bucket/videos/frames/manufacturing-plant-leadership.png&quot; because no identity-based policy allows the s3:GetObject action
+Traceback (most recent call last):
+  File &quot;/var/task/app.py&quot;, line 59, in main
+    raise e
+  File &quot;/var/task/app.py&quot;, line 55, in main
+    response = s3.get_object(Bucket=bucket, Key=key)
+  File &quot;/var/task/botocore/client.py&quot;, line 570, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File &quot;/var/task/botocore/context.py&quot;, line 124, in wrapper
+    return func(*args, **kwargs)
+  File &quot;/var/task/botocore/client.py&quot;, line 1031, in _make_api_call
+    raise error_class(parsed_response, operation_name)</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Possbile cause: missing permissions in lambda role</li>
+<li>Check problem with generated output of lambda function (no extension aparently)</li>
 </ul>
 
                                 
