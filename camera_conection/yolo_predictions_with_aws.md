@@ -146,3 +146,29 @@ The error message indicates that the Lambda function is unable to find the 'body
 ## Todo: 
 - Implement automatic activation of function when a new image is added in s3 bukcet
 - Figure out what to do with results
+
+# 21/03/2025
+- Added code to handle when a new image is added to s3 bucket
+- Made tests by manually adding image
+
+## Todo: 
+- Correrct following errors:
+```
+  [ERROR]	2025-03-22T05:34:57.537Z	62797663-ce1f-49ee-ab49-98ee2587ee11	Error: An error occurred (AccessDenied) when calling the GetObject operation: User: arn:aws:sts::615299755417:assumed-role/people-counting-YOLOV8FunctionRole-Kg1AxRQDEJIx/people-counting-YOLOV8Function-ELz4sr3ve5ZU is not authorized to perform: s3:GetObject on resource: "arn:aws:s3:::vicmangt-bucket/videos/frames/manufacturing-plant-leadership.png" because no identity-based policy allows the s3:GetObject action
+```
+```
+[ERROR] ClientError: An error occurred (AccessDenied) when calling the GetObject operation: User: arn:aws:sts::615299755417:assumed-role/people-counting-YOLOV8FunctionRole-Kg1AxRQDEJIx/people-counting-YOLOV8Function-ELz4sr3ve5ZU is not authorized to perform: s3:GetObject on resource: "arn:aws:s3:::vicmangt-bucket/videos/frames/manufacturing-plant-leadership.png" because no identity-based policy allows the s3:GetObject action
+Traceback (most recent call last):
+  File "/var/task/app.py", line 59, in main
+    raise e
+  File "/var/task/app.py", line 55, in main
+    response = s3.get_object(Bucket=bucket, Key=key)
+  File "/var/task/botocore/client.py", line 570, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/var/task/botocore/context.py", line 124, in wrapper
+    return func(*args, **kwargs)
+  File "/var/task/botocore/client.py", line 1031, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+```
+- Possbile cause: missing permissions in lambda role
+- Check problem with generated output of lambda function (no extension aparently)
