@@ -39,6 +39,8 @@ mmcli -m 0 -s 0 # Mostrar información del mensaje 0
 mmcli -m 0 -s 0 --send # Enviar sms 0
 ```
 
+---
+
 ## 20 - Mar - 2025
 
 Este día fue mucho trabajo en equipo para hacer la prueba de vuelo con el dron 
@@ -53,3 +55,28 @@ con paredes, objetos y personas
 - Prueba de vuelo exitosa con el control remoto. Utilizando dos equipos 
 (mavproxy y QGC) y mando de xbox. _El fallo de la semana anterior fue que el
 dron no tenía espacio de movimiento en el eje Z_
+
+---
+
+## 24 - Mar - 2025
+
+Plan de conexión para la cámara FPV. El diagrma a continuación ejemplifica las
+interacciones entre los distintos componentees del sistema que permitiría la
+visualización de la cámara 
+[Moonlight](https://caddxfpv.com/products/walksnail-moonlight-kit?variant=47701308997934)
+en QGC y de forma remota en cualquier
+dispositivo
+
+```mermaid
+graph LR;
+    D[Power Distribution Board] --> N
+    D --> P
+    P[Pixhawk] <-->|UART OSD MSP| TX[Moonlight VTX]
+    N[Nuclea Power Board] --> TX[Moonlight VTX]
+    TX --> RX[Avatar VRX]
+    RX -->|HDMI| C[Capturadora]
+    C -->|HDMI| M[Monitor]
+    C -->|USB| PC[PC]
+    PC -->|RTSP| MTX[Mediamtx]
+    MTX -->|RTSP| QGC
+```
