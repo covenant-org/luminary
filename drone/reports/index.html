@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796186401800">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796188538933">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,12 +31,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.796186401800" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.796188538933" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796186401800" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796188538933" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796186401800" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.796186401800" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796188538933" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.796188538933" defer></script>
+    <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.6.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -224,6 +225,7 @@ mmcli -m --messaging-list-sms # Listar sms (recibidos y enviados)
 mmcli -m 0 -s 0 # Mostrar información del mensaje 0
 mmcli -m 0 -s 0 --send # Enviar sms 0</code></pre>
 </doc-codeblock></div>
+<hr>
 <doc-anchor-target id="20---mar---2025">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#20---mar---2025">#</doc-anchor-trigger>
@@ -243,6 +245,30 @@ con paredes, objetos y personas</li>
 (mavproxy y QGC) y mando de xbox. <em>El fallo de la semana anterior fue que el
 dron no tenía espacio de movimiento en el eje Z</em></li>
 </ul>
+<hr>
+<doc-anchor-target id="24---mar---2025">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#24---mar---2025">#</doc-anchor-trigger>
+        <span>24 - Mar - 2025</span>
+    </h2>
+</doc-anchor-target>
+<p>Plan de conexión para la cámara FPV. El diagrma a continuación ejemplifica las
+interacciones entre los distintos componentees del sistema que permitiría la
+visualización de la cámara
+<a href="https://caddxfpv.com/products/walksnail-moonlight-kit?variant=47701308997934">Moonlight</a>
+en QGC y de forma remota en cualquier
+dispositivo</p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">graph LR;
+    D[Power Distribution Board] --&gt; N
+    D --&gt; P
+    P[Pixhawk] &lt;--&gt;|UART OSD MSP| TX[Moonlight VTX]
+    N[Nuclea Power Board] --&gt; TX[Moonlight VTX]
+    TX --&gt; RX[Avatar VRX]
+    RX --&gt;|HDMI| C[Capturadora]
+    C --&gt;|HDMI| M[Monitor]
+    C --&gt;|USB| PC[PC]
+    PC --&gt;|RTSP| MTX[Mediamtx]
+    MTX --&gt;|RTSP| QGC</pre></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -309,6 +335,6 @@ dron no tenía espacio de movimiento en el eje Z</em></li>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Pruebas de vuelo", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Pruebas de vuelo", level: 2, icon: "file", hasPrism: true, hasMermaid: true, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
