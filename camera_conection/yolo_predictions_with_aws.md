@@ -172,3 +172,12 @@ Traceback (most recent call last):
 ```
 - Possbile cause: missing permissions in lambda role
 - Check problem with generated output of lambda function (no extension aparently)
+
+# 24/03/2025 
+- Corrected permission errors
+- Added functionality to prediction when a new image is uploaded through workflow to s3 bucket
+- Tested whole workflow, worked nice
+
+## Todo: 
+- Can't save results in s3 bucket when the request succeded, so check where to store them.
+- 
