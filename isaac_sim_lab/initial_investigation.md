@@ -11,7 +11,7 @@ Isaac Sim leverages NVIDIA RTX ray tracing, advanced GPU-accelerated PhysX-based
 # HW Requirements 
 
 - GPU: RTX 3060 ( will sufice)
-- RAM: 16 GB
+- RAM: 32 GB ( may be need to upgrade )
 
 # SF Requirements
 - OS: Ubuntu 20.04 - 24.04 (need to check dual boot options to maximamize local computational power usage)
