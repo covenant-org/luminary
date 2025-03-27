@@ -180,4 +180,14 @@ Traceback (most recent call last):
 
 ## Todo: 
 - Can't save results in s3 bucket when the request succeded, so check where to store them.
-- 
+
+# 26/03/2025
+- Added code to uplaod the predictions in a json file to a determined s3 bucket
+- Error log: 
+```
+[ERROR]	2025-03-27T03:15:11.630Z	b617b236-268f-4630-a3e4-8ac64305213e	Error: [Errno 30] Read-only file system: '20250327_031511.json'
+```
+# Todo: 
+- Since aws allows only for read files, upload json format in zip package, modify it and then upload to s3 bucket
+- Test
+
