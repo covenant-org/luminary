@@ -18,8 +18,9 @@ Isaac Sim leverages NVIDIA RTX ray tracing, advanced GPU-accelerated PhysX-based
 - Docker ( maybe)
 - VS Code
 - GPU Drivers
-- Nvidia Onmiverse (https://www.nvidia.com/en-us/omniverse/)
+- Isaac Sim (https://docs.isaacsim.omniverse.nvidia.com/4.5.0/installation/install_workstation.html)
 
 # Guides 
 - https://youtu.be/WzkvBSFfLq8?si=6XGnN6NRmXMMZZPb
 - https://www.nvidia.com/en-us/on-demand/playlist/playList-62b777fa-766f-4773-8ae4-a70e564d7848/
+
