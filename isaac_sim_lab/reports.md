@@ -4,3 +4,15 @@
 - Installed Isaac Sim
 ## Todo: 
 - Start testing and exploring program
+
+# 28/03/2025
+- Installed Isaac Lab
+- Made first tests
+- Quick start with robotic arm and solid cube
+- Got performance issues:
+- "Isaac Sim is not responding" multiple times
+- High RAM usage (300 Mb left)
+- OS frozen multiple times
+## Todo: 
+- Check if there's a way to increase performance
+- Keep testing
