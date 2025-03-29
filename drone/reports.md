@@ -80,3 +80,13 @@ graph LR;
     PC -->|RTSP| MTX[Mediamtx]
     MTX -->|RTSP| QGC
 ```
+
+
+## 25 - Mar -2025
+
+- @fairbrook: Hacer prueba con video con un servidor de video remoto. La prueba fue exitosa.
+Uitilizando OBS y WHIP se pudo hacer una transmisión de video con alta calidad y latencia
+muy baja ~330ms. Al intentar hacer la transmisión de video utilizando el kit de
+desarrollo Jetson Nano, la calidad fue menor y con una latencia de ~1.3s. Por lo
+que se busca desarrollar un programa que permita la transmisión de video en la 
+paltaforma Jetson Nano al utilizar "Hardware Encoding" y WHIP
