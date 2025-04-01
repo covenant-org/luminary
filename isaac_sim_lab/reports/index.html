@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796531605555">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796793886764">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.796531605555" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.796793886764" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796531605555" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796793886764" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796531605555" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796793886764" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -218,6 +218,50 @@
 <ul>
 <li>Check if there&#x27;s a way to increase performance</li>
 <li>Keep testing</li>
+</ul>
+<doc-anchor-target id="31032025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#31032025">#</doc-anchor-trigger>
+        <span>31/03/2025</span>
+    </h1>
+</doc-anchor-target>
+<ul>
+<li>Installed Nvidia SDK Manager &amp; Docker</li>
+<li>Tests of tutorials in Isaac Sim</li>
+<li>Worked well in GUI</li>
+<li>Problems in interaction with python scripts</li>
+<li>Message appearing when trying hot reload in vs code python script:</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">2025-04-01 03:13:59 [361,373ms] [Error] [asyncio] Task exception was never retrieved
+future: &lt;Task finished name='Task-1922' coro=&lt;BaseSampleUITemplate._on_load_world.&lt;locals&gt;._on_load_world_async() done, defined at /home/vicman/isaacsim/exts/isaacsim.examples.interactive/isaacsim/examples/interactive/base_sample/base_sample_extension.py:107&gt; exception=NameError(&quot;name 'np' is not defined&quot;)&gt;
+Traceback (most recent call last):
+  File &quot;/home/vicman/isaacsim/exts/isaacsim.examples.interactive/isaacsim/examples/interactive/base_sample/base_sample_extension.py&quot;, line 108, in _on_load_world_async
+    await self._sample.load_world_async()
+  File &quot;/home/vicman/isaacsim/exts/isaacsim.examples.interactive/isaacsim/examples/interactive/base_sample/base_sample.py&quot;, line 43, in load_world_async
+    self.setup_scene()
+  File &quot;/home/vicman/isaacsim/exts/isaacsim.examples.interactive/isaacsim/examples/interactive/hello_world/hello_world.py&quot;, line 33, in setup_scene
+    position=np.array([0, 0, 1.0]), # Using the current stage units which is in meters by default.
+NameError: name 'np' is not defined
+</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Last logs when trying to run <code v-pre>sudo ./python.sh standalone_examples/api/isaacsim.simulation_app/hello_world.py</code></li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">2025-04-01 03:12:09 [9,676ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit buffer size 8448000128
+2025-04-01 03:12:09 [9,676ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit : valid false, within: false
+2025-04-01 03:12:09 [9,676ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit : decrement: 167690, decrement size: 8363520384
+2025-04-01 03:12:09 [9,676ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : New limit 8508328 (slope: 503, intercept: 13181056)
+2025-04-01 03:12:09 [9,676ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit buffer size 4286378240
+2025-04-01 03:12:09 [9,676ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit : valid true, within: true
+2025-04-01 03:12:09 [9,855ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults-transient/meshlights/forceDisable'
+2025-04-01 03:12:09 [9,911ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/post/dlss/execMode'
+./python.sh: line 41: 55718 Killed                  $python_exe &quot;$@&quot; $args
+There was an error running python</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Not obvious reason atm</li>
 </ul>
 
                                 
