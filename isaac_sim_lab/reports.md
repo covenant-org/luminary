@@ -51,3 +51,12 @@ NameError: name 'np' is not defined
 There was an error running python
 ```
 - Not obvious reason atm
+
+# 1/04/2025
+- Solved errors from yesterday
+- There was no clear reason at all
+- Most likely something went wrong during Isaac Lab instalation
+- Solution was to reinstall
+- Made other tutorials in nvidia page
+- Got performance errors in some of them
+- Likely cause: Limited VRAM memory in GPU
