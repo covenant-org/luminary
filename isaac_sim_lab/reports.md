@@ -52,7 +52,7 @@ There was an error running python
 ```
 - Not obvious reason atm
 
-# Activity Report - 04/01/2025
+# Activity Report - 01/04/2025
 
 **Email:** brandon@nuclea.solutions
 
