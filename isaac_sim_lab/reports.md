@@ -51,3 +51,12 @@ NameError: name 'np' is not defined
 There was an error running python
 ```
 - Not obvious reason atm
+
+# Activity Report - 04/01/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Watched all Multi-Camera Tracking tutorials from Nvidia: [Nvidia On-Demand](https://www.nvidia.com/en-us/on-demand/playlist/playList-62b777fa-766f-4773-8ae4-a70e564d7848/)
+- Reinstalled Ubuntu 22.04, Isaac Sim, libraries, and drivers to prevent compatibility issues and ensure a clean work environment
+- Encountered issues during initial tracking tests in Isaac Sim, which led me to decide to reinstall everything.
