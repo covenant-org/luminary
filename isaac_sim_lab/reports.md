@@ -69,3 +69,17 @@ There was an error running python
 - Watched all Multi-Camera Tracking tutorials from Nvidia: [Nvidia On-Demand](https://www.nvidia.com/en-us/on-demand/playlist/playList-62b777fa-766f-4773-8ae4-a70e564d7848/)
 - Reinstalled Ubuntu 22.04, Isaac Sim, libraries, and drivers to prevent compatibility issues and ensure a clean work environment
 - Encountered issues during initial tracking tests in Isaac Sim, which led me to decide to reinstall everything.
+
+  # Activity Report - 02/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- An attempt was made to create a virtual machine in Google Cloud Console using Compute Engine, but the following service errors occurred:
+  ```
+  A n1-standard-4 VM instance with 1 nvidia-tesla-t4 accelerator(s) is currently unavailable in the us-central1-f zone. Alternatively, you can try your request again with a different VM hardware configuration or at a later time. For more information, see the troubleshooting documentation.
+  ```
+- An attempt was made to resolve the error by selecting different hosting zones and various server characteristics, but unfortunately, none were successful.
+  ![image](https://github.com/user-attachments/assets/51068fb5-9b9e-46fe-98f7-35c5f1bb7a78)
+
+- Another test will be attempted with AWS to see if it works there.
