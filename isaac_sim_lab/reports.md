@@ -83,3 +83,19 @@ There was an error running python
   ![image](https://github.com/user-attachments/assets/51068fb5-9b9e-46fe-98f7-35c5f1bb7a78)
 
 - Another test will be attempted with AWS to see if it works there.
+
+# 2/04/2025
+@VicmanGT
+- Tested different included examples and tutorials in isaacsim packate
+- Got import errors in examples that tried to use clases defined in other folders
+- Exmaples that didnt' do that worked correctly
+- Got initialization error while trying to launch isaac-sim:
+```
+[Error] [carb.cudainterop.plugin] CUDA error 999: cudaErrorUnknown - unknown error)
+[Error] [carb.cudainterop.plugin] Failed to query CUDA device count.
+[Error] [carb.cudainterop.plugin] Could not query CUDA device.
+```
+- Got temporarly solved by rebooting Ubuntu
+- Not apparent cause yet.
+- Error seen in Nvidia Forum:
+- https://forums.developer.nvidia.com/t/cuda-error-999-failed-to-query-cuda-device-count-cuda-deviceordinal-is-invalid/274493
