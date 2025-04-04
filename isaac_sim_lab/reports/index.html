@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797056289070">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797057021352">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.797056289070" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.797057021352" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797056289070" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797057021352" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797056289070" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797057021352" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -345,10 +345,49 @@ There was an error running python</code></pre>
 [Error] [carb.cudainterop.plugin] Could not query CUDA device.</code></pre>
 </doc-codeblock></div>
 <ul>
-<li>Got temporarly solved by rebooting Ubuntu</li>
-<li>Not apparent cause yet.</li>
-<li>Error seen in Nvidia Forum:</li>
-<li><a href="https://forums.developer.nvidia.com/t/cuda-error-999-failed-to-query-cuda-device-count-cuda-deviceordinal-is-invalid/274493">https://forums.developer.nvidia.com/t/cuda-error-999-failed-to-query-cuda-device-count-cuda-deviceordinal-is-invalid/274493</a></li>
+<li><p>Got temporarly solved by rebooting Ubuntu</p>
+</li>
+<li><p>Not apparent cause yet.</p>
+</li>
+<li><p>Error seen in Nvidia Forum:</p>
+</li>
+<li><p><a href="https://forums.developer.nvidia.com/t/cuda-error-999-failed-to-query-cuda-device-count-cuda-deviceordinal-is-invalid/274493">https://forums.developer.nvidia.com/t/cuda-error-999-failed-to-query-cuda-device-count-cuda-deviceordinal-is-invalid/274493</a></p>
+<doc-anchor-target id="activity-report---03042025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-report---03042025">#</doc-anchor-trigger>
+        <span>Activity Report - 03/04/2025</span>
+    </h1>
+</doc-anchor-target>
+</li>
+</ul>
+<p><strong>Email:</strong> <a href="mailto:brandon@nuclea.solutions">brandon@nuclea.solutions</a></p>
+<doc-anchor-target id="main-updates-2">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-updates-2">#</doc-anchor-trigger>
+        <span>Main Updates</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Successfully launch and configure a virtual machine on AWS without encountering server issues or GPU availability limitations by region.</li>
+<li>The NVIDIA drivers with CUDA and other libraries were installed to configure Metropolitan NVIDIA.</li>
+<li>An attempt was made to configure Metropolitan NVIDIA using Docker, but the following authorization error occurred:
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">sudo docker login nvcr.io
+Username: $oauthtoken
+Password:
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+ubuntu@ip-172-31-5-186:~$ sudo docker pull nvcr.io/nvidia/metropolis/metropolis:v1.0
+Error response from daemon: Head &quot;https://nvcr.io/v2/nvidia/metropolis/metropolis/manifests/v1.0&quot;: denied: {&quot;errors&quot;: [{&quot;code&quot;: &quot;DENIED&quot;, &quot;message&quot;: &quot;Access Denied&quot;}]}
+ubuntu@ip-172-31-5-186:~$ sudo docker pull nvcr.io/nvidia/metropolis/metropolis:v1.0
+Error response from daemon: Head &quot;https://nvcr.io/v2/nvidia/metropolis/metropolis/manifests/v1.0&quot;: denied: {&quot;errors&quot;: [{&quot;code&quot;: &quot;DENIED&quot;, &quot;message&quot;: &quot;Access Denied&quot;}]}</code></pre>
+</doc-codeblock></div>
+</li>
+<li>I used DeepStream SDK as an alternative to Docker to perform intelligent video analysis.</li>
+<li>I will look for a way to install it tomorrow using a Docker container for only the VTS service.</li>
 </ul>
 
                                 
