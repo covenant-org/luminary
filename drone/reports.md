@@ -90,3 +90,8 @@ muy baja ~330ms. Al intentar hacer la transmisión de video utilizando el kit de
 desarrollo Jetson Nano, la calidad fue menor y con una latencia de ~1.3s. Por lo
 que se busca desarrollar un programa que permita la transmisión de video en la 
 paltaforma Jetson Nano al utilizar "Hardware Encoding" y WHIP
+
+---
+
+01 - Abr - 2025
+@fairbrook: Pruebas de latencia con video receptor y transmisor montado en dron y en estación de trabajo. Latencia aproximada de 800ms
