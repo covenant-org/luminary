@@ -124,3 +124,15 @@ There was an error running python
   ```
 - I used DeepStream SDK as an alternative to Docker to perform intelligent video analysis.
 - I will look for a way to install it tomorrow using a Docker container for only the VTS service.
+
+# 03/04/2025
+@VicmanGT
+- Check tutorials and examples from Nvidia Isaac Sim docs page
+- Started reviewing examples from cameras in the simulation
+- Printed frames into console and generated images from frames with opencv
+- Combined examples from a robot (car and arm ) simulation and a camera implementation, worked nicely
+
+## Todo: 
+- Get video from simulation using camera 
+- Check how to put multiple cameras and get data from them
+- Implement in other examples 
