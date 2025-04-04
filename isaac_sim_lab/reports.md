@@ -99,3 +99,28 @@ There was an error running python
 - Not apparent cause yet.
 - Error seen in Nvidia Forum:
 - https://forums.developer.nvidia.com/t/cuda-error-999-failed-to-query-cuda-device-count-cuda-deviceordinal-is-invalid/274493
+
+  # Activity Report - 03/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Successfully launch and configure a virtual machine on AWS without encountering server issues or GPU availability limitations by region.
+- The NVIDIA drivers with CUDA and other libraries were installed to configure Metropolitan NVIDIA.
+- An attempt was made to configure Metropolitan NVIDIA using Docker, but the following authorization error occurred:
+  ```
+   sudo docker login nvcr.io
+  Username: $oauthtoken
+  Password:
+  WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+  Configure a credential helper to remove this warning. See
+  https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+  
+  Login Succeeded
+  ubuntu@ip-172-31-5-186:~$ sudo docker pull nvcr.io/nvidia/metropolis/metropolis:v1.0
+  Error response from daemon: Head "https://nvcr.io/v2/nvidia/metropolis/metropolis/manifests/v1.0": denied: {"errors": [{"code": "DENIED", "message": "Access Denied"}]}
+  ubuntu@ip-172-31-5-186:~$ sudo docker pull nvcr.io/nvidia/metropolis/metropolis:v1.0
+  Error response from daemon: Head "https://nvcr.io/v2/nvidia/metropolis/metropolis/manifests/v1.0": denied: {"errors": [{"code": "DENIED", "message": "Access Denied"}]}
+  ```
+- I used DeepStream SDK as an alternative to Docker to perform intelligent video analysis.
+- I will look for a way to install it tomorrow using a Docker container for only the VTS service.
