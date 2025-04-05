@@ -135,4 +135,37 @@ There was an error running python
 ## Todo: 
 - Get video from simulation using camera 
 - Check how to put multiple cameras and get data from them
-- Implement in other examples 
+- Implement in other examples
+
+  # Activity Report - 04/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- It was successfully installed and configured DeepStream on the server.
+- A configuration file was created for DeepStream so that it could run a video through VST.
+- The video ran correctly, but I have the problem of not being able to visualize it since I'm connected via SSH.
+  ```
+  ubuntu@ip-172-31-5-186:/opt/nvidia/deepstream/deepstream-7.1/samples/configs/deepstream-app$ deepstream-app -c config_file.txt
+  ** WARN: <parse_source:675>: Unknown key 'width' for group [source0]
+  ** WARN: <parse_source:675>: Unknown key 'height' for group [source0]
+  
+  Runtime commands:
+          h: Print this help
+          q: Quit
+  
+          p: Pause
+          r: Resume
+  
+  ** INFO: <bus_callback:291>: Pipeline ready
+  
+  Failed to query video capabilities: Invalid argument
+  ** INFO: <bus_callback:277>: Pipeline running
+  
+  nvstreammux: Successfully handled EOS for source_id=0
+  ** INFO: <bus_callback:334>: Received EOS. Exiting ...
+  
+  Quitting
+  App run successful
+  ```
+- Find a way to display the VST UI.
