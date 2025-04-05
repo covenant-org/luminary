@@ -169,3 +169,29 @@ There was an error running python
   App run successful
   ```
 - Find a way to display the VST UI.
+
+# 04/04/2025
+@VicmanGT
+- Checked humanoids example
+- Added multiple cameras to simulation in different positions and orientations
+- Got frames from all of them each a certain amount of time
+- Converted frames into iamges and store them in file system
+- Camera 1 first frame
+![1_camera1_opencv](https://github.com/user-attachments/assets/37a655b8-9a6f-457b-8918-6f55e2169369)
+- Camera 2 first frame
+![1_camera2_opencv](https://github.com/user-attachments/assets/c830fc73-fcd9-4da5-9d71-31189e2571df)
+- Camera 3 first frame
+![1_camera3_opencv](https://github.com/user-attachments/assets/b8ab076d-149b-45d7-a03e-695e8c27d0c5)
+- Camera 1 second frame
+![2_camera1_opencv](https://github.com/user-attachments/assets/3d6fab01-d803-4fa3-b8d0-ef112d9e459a)
+- Camera 2 second frame
+![2_camera2_opencv](https://github.com/user-attachments/assets/0c2bcca4-58dd-45c6-a429-9aea0cde91e1)
+- Camera 13 second frame
+![2_camera3_opencv](https://github.com/user-attachments/assets/bd2c523e-719f-428e-9a55-be0f5a101ebf)
+
+## Todo: 
+- Modify humanoid movement to they don't fall that quick
+
+
+
+
