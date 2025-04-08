@@ -192,6 +192,18 @@ There was an error running python
 ## Todo: 
 - Modify humanoid movement to they don't fall that quick
 
+ # Activity Report - 07/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- The DeepStream configuration for running MP4 videos has been completed. It runs smoothly, although the interface has not yet been viewed.
+
+- The setup for running videos via the RTSP protocol in DeepStream has begun, but it is not yet ready due to the lack of a graphics engine with NVIDIA's TensorRT library, which is used for optimizing and running neural networks on GPUs.
+![image](https://github.com/user-attachments/assets/b3f1e0b5-b0fb-49e4-a1fc-dfcb1bb0f78a)
+
+- The plan is to follow the quick start guide for multi-camera simulation with AWS, from: [Multi_Camera_Sim2Deploy_AWS](https://docs.nvidia.com/mms/text/Multi_Camera_Sim2Deploy_AWS.html)
+
 
 
 
