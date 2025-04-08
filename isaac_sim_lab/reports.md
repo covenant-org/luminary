@@ -204,6 +204,22 @@ There was an error running python
 
 - The plan is to follow the quick start guide for multi-camera simulation with AWS, from: [Multi_Camera_Sim2Deploy_AWS](https://docs.nvidia.com/mms/text/Multi_Camera_Sim2Deploy_AWS.html)
 
+# 07/04/2025
+@VicmanGT
+- Implemented 3 cameras in different position in humanoid simulation
+- Got 1 fps from all of them and were saved in different folders
+- Used numeric keyboard to move the humanoids throughout the space ( now modified to warehouse environment )
+- Simulation Results (5x vel):
 
+https://github.com/user-attachments/assets/857a68e0-6a97-43a5-8a4b-a65aecdfccd5
 
+- Cameras frames:
 
+https://github.com/user-attachments/assets/37780be7-548c-43ed-ba8e-8d2b6116535b
+
+https://github.com/user-attachments/assets/055b8177-7941-450b-abac-d18915dcbd03
+
+https://github.com/user-attachments/assets/f38c2686-e087-4d51-bd08-f0ae348baad8
+
+- Got some issues with slowness of the simulation and response time from the keyboard input, posible cause the frame capture
+- Neither RAM or VRAM seem an cause
