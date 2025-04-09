@@ -248,4 +248,19 @@ https://github.com/user-attachments/assets/f38c2686-e087-4d51-bd08-f0ae348baad8
 # Todo: 
 - Reinstall Isaac Sim from scratch
 - Check installed python libraries with  ```./python.sh -m pip list``` before and after trying to install the ```rfdeter```
-- 
+
+ # Activity Report - 09/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Early access was requested from NVIDIA through an official application to use their new AI models and camera tracking technologies, such as NVIDIA Metropolis. I am currently waiting for approval.
+![image](https://github.com/user-attachments/assets/22eba68c-ff38-463e-80f9-f64dbd7196c0)
+
+- Two work plans were developed to extract video footage from HikVision cameras. The first plan involves downloading videos locally via RTSP using the FFmpeg library. A Python script was created to manage all registered cameras listed in a CSV file. The recording duration is customizable, and using cron jobs and system services, we can schedule the script to run at specific times of the day.
+![image](https://github.com/user-attachments/assets/26ba5144-9e2c-4c90-9b22-75390956852b)
+
+- The second plan builds on the first but differs in that instead of storing the videos locally, the footage is uploaded directly to a cloud storage solution such as an AWS S3 bucket.
+
+- Tomorrow, we will begin testing with the actual Fimex cameras and evaluate the strategy of also using an SFTP server to store all videos, which will later be processed using NVIDIA Metropolis.
+ 
