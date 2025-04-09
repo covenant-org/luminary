@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797147546660">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.797493161013">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.6.0">
+    <meta name="generator" content="Retype 3.7.0">
 
     <!-- Primary Meta Tags -->
     <title>27/03/2025</title>
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.797147546660" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.797493161013" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797147546660" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797147546660" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.797493161013" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.797493161013" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -118,7 +118,6 @@
             <!-- Sidebar Skeleton -->
             <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
             
-                <!-- Render this div, if config.showSidebarFilter is `true` -->
                 <div class="flex items-center h-16 px-6">
                     <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
                 </div>
@@ -516,6 +515,97 @@ App run successful</code></pre>
 </doc-anchor-target>
 <ul>
 <li>Modify humanoid movement to they don&#x27;t fall that quick</li>
+</ul>
+<doc-anchor-target id="activity-report---07042025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-report---07042025">#</doc-anchor-trigger>
+        <span>Activity Report - 07/04/2025</span>
+    </h1>
+</doc-anchor-target>
+<p><strong>Email:</strong> <a href="mailto:brandon@nuclea.solutions">brandon@nuclea.solutions</a></p>
+<doc-anchor-target id="main-updates-4">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-updates-4">#</doc-anchor-trigger>
+        <span>Main Updates</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><p>The DeepStream configuration for running MP4 videos has been completed. It runs smoothly, although the interface has not yet been viewed.</p>
+</li>
+<li><p>The setup for running videos via the RTSP protocol in DeepStream has begun, but it is not yet ready due to the lack of a graphics engine with NVIDIA&#x27;s TensorRT library, which is used for optimizing and running neural networks on GPUs.
+<figure class="content-center">
+    <img src="https://github.com/user-attachments/assets/b3f1e0b5-b0fb-49e4-a1fc-dfcb1bb0f78a" alt="image">
+    <figcaption class="caption">image</figcaption>
+</figure>
+</p>
+</li>
+<li><p>The plan is to follow the quick start guide for multi-camera simulation with AWS, from: <a href="https://docs.nvidia.com/mms/text/Multi_Camera_Sim2Deploy_AWS.html">Multi_Camera_Sim2Deploy_AWS</a></p>
+</li>
+</ul>
+<doc-anchor-target id="07042025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#07042025">#</doc-anchor-trigger>
+        <span>07/04/2025</span>
+    </h1>
+</doc-anchor-target>
+<p>@VicmanGT</p>
+<ul>
+<li>Implemented 3 cameras in different position in humanoid simulation</li>
+<li>Got 1 fps from all of them and were saved in different folders</li>
+<li>Used numeric keyboard to move the humanoids throughout the space ( now modified to warehouse environment )</li>
+<li>Simulation Results (5x vel):</li>
+</ul>
+<p><a href="https://github.com/user-attachments/assets/857a68e0-6a97-43a5-8a4b-a65aecdfccd5">https://github.com/user-attachments/assets/857a68e0-6a97-43a5-8a4b-a65aecdfccd5</a></p>
+<ul>
+<li>Cameras frames:</li>
+</ul>
+<p><a href="https://github.com/user-attachments/assets/37780be7-548c-43ed-ba8e-8d2b6116535b">https://github.com/user-attachments/assets/37780be7-548c-43ed-ba8e-8d2b6116535b</a></p>
+<p><a href="https://github.com/user-attachments/assets/055b8177-7941-450b-abac-d18915dcbd03">https://github.com/user-attachments/assets/055b8177-7941-450b-abac-d18915dcbd03</a></p>
+<p><a href="https://github.com/user-attachments/assets/f38c2686-e087-4d51-bd08-f0ae348baad8">https://github.com/user-attachments/assets/f38c2686-e087-4d51-bd08-f0ae348baad8</a></p>
+<ul>
+<li>Got some issues with slowness of the simulation and response time from the keyboard input, posible cause the frame capture</li>
+<li>Neither RAM or VRAM seem an cause</li>
+</ul>
+<doc-anchor-target id="08042025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#08042025">#</doc-anchor-trigger>
+        <span>08/04/2025</span>
+    </h1>
+</doc-anchor-target>
+<p>@VicmanGT</p>
+<ul>
+<li>Implemented RF-DETR algorithm on code to make predicions on the detected frames for each camera</li>
+<li>GitHub Repo: <a href="https://github.com/roboflow/rf-detr">https://github.com/roboflow/rf-detr</a></li>
+<li>Save the images with surrounding boxes with predictions</li>
+<li>Got errors while trying this:</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">  Error] [omni.ext._impl.custom_importer] Failed to import python module omni.kit.widget.options_menu. Error: No module named 'omni.kit.widget'</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>This after making a <code v-pre>./python.sh -m pip install rfdetr</code> to install the library to use the model</li>
+<li>The error message was showed in console for almost every <code v-pre>omni</code> dependent package</li>
+<li>Ran <code v-pre>./post_install.sh</code> after rebooting system</li>
+<li>New error was this:
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">[Error] [carb.scripting-python.plugin] FileNotFoundError: [Errno 2] No such file or directory: '/home/vicman/isaacsim/exts/omni.pip.compute/pip_prebundle/cv2'
+At:
+  /home/vicman/isaacsim/kit/kernel/py/omni/ext/_impl/fast_importer.py(261): _fast_walk</code></pre>
+</doc-codeblock></div>
+</li>
+<li>Neither the application of any of the examples from isaac sim worked due to the same error</li>
+<li>Couldn&#x27;t yet find a quick solution in the web</li>
+</ul>
+<doc-anchor-target id="todo-4">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#todo-4">#</doc-anchor-trigger>
+        <span>Todo:</span>
+    </h1>
+</doc-anchor-target>
+<ul>
+<li>Reinstall Isaac Sim from scratch</li>
+<li>Check installed python libraries with  <code v-pre>./python.sh -m pip list</code> before and after trying to install the <code v-pre>rfdeter</code></li>
+<li></li>
 </ul>
 
                                 
