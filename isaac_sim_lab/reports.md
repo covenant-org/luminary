@@ -223,3 +223,29 @@ https://github.com/user-attachments/assets/f38c2686-e087-4d51-bd08-f0ae348baad8
 
 - Got some issues with slowness of the simulation and response time from the keyboard input, posible cause the frame capture
 - Neither RAM or VRAM seem an cause
+
+# 08/04/2025
+@VicmanGT
+- Implemented RF-DETR algorithm on code to make predicions on the detected frames for each camera
+- GitHub Repo: https://github.com/roboflow/rf-detr
+- Save the images with surrounding boxes with predictions
+- Got errors while trying this:
+```
+  Error] [omni.ext._impl.custom_importer] Failed to import python module omni.kit.widget.options_menu. Error: No module named 'omni.kit.widget'
+```
+- This after making a ```./python.sh -m pip install rfdetr``` to install the library to use the model
+- The error message was showed in console for almost every ```omni``` dependent package
+- Ran ```./post_install.sh``` after rebooting system
+- New error was this:
+  ```
+  [Error] [carb.scripting-python.plugin] FileNotFoundError: [Errno 2] No such file or directory: '/home/vicman/isaacsim/exts/omni.pip.compute/pip_prebundle/cv2'
+  At:
+    /home/vicman/isaacsim/kit/kernel/py/omni/ext/_impl/fast_importer.py(261): _fast_walk
+  ```
+- Neither the application of any of the examples from isaac sim worked due to the same error
+- Couldn't yet find a quick solution in the web
+
+# Todo: 
+- Reinstall Isaac Sim from scratch
+- Check installed python libraries with  ```./python.sh -m pip list``` before and after trying to install the ```rfdeter```
+- 
