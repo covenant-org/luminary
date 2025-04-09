@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.797493161013">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.797554054409">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.7.0.797493161013" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.797554054409" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.797493161013" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.797554054409" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.797493161013" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.797554054409" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -605,7 +605,39 @@ At:
 <ul>
 <li>Reinstall Isaac Sim from scratch</li>
 <li>Check installed python libraries with  <code v-pre>./python.sh -m pip list</code> before and after trying to install the <code v-pre>rfdeter</code></li>
-<li></li>
+</ul>
+<doc-anchor-target id="activity-report---09042025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-report---09042025">#</doc-anchor-trigger>
+        <span>Activity Report - 09/04/2025</span>
+    </h1>
+</doc-anchor-target>
+<p><strong>Email:</strong> <a href="mailto:brandon@nuclea.solutions">brandon@nuclea.solutions</a></p>
+<doc-anchor-target id="main-updates-5">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-updates-5">#</doc-anchor-trigger>
+        <span>Main Updates</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><p>Early access was requested from NVIDIA through an official application to use their new AI models and camera tracking technologies, such as NVIDIA Metropolis. I am currently waiting for approval.
+<figure class="content-center">
+    <img src="https://github.com/user-attachments/assets/22eba68c-ff38-463e-80f9-f64dbd7196c0" alt="image">
+    <figcaption class="caption">image</figcaption>
+</figure>
+</p>
+</li>
+<li><p>Two work plans were developed to extract video footage from HikVision cameras. The first plan involves downloading videos locally via RTSP using the FFmpeg library. A Python script was created to manage all registered cameras listed in a CSV file. The recording duration is customizable, and using cron jobs and system services, we can schedule the script to run at specific times of the day.
+<figure class="content-center">
+    <img src="https://github.com/user-attachments/assets/26ba5144-9e2c-4c90-9b22-75390956852b" alt="image">
+    <figcaption class="caption">image</figcaption>
+</figure>
+</p>
+</li>
+<li><p>The second plan builds on the first but differs in that instead of storing the videos locally, the footage is uploaded directly to a cloud storage solution such as an AWS S3 bucket.</p>
+</li>
+<li><p>Tomorrow, we will begin testing with the actual Fimex cameras and evaluate the strategy of also using an SFTP server to store all videos, which will later be processed using NVIDIA Metropolis.</p>
+</li>
 </ul>
 
                                 
