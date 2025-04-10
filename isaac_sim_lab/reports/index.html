@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.797554054409">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.797577760571">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.7.0.797554054409" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.797577760571" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.797554054409" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.797577760571" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.797554054409" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.797577760571" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -638,6 +638,58 @@ At:
 </li>
 <li><p>Tomorrow, we will begin testing with the actual Fimex cameras and evaluate the strategy of also using an SFTP server to store all videos, which will later be processed using NVIDIA Metropolis.</p>
 </li>
+</ul>
+<doc-anchor-target id="09042025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#09042025">#</doc-anchor-trigger>
+        <span>09/04/2025</span>
+    </h1>
+</doc-anchor-target>
+<p>@VicmanGT</p>
+<ul>
+<li>Reinstalled Isaac Sim and the problem from yesterdy solved, even after installiing de library for the RF-DETR</li>
+<li>Correctly implemented RF-DETR algorithm</li>
+<li>Correctly saved frames with bounding boxes of predicitons</li>
+<li>Improved performance of simulation by lowering the resolution of the cameras (full hd -&gt; hd)</li>
+<li>Moved camera positions to get them to capture a wider space</li>
+<li>Implemented an option to choose between automated simulation of manual control with the numpad</li>
+<li>Started coding the algorithm to detect movement</li>
+<li>Results of simulation:</li>
+</ul>
+<p><a href="https://github.com/user-attachments/assets/2f4ab757-2c00-4ba6-847a-94ed0731e8e0">https://github.com/user-attachments/assets/2f4ab757-2c00-4ba6-847a-94ed0731e8e0</a></p>
+<ul>
+<li>Result frames with predicitons</li>
+</ul>
+<p><a href="https://github.com/user-attachments/assets/0ff68486-a04d-4fbf-9df4-60e08fe3807f">https://github.com/user-attachments/assets/0ff68486-a04d-4fbf-9df4-60e08fe3807f</a></p>
+<p><a href="https://github.com/user-attachments/assets/85516f4c-dab2-4da7-a751-920e4efccdc5">https://github.com/user-attachments/assets/85516f4c-dab2-4da7-a751-920e4efccdc5</a></p>
+<doc-anchor-target id="todo-5">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#todo-5">#</doc-anchor-trigger>
+        <span>Todo:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>The RF-DETR algorithm had problems to identify the humanoids, labeling them as other objects when they were even detected</li>
+<li>This could be mainly due to the not human like texture they have, so try to find if there&#x27;s another texture to cover them</li>
+<li>Check another object detection algorithm such as YOLO to compare performance and scores</li>
+<li>Implement the move alert function</li>
+<li>Figure out how to mantain some form of consistency during the frames passed</li>
+</ul>
+<doc-anchor-target id="notes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#notes">#</doc-anchor-trigger>
+        <span>Notes:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Got this error message some times while trying to run the python script</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Inconsistency detected by ld.so: ../elf/dl-tls.c: 517: _dl_allocate_tls_init: Assertion `listp != NULL' failed!
+There was an error running python</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>The problem solved trying 2 or 1 more time, no obvious reason atm</li>
 </ul>
 
                                 
