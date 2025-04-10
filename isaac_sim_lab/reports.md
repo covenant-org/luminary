@@ -263,4 +263,37 @@ https://github.com/user-attachments/assets/f38c2686-e087-4d51-bd08-f0ae348baad8
 - The second plan builds on the first but differs in that instead of storing the videos locally, the footage is uploaded directly to a cloud storage solution such as an AWS S3 bucket.
 
 - Tomorrow, we will begin testing with the actual Fimex cameras and evaluate the strategy of also using an SFTP server to store all videos, which will later be processed using NVIDIA Metropolis.
- 
+
+# 09/04/2025
+@VicmanGT
+- Reinstalled Isaac Sim and the problem from yesterdy solved, even after installiing de library for the RF-DETR
+- Correctly implemented RF-DETR algorithm
+- Correctly saved frames with bounding boxes of predicitons
+- Improved performance of simulation by lowering the resolution of the cameras (full hd -> hd)
+- Moved camera positions to get them to capture a wider space
+- Implemented an option to choose between automated simulation of manual control with the numpad
+- Started coding the algorithm to detect movement
+- Results of simulation:
+
+https://github.com/user-attachments/assets/2f4ab757-2c00-4ba6-847a-94ed0731e8e0
+
+- Result frames with predicitons
+
+https://github.com/user-attachments/assets/0ff68486-a04d-4fbf-9df4-60e08fe3807f
+
+https://github.com/user-attachments/assets/85516f4c-dab2-4da7-a751-920e4efccdc5
+
+## Todo: 
+- The RF-DETR algorithm had problems to identify the humanoids, labeling them as other objects when they were even detected
+- This could be mainly due to the not human like texture they have, so try to find if there's another texture to cover them
+- Check another object detection algorithm such as YOLO to compare performance and scores
+- Implement the move alert function
+- Figure out how to mantain some form of consistency during the frames passed
+
+## Notes: 
+- Got this error message some times while trying to run the python script
+```
+Inconsistency detected by ld.so: ../elf/dl-tls.c: 517: _dl_allocate_tls_init: Assertion `listp != NULL' failed!
+There was an error running python
+```
+- The problem solved trying 2 or 1 more time, no obvious reason atm
