@@ -301,7 +301,10 @@ There was an error running python
 # Activity Report - 10/04/2025
 
 **Email:** brandon@nuclea.solutions
+@VicmanGT
 
 ## Main Updates
 - Today, I visited the Fimex factory and worked with Víctor on configuring and extracting video footage from the production cameras, then streaming it via RTSP to the AWS EC2.
+- Checked the stream via VLC, however this was only possible in Brandon's personal computer most likely because some specific configuration on the Local Fimex computer.
+- It did work one time on the Local Fimex computer but after changing the camera in the python script, the connection was unable to be setted again, the reason behind this it's still not clear.
 - We also left the local Fimex computer connected to TeamViewer, so we can access it remotely in the future for further configuration.
