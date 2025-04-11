@@ -308,3 +308,17 @@ There was an error running python
 - Checked the stream via VLC, however this was only possible in Brandon's personal computer most likely because some specific configuration on the Local Fimex computer.
 - It did work one time on the Local Fimex computer but after changing the camera in the python script, the connection was unable to be setted again, the reason behind this it's still not clear.
 - We also left the local Fimex computer connected to TeamViewer, so we can access it remotely in the future for further configuration.
+
+# Activity Report - 11/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- A basic GUI was downloaded and configured for the AWS EC2 server, and a successful connection was made from a Windows client machine using VNC.
+  ![image](https://github.com/user-attachments/assets/ba528233-23b5-4b30-acd5-e41a2f78b674)
+
+- A daemon service was created so that, upon starting or restarting the server, the mediamtx service would automatically start and run, enabling the reception of video from the RTSP cameras.
+- A VPN called Kerio was downloaded and configured on the virtual machine to establish a connection between the server and the local Fimex computer.
+![image](https://github.com/user-attachments/assets/6ef47ec7-2bf9-4525-92ac-a7fdfbbb711b)
+
+- A visit was made to Cumbres to perform a drone flight test.
