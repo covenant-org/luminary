@@ -297,3 +297,11 @@ Inconsistency detected by ld.so: ../elf/dl-tls.c: 517: _dl_allocate_tls_init: As
 There was an error running python
 ```
 - The problem solved trying 2 or 1 more time, no obvious reason atm
+
+# Activity Report - 10/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Today, I visited the Fimex factory and worked with Víctor on configuring and extracting video footage from the production cameras, then streaming it via RTSP to the AWS EC2.
+- We also left the local Fimex computer connected to TeamViewer, so we can access it remotely in the future for further configuration.
