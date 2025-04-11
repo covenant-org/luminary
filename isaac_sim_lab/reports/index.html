@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.797665827341">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.797720444417">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.7.0.797665827341" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.797720444417" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.797665827341" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.797720444417" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.797665827341" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.797720444417" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -710,6 +710,35 @@ There was an error running python</code></pre>
 <li>Checked the stream via VLC, however this was only possible in Brandon&#x27;s personal computer most likely because some specific configuration on the Local Fimex computer.</li>
 <li>It did work one time on the Local Fimex computer but after changing the camera in the python script, the connection was unable to be setted again, the reason behind this it&#x27;s still not clear.</li>
 <li>We also left the local Fimex computer connected to TeamViewer, so we can access it remotely in the future for further configuration.</li>
+</ul>
+<doc-anchor-target id="activity-report---11042025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-report---11042025">#</doc-anchor-trigger>
+        <span>Activity Report - 11/04/2025</span>
+    </h1>
+</doc-anchor-target>
+<p><strong>Email:</strong> <a href="mailto:brandon@nuclea.solutions">brandon@nuclea.solutions</a></p>
+<doc-anchor-target id="main-updates-7">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-updates-7">#</doc-anchor-trigger>
+        <span>Main Updates</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><p>A basic GUI was downloaded and configured for the AWS EC2 server, and a successful connection was made from a Windows client machine using VNC.
+<img src="https://github.com/user-attachments/assets/ba528233-23b5-4b30-acd5-e41a2f78b674" alt="image" /></p>
+</li>
+<li><p>A daemon service was created so that, upon starting or restarting the server, the mediamtx service would automatically start and run, enabling the reception of video from the RTSP cameras.</p>
+</li>
+<li><p>A VPN called Kerio was downloaded and configured on the virtual machine to establish a connection between the server and the local Fimex computer.
+<figure class="content-center">
+    <img src="https://github.com/user-attachments/assets/6ef47ec7-2bf9-4525-92ac-a7fdfbbb711b" alt="image">
+    <figcaption class="caption">image</figcaption>
+</figure>
+</p>
+</li>
+<li><p>A visit was made to Cumbres to perform a drone flight test.</p>
+</li>
 </ul>
 
                                 
