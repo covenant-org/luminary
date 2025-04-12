@@ -322,3 +322,8 @@ There was an error running python
 ![image](https://github.com/user-attachments/assets/6ef47ec7-2bf9-4525-92ac-a7fdfbbb711b)
 
 - A visit was made to Cumbres to perform a drone flight test.
+
+# 11/04/2025
+@VicmanGT
+- Went to Cumbres school to help install and configure a sensor to better measure the distance from the ground
+- Helped performed basic flight operation
