@@ -97,3 +97,8 @@ paltaforma Jetson Nano al utilizar "Hardware Encoding" y WHIP
 
 @fairbrook: Pruebas de latencia con video receptor y transmisor montado en dron y en estación de trabajo. Latencia aproximada de 800ms
 @jeduardofr: Pruebas de vuelo remoto usando puro video (sin observar el dron) con version modificada de joystick (yaw, pitch & roll factors)
+
+## 12 - Abr - 2025
+
+@jeduardofr: Configuracion del sensor optico para mejor lectura de distancia vertical (altura). Mantenimiento
+general del dron.
