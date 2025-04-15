@@ -327,3 +327,18 @@ There was an error running python
 @VicmanGT
 - Went to Cumbres school to help install and configure a sensor to better measure the distance from the ground
 - Helped performed basic flight operation
+
+# Activity Report - 14/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Once the VPN was correctly installed and configured on the EC2 server, a service was also created to enable it and connect automatically to the Fimex server every time the server starts.
+
+- A service was created so that VNC would start automatically when Linux boots, allowing us to access the graphical interface without having to activate it manually.
+
+- It was possible to ping the IP address 172.16.3.122, and the camera stream could already be viewed using the ffplay command.
+  ![image](https://github.com/user-attachments/assets/941a9674-cd8a-4e63-ac20-b4f2331a6edf)
+  ![image](https://github.com/user-attachments/assets/2c27eb72-acce-4f45-878b-b426bd0766b9)
+- It will be investigated how to save short video locally to process it on the EC2 server.
+
