@@ -342,3 +342,18 @@ There was an error running python
   ![image](https://github.com/user-attachments/assets/2c27eb72-acce-4f45-878b-b426bd0766b9)
 - It will be investigated how to save short video locally to process it on the EC2 server.
 
+# 14/04/2025
+@VicmanGT
+- Coded a movement alert function that prints to the console when the centroid of a box prediction moves more that a certain threshold
+- Included logging info to know when the new object are detected, not longer detected or the classs of the prediction changed
+- Also when there are no predictions for the image
+- All this for each camera
+  
+https://github.com/user-attachments/assets/be6eac17-51a7-4254-bc91-5e1aee0add30
+
+
+- Implemented YOLOv11 model to make predictions on frames
+
+## Todo: 
+- Check how to process the outputs of YOLOv11 to draw the rectangles on the image
+- Adapt function to process the output of YOLOv11
