@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.797999872347">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.798010741661">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.7.0.797999872347" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.798010741661" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.797999872347" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.798010741661" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.797999872347" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.798010741661" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -775,6 +775,33 @@ There was an error running python</code></pre>
 </li>
 <li><p>It will be investigated how to save short video locally to process it on the EC2 server.</p>
 </li>
+</ul>
+<doc-anchor-target id="14042025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#14042025">#</doc-anchor-trigger>
+        <span>14/04/2025</span>
+    </h1>
+</doc-anchor-target>
+<p>@VicmanGT</p>
+<ul>
+<li>Coded a movement alert function that prints to the console when the centroid of a box prediction moves more that a certain threshold</li>
+<li>Included logging info to know when the new object are detected, not longer detected or the classs of the prediction changed</li>
+<li>Also when there are no predictions for the image</li>
+<li>All this for each camera</li>
+</ul>
+<p><a href="https://github.com/user-attachments/assets/be6eac17-51a7-4254-bc91-5e1aee0add30">https://github.com/user-attachments/assets/be6eac17-51a7-4254-bc91-5e1aee0add30</a></p>
+<ul>
+<li>Implemented YOLOv11 model to make predictions on frames</li>
+</ul>
+<doc-anchor-target id="todo-6">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#todo-6">#</doc-anchor-trigger>
+        <span>Todo:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Check how to process the outputs of YOLOv11 to draw the rectangles on the image</li>
+<li>Adapt function to process the output of YOLOv11</li>
 </ul>
 
                                 
