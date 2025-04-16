@@ -357,3 +357,15 @@ https://github.com/user-attachments/assets/be6eac17-51a7-4254-bc91-5e1aee0add30
 ## Todo: 
 - Check how to process the outputs of YOLOv11 to draw the rectangles on the image
 - Adapt function to process the output of YOLOv11
+
+  # Activity Report - 15/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Some issues were fixed during the VPN initialization that were preventing it from properly connecting to the Fimex server.
+- After successfully configuring the VPN to access all camera streams from Fimex, a Python script was developed to extract specific segments of the live feed and save them locally on the computer.
+  ![image](https://github.com/user-attachments/assets/ba3c9a23-3abf-4aaf-b5ee-c2ea8084ce72)
+  ![image](https://github.com/user-attachments/assets/a07dd569-bb52-4832-a51d-3b16e876fb69)
+
+- The script will be improved to analyze each of the extracted videos for camera tracking. A more local solution will be implemented, without using NVIDIA Metropolis, since access to the platform has not yet been granted.
