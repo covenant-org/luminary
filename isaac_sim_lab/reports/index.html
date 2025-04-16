@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.798088568237">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.798098309367">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.7.0.798088568237" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.798098309367" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.798088568237" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.798098309367" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.798088568237" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.798098309367" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -827,6 +827,35 @@ There was an error running python</code></pre>
 </li>
 <li><p>The script will be improved to analyze each of the extracted videos for camera tracking. A more local solution will be implemented, without using NVIDIA Metropolis, since access to the platform has not yet been granted.</p>
 </li>
+</ul>
+<doc-anchor-target id="15042025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#15042025">#</doc-anchor-trigger>
+        <span>15/04/2025</span>
+    </h1>
+</doc-anchor-target>
+<p>@VicmanGT</p>
+<ul>
+<li>Created repo to have version control in isaac sim code</li>
+<li>Completely implemented YOLOv11 algorithm to make predictions for the isaac sim simulation</li>
+<li>Assigned camera 2 to this</li>
+<li>Tests results:</li>
+<li>The YOLO algorithm performed worse than the RFDE, since in most of the frames none of the humanoids were detected</li>
+<li>Therefore no moment whatsoever</li>
+</ul>
+<p><a href="https://github.com/user-attachments/assets/e668101a-0287-4461-b6dc-8672fbc261bc">https://github.com/user-attachments/assets/e668101a-0287-4461-b6dc-8672fbc261bc</a></p>
+<ul>
+<li>Tested movement alert function in local webcam to check with &quot;real person movement&quot; worked nicely</li>
+</ul>
+<p><a href="https://github.com/user-attachments/assets/419b049d-e30c-460f-8943-aa1d6a6a3602">https://github.com/user-attachments/assets/419b049d-e30c-460f-8943-aa1d6a6a3602</a></p>
+<doc-anchor-target id="todo-7">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#todo-7">#</doc-anchor-trigger>
+        <span>Todo:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Apply filter for person class and counting</li>
 </ul>
 
                                 
