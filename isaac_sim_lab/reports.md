@@ -369,3 +369,22 @@ https://github.com/user-attachments/assets/be6eac17-51a7-4254-bc91-5e1aee0add30
   ![image](https://github.com/user-attachments/assets/a07dd569-bb52-4832-a51d-3b16e876fb69)
 
 - The script will be improved to analyze each of the extracted videos for camera tracking. A more local solution will be implemented, without using NVIDIA Metropolis, since access to the platform has not yet been granted.
+
+# 15/04/2025
+@VicmanGT
+- Created repo to have version control in isaac sim code
+- Completely implemented YOLOv11 algorithm to make predictions for the isaac sim simulation
+- Assigned camera 2 to this
+- Tests results:
+- The YOLO algorithm performed worse than the RFDE, since in most of the frames none of the humanoids were detected
+- Therefore no moment whatsoever
+
+https://github.com/user-attachments/assets/e668101a-0287-4461-b6dc-8672fbc261bc
+
+- Tested movement alert function in local webcam to check with "real person movement" worked nicely
+
+https://github.com/user-attachments/assets/419b049d-e30c-460f-8943-aa1d6a6a3602
+
+
+## Todo: 
+- Apply filter for person class and counting
