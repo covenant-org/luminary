@@ -385,6 +385,32 @@ https://github.com/user-attachments/assets/e668101a-0287-4461-b6dc-8672fbc261bc
 
 https://github.com/user-attachments/assets/419b049d-e30c-460f-8943-aa1d6a6a3602
 
-
 ## Todo: 
 - Apply filter for person class and counting
+
+# 16/04/2025
+@VicmanGT
+- Divided humanoid simulation file into modules for more comfortable development
+- Added named paratemer to script to select the model to use (rfde or yolo)
+- IsaacSim code stop working in local computer
+- Got same error as in the 8/04/2025 but the procedure didn't work now
+- Not custom humanoids simulation app or any of the examples are running:
+- Last logs before shooting down app:
+```
+2025-04-17 01:31:37 [10,558ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit buffer size 8448000128
+2025-04-17 01:31:37 [10,558ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit : valid false, within: false
+2025-04-17 01:31:37 [10,558ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit : decrement: 167690, decrement size: 8363520384
+2025-04-17 01:31:37 [10,558ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : New limit 8508328 (slope: 503, intercept: 13181056)
+2025-04-17 01:31:37 [10,558ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit buffer size 4286378240
+2025-04-17 01:31:37 [10,558ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit : valid true, within: true
+2025-04-17 01:31:38 [10,757ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults-transient/meshlights/forceDisable'
+2025-04-17 01:31:38 [10,854ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/post/dlss/execMode'
+./python.sh: line 41: 16648 Killed                  $python_exe "$@" $args
+There was an error running python
+```
+- Get frozen while trying to run then suddenly stops
+- IsaacSim App selector works ok
+
+## Todo: 
+- Check RAM and VRAM usage while trying to run a script
+- Check other versions
