@@ -414,3 +414,13 @@ There was an error running python
 ## Todo: 
 - Check RAM and VRAM usage while trying to run a script
 - Check other versions
+
+  # Activity Report - 21/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Tests were conducted with the cameras to extract videos from Fimex.
+- A new VNC service was enabled to allow faster and more efficient access to the server.
+- A service was created to retry the VPN connection to prevent potential data leaks and to improve video retrieval from the cameras.
+- A solution will be explored to extract all videos from all cameras via streaming and store them in a bucket with a UI to view the streams simultaneously.
