@@ -9,33 +9,34 @@
     <meta name="generator" content="Retype 3.7.0">
 
     <!-- Primary Meta Tags -->
-    <title>Tinygrad en Covenant</title>
-    <meta name="title" content="Tinygrad en Covenant">
-    <meta name="description" content="Investigación relacionada a tinygrad y cambios que se han requerido en el proyecto base">
+    <title>Configuraciones y herramientas</title>
+    <meta name="title" content="Configuraciones y herramientas">
+    <meta name="description" content="Documentación sobr las diferentes herarmientas y configuraciones que se han utilizado para el desarrollo de los diferentes proyectos implementados">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/tinygrad/">
+    <link rel="canonical" href="/jetson/config/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/tinygrad/">
-    <meta property="og:title" content="Tinygrad en Covenant">
-    <meta property="og:description" content="Investigación relacionada a tinygrad y cambios que se han requerido en el proyecto base">
+    <meta property="og:url" content="/jetson/config/">
+    <meta property="og:title" content="Configuraciones y herramientas">
+    <meta property="og:description" content="Documentación sobr las diferentes herarmientas y configuraciones que se han utilizado para el desarrollo de los diferentes proyectos implementados">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/tinygrad/">
-    <meta property="twitter:title" content="Tinygrad en Covenant">
-    <meta property="twitter:description" content="Investigación relacionada a tinygrad y cambios que se han requerido en el proyecto base">
+    <meta property="twitter:url" content="/jetson/config/">
+    <meta property="twitter:title" content="Configuraciones y herramientas">
+    <meta property="twitter:description" content="Documentación sobr las diferentes herarmientas y configuraciones que se han utilizado para el desarrollo de los diferentes proyectos implementados">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../static/nuclea-logo.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.7.0.798666903427" rel="stylesheet">
+    <link href="../../static/nuclea-logo.png" rel="icon">
+    <link href="../../resources/css/retype.css?v=3.7.0.798666903427" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.7.0.798666903427" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.7.0.798666903427" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.798666903427" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.798666903427" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.7.0.798666903427" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -50,10 +51,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../static/nuclea-logo.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../static/nuclea-logo.png">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/nuclea-logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../static/nuclea-logo.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Covenant</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
@@ -173,21 +174,214 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="tinygrad-en-covenant" class="break-words">
+<doc-anchor-target id="configuraciones-y-herramientas" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tinygrad-en-covenant">#</doc-anchor-trigger>
-        <span>Tinygrad en Covenant</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configuraciones-y-herramientas">#</doc-anchor-trigger>
+        <span>Configuraciones y herramientas</span>
     </h1>
 </doc-anchor-target>
-<p><em>Investigación relacionada a tinygrad y cambios que se han requerido en el proyecto base</em></p>
-<hr>
-<doc-anchor-target id="está-listo-para-funcionar-con-yolo-en-la-comma">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#está-listo-para-funcionar-con-yolo-en-la-comma">#</doc-anchor-trigger>
-        <span>¿Está listo para funcionar con yolo en la comma?</span>
-    </h3>
+<p>Documentación sobr las diferentes herarmientas y configuraciones que se
+han utilizado para el desarrollo de los diferentes proyectos implementados
+sobre la plataforma de desarrollo NVIDIA Jetson</p>
+<doc-anchor-target id="yolo">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#yolo">#</doc-anchor-trigger>
+        <span>YOLO</span>
+    </h2>
 </doc-anchor-target>
-<p>No.</p>
+<p>Modelo de detección y segmentación de objetos enfocado en tiempo real, de la
+mano de Ultralytics.</p>
+<p>Para instalar exitosamente la la libreria de Ultralytics siga el siguiente
+procedimiento:</p>
+<doc-anchor-target id="1-actualizar-los-repositorios">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-actualizar-los-repositorios">#</doc-anchor-trigger>
+        <span>1. Actualizar los repositorios</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">sudo apt-get update
+sudo apt install python3-pip -y
+pip install -U pip</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="4-crear-un-entorno-virtual-opcional">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-crear-un-entorno-virtual-opcional">#</doc-anchor-trigger>
+        <span>4. Crear un entorno virtual (opcional)</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">sudo apt-get install python3-venv -y
+python3 -m venv venv
+source venv/bin/activate</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="3-instalar-la-libreria-de-ultralytics">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-instalar-la-libreria-de-ultralytics">#</doc-anchor-trigger>
+        <span>3. Instalar la libreria de ultralytics</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">pip install ultralytics[export]</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-gray-300 dark:bg-dark-250"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-gray-400 dark:text-dark-250" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Se pude omitir <em>[export]</em> si no se desea cambiar de formato los archivos de pesos</p>
+        </div>
+    </div>
+</div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>En versiones recientes de pip, el dependency resolver toma demasiado tiempo
+para resolver la dependencia adicional de export de ultralytics.
+Por lo que se recomienda agregar</p>
+<p><code v-pre>--use-deprecated=legacy-resolver</code></p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="4-instalar-cusparselt">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-instalar-cusparselt">#</doc-anchor-trigger>
+        <span>4. Instalar cusParselt</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/arm64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt-get update
+sudo apt-get -y install libcusparselt0 libcusparselt-dev</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-gray-300 dark:bg-dark-250"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-gray-400 dark:text-dark-250" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Los comandos mencionados son para las versiones específicas que se encuentran
+en la jetson. Para posibles actualizaciones visitar el <a href="https://developer.nvidia.com/cusparselt-downloads">sitio oficial</a></p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="5-instalar-pytorch-y-torchvision">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-instalar-pytorch-y-torchvision">#</doc-anchor-trigger>
+        <span>5. Instalar PyTorch y Torchvision</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">pip install https://developer.download.nvidia.cn/compute/redist/jp/v61/pytorch/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl
+pip install https://github.com/ultralytics/assets/releases/download/v0.0.0/torchvision-0.20.0a0+afc54f7-cp310-cp310-linux_aarch64.whl</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-gray-300 dark:bg-dark-250"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-gray-400 dark:text-dark-250" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Los whl son para la version 6.1 de Jetpack. Para posibles versiones visitar el sitio
+oficial de <a href="https://developer.download.nvidia.cn/compute/redist/jp/">Nvidia</a>
+o la guía de <a href="https://docs.ultralytics.com/guides/nvidia-jetson/#install-pytorch-and-torchvision">Ultralytics</a></p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="6-instalar-onnxruntime">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-instalar-onnxruntime">#</doc-anchor-trigger>
+        <span>6. Instalar onnxruntime</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">pip install https://github.com/ultralytics/assets/releases/download/v0.0.0/onnxruntime_gpu-1.20.0-cp310-cp310-linux_aarch64.whl</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Onnx runtime cambia la versión de numpy por lo que se debe reinstalar una versión
+en específico</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">pip install numpy==1.23.5</code></pre>
+</doc-codeblock></div>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="tensorrt">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tensorrt">#</doc-anchor-trigger>
+        <span>Tensorrt</span>
+    </h2>
+</doc-anchor-target>
+<p>Librería de NVIDIA para C++ que facilita inferencias de alto desempeño en
+unidades de procecsamiento graficas.TensorRT toma una red entrenada, compuesta
+por una definición y un grupo de pesas y produce un motor de inferencia optimizado</p>
+<p>Existen múltiples formas de instalar tensorrt en Jetson. Pero con la que se tuvo
+éxito fue la siguiente:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.7.0/tars/TensorRT-10.7.0.23.l4t.aarch64-gnu.cuda-12.6.tar.gz
+tar -xvzf TensorRT-10.7.0.23.l4t.aarch64-gnu.cuda-12.6.tar.gz
+version=10.7.0.23
+export LD_LIBRARY_PATH=${PWD}/TensorRT-${version}/lib:$LD_LIBRARY_PATH
+cd TensorRT-${version}/python
+pip install tensorrt-*-cp310-none-linux_aarch64.whl</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="jtop-jetson-stats">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#jtop-jetson-stats">#</doc-anchor-trigger>
+        <span>Jtop (Jetson Stats)</span>
+    </h2>
+</doc-anchor-target>
+<p>Programa que muestra estadisticas de la Jetson en tiempo real, como el uso
+de GPU y que cuenta con interfaz programática en python</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">sudo pip3 install -U jetson-stats</code></pre>
+</doc-codeblock></div>
+<blockquote>
+<p><a href="https://github.com/rbonghi/jetson_stats"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"/></g></g></svg> Jetson Stats</a></p>
+</blockquote>
 
                                 
                                 <!-- Required only on API pages -->
@@ -197,20 +391,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../jetson/config/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../jetson/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Configuraciones y herramientas</span>
+                                                <span class="block mt-1">NVIDIA Jetson</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../tinygrad/comma/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../tinygrad/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">YOLO en Comma​3​X</span>
+                                                <span class="block mt-1">Tinygrad en Covenant</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -254,6 +448,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Tinygrad en Covenant", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Configuraciones y herramientas", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
