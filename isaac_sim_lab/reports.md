@@ -436,3 +436,17 @@ There was an error running python
 - Another script was developed to continuously save the camera streams to an AWS S3 bucket. Whether the recording day ends or the script is interrupted due to an error, the recorded footage up to that point is saved automatically.
 - A Linux service was configured to ensure the script runs automatically at all times, without the need for manual startup.
 - The setup of a local computer with a 5070 graphics card will begin, aiming to eliminate the need for using AWS EC2 instances.
+
+# 22/04/2025
+@VicmanGT
+- Tested custom models with the people counting function and the movement alert:
+- best.pt
+
+https://github.com/user-attachments/assets/8ae3f7ba-64e9-4b74-9b0e-67b2b45cc418
+
+- NucleaDrone-v14-2Class.pt
+
+https://github.com/user-attachments/assets/32f82b47-f2f7-4d12-9719-09a25f5dac72
+
+- Both models got similar results
+- Only minor difference is that best.pt is faster and therefore better and keeping track of people when do fast movements
