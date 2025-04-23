@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.798685457234">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.798690376036">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.7.0.798685457234" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.798690376036" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.798685457234" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.798690376036" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.798685457234" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.798690376036" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -914,10 +914,38 @@ There was an error running python</code></pre>
     </h2>
 </doc-anchor-target>
 <ul>
-<li>Tests were conducted with the cameras to extract videos from Fimex.</li>
-<li>A new VNC service was enabled to allow faster and more efficient access to the server.</li>
-<li>A service was created to retry the VPN connection to prevent potential data leaks and to improve video retrieval from the cameras.</li>
-<li>A solution will be explored to extract all videos from all cameras via streaming and store them in a bucket with a UI to view the streams simultaneously.</li>
+<li><p>Tests were conducted with the cameras to extract videos from Fimex.</p>
+</li>
+<li><p>A new VNC service was enabled to allow faster and more efficient access to the server.</p>
+</li>
+<li><p>A service was created to retry the VPN connection to prevent potential data leaks and to improve video retrieval from the cameras.</p>
+</li>
+<li><p>A solution will be explored to extract all videos from all cameras via streaming and store them in a bucket with a UI to view the streams simultaneously.</p>
+<doc-anchor-target id="activity-report---22042025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-report---22042025">#</doc-anchor-trigger>
+        <span>Activity Report - 22/04/2025</span>
+    </h1>
+</doc-anchor-target>
+</li>
+</ul>
+<p><strong>Email:</strong> <a href="mailto:brandon@nuclea.solutions">brandon@nuclea.solutions</a></p>
+<doc-anchor-target id="main-updates-11">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-updates-11">#</doc-anchor-trigger>
+        <span>Main Updates</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><p>A Python script was created to display the streaming of the 20 cameras connected in Fimex through a simple UI.
+<img src="https://github.com/user-attachments/assets/dc7d7e4b-338e-4c9c-b1ba-a1b8c1bbded0" alt="image" /></p>
+</li>
+<li><p>Another script was developed to continuously save the camera streams to an AWS S3 bucket. Whether the recording day ends or the script is interrupted due to an error, the recorded footage up to that point is saved automatically.</p>
+</li>
+<li><p>A Linux service was configured to ensure the script runs automatically at all times, without the need for manual startup.</p>
+</li>
+<li><p>The setup of a local computer with a 5070 graphics card will begin, aiming to eliminate the need for using AWS EC2 instances.</p>
+</li>
 </ul>
 
                                 
