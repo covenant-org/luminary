@@ -3,7 +3,7 @@ icon: tools
 ---
 # Configuraciones y herramientas
 
-Documentación sobr las diferentes herarmientas y configuraciones que se
+Documentación sobre las diferentes herarmientas y configuraciones que se
 han utilizado para el desarrollo de los diferentes proyectos implementados
 sobre la plataforma de desarrollo NVIDIA Jetson
 
@@ -154,6 +154,10 @@ pueden cambiar de acuerdo a sus necesidades
 :::code source="../static/wadi@.service" title="/etc/systemd/system/wadi\@.service" :::
 [!file](../static/wadi@.service)
 
+!!! warning
+El archivo de servicio utiliza el comando sleep para esperar que el servicio
+de pulseaudio se inicie. No es la mejor forma de hacerlo y puede causar problemas
+!!!
 
 :::code source="../static/99-wadi.rules" title="/etc/udev/rules.d/99-wadi.rules" :::
 [!file](../static/99-wadi.rules)
