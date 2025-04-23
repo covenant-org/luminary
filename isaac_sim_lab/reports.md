@@ -424,3 +424,15 @@ There was an error running python
 - A new VNC service was enabled to allow faster and more efficient access to the server.
 - A service was created to retry the VPN connection to prevent potential data leaks and to improve video retrieval from the cameras.
 - A solution will be explored to extract all videos from all cameras via streaming and store them in a bucket with a UI to view the streams simultaneously.
+
+  # Activity Report - 22/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- A Python script was created to display the streaming of the 20 cameras connected in Fimex through a simple UI.
+  ![image](https://github.com/user-attachments/assets/dc7d7e4b-338e-4c9c-b1ba-a1b8c1bbded0)
+
+- Another script was developed to continuously save the camera streams to an AWS S3 bucket. Whether the recording day ends or the script is interrupted due to an error, the recorded footage up to that point is saved automatically.
+- A Linux service was configured to ensure the script runs automatically at all times, without the need for manual startup.
+- The setup of a local computer with a 5070 graphics card will begin, aiming to eliminate the need for using AWS EC2 instances.
