@@ -118,3 +118,42 @@ sudo pip3 install -U jetson-stats
 ```
 
 > [:icon-mark-github: Jetson Stats](https://github.com/rbonghi/jetson_stats)
+
+
+## Wadi
+
+Wadi es un servicio de streaming que utiliza el protocolo WebRTC para transmitir
+video en tiempo real a un servidor WHIP. Se utiliza para transmitir el video de
+la cámara FPV a un servidor para su consumo remoto
+
+#### 1. Clonar el repositorio [:icon-mark-github: Wadi](https://github.com/covenant-org/wadi)
+
+```bash
+git clone https://github.com/covenant-org/wadi.git
+```
+
+#### 2. Compilar el proyecto
+
+```bash
+cd wadi
+cmake -B build -H. -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+```
+
+#### 3. Copiar el ejectuable a la carpeta de binarios
+
+```bash
+sudo cp build/wadi /usr/bin
+```
+
+#### 4. Crear servicio y regla de udev
+
+Cree los siguientes archivos en la ruta especificada. Estos son ejemplos y 
+pueden cambiar de acuerdo a sus necesidades
+
+:::code source="../static/wadi@.service" title="/etc/systemd/system/wadi\@.service" :::
+[!file](../static/wadi@.service)
+
+
+:::code source="../static/99-wadi.rules" title="/etc/udev/rules.d/99-wadi.rules" :::
+[!file](../static/99-wadi.rules)
