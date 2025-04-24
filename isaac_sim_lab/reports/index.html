@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.798760440550">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.798816956514">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.7.0.798760440550" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.798816956514" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.798760440550" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.798816956514" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.798760440550" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.798816956514" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -866,7 +866,7 @@ There was an error running python</code></pre>
 <p>@VicmanGT</p>
 <ul>
 <li>Divided humanoid simulation file into modules for more comfortable development</li>
-<li>Added named paratemer to script to select the model to use (rfde or yolo)</li>
+<li>Added named paratemer to script to select the model to use (rf-dert or yolo)</li>
 <li>IsaacSim code stop working in local computer</li>
 <li>Got same error as in the 8/04/2025 but the procedure didn&#x27;t work now</li>
 <li>Not custom humanoids simulation app or any of the examples are running:</li>
@@ -966,6 +966,31 @@ There was an error running python</code></pre>
 <ul>
 <li>Both models got similar results</li>
 <li>Only minor difference is that best.pt is faster and therefore better and keeping track of people when do fast movements</li>
+</ul>
+<doc-anchor-target id="23042025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#23042025">#</doc-anchor-trigger>
+        <span>23/04/2025</span>
+    </h1>
+</doc-anchor-target>
+<p>@VicmanGT</p>
+<ul>
+<li>Cloned metropolis-dev repository into ec2 server to access compute there</li>
+<li>Made predictions in videos of Fimex with rfde-tf, custom models best.pt and NucleaDrone-v14-2Class.pt</li>
+<li>The rf-detr permormed well both at counting and the interaction with the movement_alert</li>
+</ul>
+<p><a href="https://github.com/user-attachments/assets/e4544a9c-d994-498d-8d65-57ae532acdf7">https://github.com/user-attachments/assets/e4544a9c-d994-498d-8d65-57ae532acdf7</a></p>
+<ul>
+<li>The tests made with both best.pt and NucleaDrone-v14-2Class.pt seemed to have less accuracy when detecting people, and only outputed one person in each frame</li>
+</ul>
+<doc-anchor-target id="todo-9">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#todo-9">#</doc-anchor-trigger>
+        <span>Todo:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Check what is happening there</li>
 </ul>
 
                                 
