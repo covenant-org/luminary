@@ -391,7 +391,7 @@ https://github.com/user-attachments/assets/419b049d-e30c-460f-8943-aa1d6a6a3602
 # 16/04/2025
 @VicmanGT
 - Divided humanoid simulation file into modules for more comfortable development
-- Added named paratemer to script to select the model to use (rfde or yolo)
+- Added named paratemer to script to select the model to use (rf-dert or yolo)
 - IsaacSim code stop working in local computer
 - Got same error as in the 8/04/2025 but the procedure didn't work now
 - Not custom humanoids simulation app or any of the examples are running:
@@ -450,3 +450,15 @@ https://github.com/user-attachments/assets/32f82b47-f2f7-4d12-9719-09a25f5dac72
 
 - Both models got similar results
 - Only minor difference is that best.pt is faster and therefore better and keeping track of people when do fast movements
+
+# 23/04/2025
+@VicmanGT
+- Cloned metropolis-dev repository into ec2 server to access compute there 
+- Made predictions in videos of Fimex with rfde-tf, custom models best.pt and NucleaDrone-v14-2Class.pt
+- The rf-detr permormed well both at counting and the interaction with the movement_alert
+
+https://github.com/user-attachments/assets/e4544a9c-d994-498d-8d65-57ae532acdf7
+
+- The tests made with both best.pt and NucleaDrone-v14-2Class.pt seemed to have less accuracy when detecting people, and only outputed one person in each frame
+## Todo: 
+- Check what is happening there
