@@ -471,3 +471,18 @@ https://github.com/user-attachments/assets/e4544a9c-d994-498d-8d65-57ae532acdf7
 - The local Nuclea computer with an Nvidia 5070 graphics card was configured to access the Fimex cameras.
 - VPN and VNC services were created to enable access to the FSTP video from the cameras.
 - A script was created to run automatically and locally save the video stream from 20 cameras on the computer.
+
+# 24/04/2025
+@VicmanGT 
+- Corrected script to get better predictions from custom models best.pt and NucleaDrone-v14-2Class.pt
+- Tested with videos saved from Fimex cameras
+- best.pt
+
+ https://github.com/user-attachments/assets/4187d91b-af04-4b4d-a9da-73f096d703f7
+
+- NucleaDrone-v14-2Class.pt
+
+https://github.com/user-attachments/assets/15da1964-4ead-43fd-9658-97365a215acb
+
+- Between the two custom models, best.pt got the better results being faster and more accurate
+- When comparing best.pt with the rf-dert model, both provide good results with the main difference that best.pt sometimes detect more people in the frame however rf-dert got more consistent and stable predictions. 
