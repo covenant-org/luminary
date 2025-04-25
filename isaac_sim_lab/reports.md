@@ -462,3 +462,12 @@ https://github.com/user-attachments/assets/e4544a9c-d994-498d-8d65-57ae532acdf7
 - The tests made with both best.pt and NucleaDrone-v14-2Class.pt seemed to have less accuracy when detecting people, and only outputed one person in each frame
 ## Todo: 
 - Check what is happening there
+
+# Activity Report - 24/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- The local Nuclea computer with an Nvidia 5070 graphics card was configured to access the Fimex cameras.
+- VPN and VNC services were created to enable access to the FSTP video from the cameras.
+- A script was created to run automatically and locally save the video stream from 20 cameras on the computer.
