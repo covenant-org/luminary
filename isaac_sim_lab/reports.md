@@ -497,3 +497,8 @@ https://github.com/user-attachments/assets/15da1964-4ead-43fd-9658-97365a215acb
 - The Python script was improved to more efficiently detect recordings or streamings from the cameras simultaneously and correctly save the video output.
 - The configuration of the Gaia computer is planned to be completed next, with the goal of enabling remote UI access and beginning the installation of software such as Isaac Sim and Isaac Lab.
 
+# 25/04/2025
+@VicmanGT
+- Reestructured scripts in metropolis-dev repo into folders
+- isaac_sim_lab, models ( custom models ), utils ( movement alert and function to annotate yolo detections), and video_analysis
+- In video_analysis added separate scripts to test models in webcam and with a folder with videos
