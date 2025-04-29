@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.799207484326">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.799218960541">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.7.0.799207484326" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.799218960541" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.799207484326" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.799218960541" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.799207484326" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.799218960541" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -1080,6 +1080,53 @@ There was an error running python</code></pre>
 <li>The script for recording FIMEX cameras was modified to save all videos on the new hard drive.</li>
 <li>All the initial configurations for the Gaia computer were completed to enable access to the operating system&#x27;s GUI via a VNC service. Additionally, basic programs such as Visual Studio Code, VLC, Google Chrome, and others were installed.
 <img src="https://github.com/user-attachments/assets/22bfd274-0db1-42f8-911b-17eccd385235" alt="image" /></li>
+</ul>
+<doc-anchor-target id="28042025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#28042025">#</doc-anchor-trigger>
+        <span>28/04/2025</span>
+    </h1>
+</doc-anchor-target>
+<p>@VicmanGT</p>
+<ul>
+<li>Cloned local repository from metropolis-dev and adapted code in the Zeus computer for testing the movement alert in the recordings from Fimex</li>
+<li>Got following errors:</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">UserWarning: 
+NVIDIA GeForce RTX 5070 Ti with CUDA capability sm_120 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_50 sm_60 sm_70 sm_75 sm_80 sm_86 sm_90.
+If you want to use the NVIDIA GeForce RTX 5070 Ti GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">RuntimeError: CUDA error: no kernel image is available for execution on the device
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Seemed like there isn&#x27;t yet any Pytorch version that supports the installed GPU <code v-pre>NVIDIA GeForce RTX 5070 Ti</code> and therefore no models can be used</li>
+<li>This happens for both custom models and rf-detr</li>
+<li>Relevant links of same problem but using ComfyUI:</li>
+</ul>
+<ol>
+<li><a href="https://github.com/comfyanonymous/ComfyUI/issues/7127">https://github.com/comfyanonymous/ComfyUI/issues/7127</a></li>
+<li><a href="https://github.com/comfyanonymous/ComfyUI/discussions/6643">https://github.com/comfyanonymous/ComfyUI/discussions/6643</a></li>
+</ol>
+<ul>
+<li>Solved by installing another pytorch version:</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">  pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cu128</code></pre>
+</doc-codeblock></div>
+<p>Results:</p>
+<ul>
+<li>Very similar to the ones made in the EC2 instance, however there were many videos that had a lot of noise that made the detections inaccurate and inconsistent</li>
+<li>Example:</li>
+</ul>
+<p><a href="https://github.com/user-attachments/assets/5ffefcec-4474-4f50-bb0e-d34da1fe724d">https://github.com/user-attachments/assets/5ffefcec-4474-4f50-bb0e-d34da1fe724d</a></p>
+<ul>
+<li>But it seems like it&#x27;s more of a problem of the cameras themselves.</li>
 </ul>
 
                                 
