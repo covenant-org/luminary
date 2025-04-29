@@ -502,3 +502,14 @@ https://github.com/user-attachments/assets/15da1964-4ead-43fd-9658-97365a215acb
 - Reestructured scripts in metropolis-dev repo into folders
 - isaac_sim_lab, models ( custom models ), utils ( movement alert and function to annotate yolo detections), and video_analysis
 - In video_analysis added separate scripts to test models in webcam and with a folder with videos
+
+# Activity Report - 28/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- The new 14TB hard drive was configured and partitioned for the Zeus computer, and a shortcut was created for this drive in the file explorer.
+- The script for recording FIMEX cameras was modified to save all videos on the new hard drive.
+- All the initial configurations for the Gaia computer were completed to enable access to the operating system's GUI via a VNC service. Additionally, basic programs such as Visual Studio Code, VLC, Google Chrome, and others were installed.
+  ![image](https://github.com/user-attachments/assets/22bfd274-0db1-42f8-911b-17eccd385235)
+
