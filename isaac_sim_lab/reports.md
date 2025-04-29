@@ -513,3 +513,35 @@ https://github.com/user-attachments/assets/15da1964-4ead-43fd-9658-97365a215acb
 - All the initial configurations for the Gaia computer were completed to enable access to the operating system's GUI via a VNC service. Additionally, basic programs such as Visual Studio Code, VLC, Google Chrome, and others were installed.
   ![image](https://github.com/user-attachments/assets/22bfd274-0db1-42f8-911b-17eccd385235)
 
+# 28/04/2025
+@VicmanGT
+- Cloned local repository from metropolis-dev and adapted code in the Zeus computer for testing the movement alert in the recordings from Fimex
+- Got following errors:
+```
+UserWarning: 
+NVIDIA GeForce RTX 5070 Ti with CUDA capability sm_120 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_50 sm_60 sm_70 sm_75 sm_80 sm_86 sm_90.
+If you want to use the NVIDIA GeForce RTX 5070 Ti GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+```
+```
+RuntimeError: CUDA error: no kernel image is available for execution on the device
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+```
+- Seemed like there isn't yet any Pytorch version that supports the installed GPU ```NVIDIA GeForce RTX 5070 Ti``` and therefore no models can be used
+- This happens for both custom models and rf-detr
+- Relevant links of same problem but using ComfyUI:
+1. https://github.com/comfyanonymous/ComfyUI/issues/7127
+2. https://github.com/comfyanonymous/ComfyUI/discussions/6643
+- Solved by installing another pytorch version:
+```
+  pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cu128
+```
+Results: 
+- Very similar to the ones made in the EC2 instance, however there were many videos that had a lot of noise that made the detections inaccurate and inconsistent
+- Example:
+
+https://github.com/user-attachments/assets/5ffefcec-4474-4f50-bb0e-d34da1fe724d
+
+- But it seems like it's more of a problem of the cameras themselves.
