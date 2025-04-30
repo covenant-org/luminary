@@ -545,3 +545,14 @@ Results:
 https://github.com/user-attachments/assets/5ffefcec-4474-4f50-bb0e-d34da1fe724d
 
 - But it seems like it's more of a problem of the cameras themselves.
+
+# Activity Report - 29/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Isaac Sim and Isaac Lab from NVIDIA were downloaded and configured on the Gaia computer.
+  ![image](https://github.com/user-attachments/assets/c7ef6658-3858-47db-8f47-4ec3409a4132)
+- The first test of using the VST container on the Zeus computer for elk tracking with the office webcam was conducted.
+- The VST Docker container runs correctly, but there is an issue where the UI does not display, even though no specific error is thrown. Further investigation is needed to find a way to launch it properly.
+  ![image](https://github.com/user-attachments/assets/6693eeed-04f8-4efe-9389-94fe007eb558)
