@@ -556,3 +556,21 @@ https://github.com/user-attachments/assets/5ffefcec-4474-4f50-bb0e-d34da1fe724d
 - The first test of using the VST container on the Zeus computer for elk tracking with the office webcam was conducted.
 - The VST Docker container runs correctly, but there is an issue where the UI does not display, even though no specific error is thrown. Further investigation is needed to find a way to launch it properly.
   ![image](https://github.com/user-attachments/assets/6693eeed-04f8-4efe-9389-94fe007eb558)
+
+
+# 29/04/2025
+@VicmanGT
+- Started programming code for the Zeus server surveillance using webcam
+- Face detection algorithms with a Cascade Classifier might be useful
+- There are different types of configurations for the models managed in .xml files
+- There were issues when the camera pointed to the side of the face instead of in the front, and in this case there was no prediction
+- Relevant links:
+- https://www.geeksforgeeks.org/face-detection-using-cascade-classifier-using-opencv-python/
+- https://chatgpt.com/share/6811b087-52e0-800c-8bbc-b46e9086b737
+- https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html
+
+## Todo: 
+- Find configuration file that can detect a face completely from the side
+- Check another way to detect when some is using the computer server
+- Pose Estimation, Fase Mesh, Eye tracking
+- Test
