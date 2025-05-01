@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.799387421213">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.799391649623">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.7.0.799387421213" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.799391649623" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.799387421213" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.799391649623" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.799387421213" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.799391649623" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -1195,6 +1195,33 @@ Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.</code></pre>
 <li>The first Docker container for NVIDIA VST was downloaded and used.</li>
 <li>The UI was successfully displayed, although I still haven&#x27;t found a way to connect the VST service to the local computer&#x27;s webcam.</li>
 <li>It is necessary to investigate how to run the webcam over RTSP and connect it directly to the Docker container so it can detect it, and also check if it would work with access to the camera recordings from Fimex.</li>
+</ul>
+<doc-anchor-target id="30042025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#30042025">#</doc-anchor-trigger>
+        <span>30/04/2025</span>
+    </h1>
+</doc-anchor-target>
+<p>@VicmanGT</p>
+<ul>
+<li>Found repository that already had implemented a face detection algorithm and was able to detect face from the profile</li>
+<li>Had some bugs but they&#x27;re fixed now</li>
+<li>Modifications:</li>
+<li>Limit face detection to only the one that is closer to the camera by comparing the size of the bounding box</li>
+<li>Added threshold to see if the face was close enough, simulating it&#x27;s using the computer server</li>
+<li>Filter by &#x27;Right Profile&#x27; according to the accomodation of the webcam in the computer server so when it&#x27;s detected, the code saved the frames and makes a video out of them</li>
+<li>Relevant links:</li>
+<li><a href="https://github.com/nawafalageel/Side-Profile-Detection">https://github.com/nawafalageel/Side-Profile-Detection</a></li>
+<li><a href="https://www.geeksforgeeks.org/python-opencv-capture-video-from-camera/">https://www.geeksforgeeks.org/python-opencv-capture-video-from-camera/</a></li>
+</ul>
+<doc-anchor-target id="todo-11">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#todo-11">#</doc-anchor-trigger>
+        <span>Todo:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Check how to make multiple videos out of a single stream without the need to rerun the code</li>
 </ul>
 
                                 
