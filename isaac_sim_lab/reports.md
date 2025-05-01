@@ -574,3 +574,13 @@ https://github.com/user-attachments/assets/5ffefcec-4474-4f50-bb0e-d34da1fe724d
 - Check another way to detect when some is using the computer server
 - Pose Estimation, Fase Mesh, Eye tracking
 - Test
+
+# Activity Report - 30/04/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- The Zeus computer was successfully configured to use NVIDIA NGC with access to all containers provided by NVIDIA Metropolis.
+- The first Docker container for NVIDIA VST was downloaded and used.
+- The UI was successfully displayed, although I still haven't found a way to connect the VST service to the local computer's webcam.
+- It is necessary to investigate how to run the webcam over RTSP and connect it directly to the Docker container so it can detect it, and also check if it would work with access to the camera recordings from Fimex.
