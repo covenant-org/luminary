@@ -584,3 +584,19 @@ https://github.com/user-attachments/assets/5ffefcec-4474-4f50-bb0e-d34da1fe724d
 - The first Docker container for NVIDIA VST was downloaded and used.
 - The UI was successfully displayed, although I still haven't found a way to connect the VST service to the local computer's webcam.
 - It is necessary to investigate how to run the webcam over RTSP and connect it directly to the Docker container so it can detect it, and also check if it would work with access to the camera recordings from Fimex.
+
+# 30/04/2025
+@VicmanGT
+- Found repository that already had implemented a face detection algorithm and was able to detect face from the profile
+- Had some bugs but they're fixed now
+- Modifications:
+- Limit face detection to only the one that is closer to the camera by comparing the size of the bounding box
+- Added threshold to see if the face was close enough, simulating it's using the computer server
+- Filter by 'Right Profile' according to the accomodation of the webcam in the computer server so when it's detected, the code saved the frames and makes a video out of them
+- Relevant links:
+- https://github.com/nawafalageel/Side-Profile-Detection
+- https://www.geeksforgeeks.org/python-opencv-capture-video-from-camera/
+
+## Todo: 
+- Check how to make multiple videos out of a single stream without the need to rerun the code
+
