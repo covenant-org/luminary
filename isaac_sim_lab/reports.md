@@ -600,3 +600,19 @@ https://github.com/user-attachments/assets/5ffefcec-4474-4f50-bb0e-d34da1fe724d
 ## Todo: 
 - Check how to make multiple videos out of a single stream without the need to rerun the code
 
+# Activity Report - 02/05/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- An RTSP service was configured so that the webcam from Nuclea's office could be accessed via RTSP streaming.
+  ![image](https://github.com/user-attachments/assets/b61ce0a9-2fab-4214-b8f6-0b5952fc7410)
+
+- A separate Docker container was used and configured to manage the VST more effectively.
+- The streaming from 4 Fimex cameras was successfully added directly to the VST UI for further analysis.
+  ![image](https://github.com/user-attachments/assets/ecb63238-7012-470d-85f0-bb0adc70357e)
+  ![image](https://github.com/user-attachments/assets/dc4d4c34-1403-49ae-a588-eb566a55e01b)
+
+- Investigate why the RTSP stream from the webcam did not work within the VST.
+- Check why I haven't been able to draw ROI zones and Tripwires on the Fimex streams that appear.
+
