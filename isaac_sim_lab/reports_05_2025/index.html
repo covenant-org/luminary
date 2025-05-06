@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.0.799825111281">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.0.799826598994">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.8.0.799825111281" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.0.799826598994" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.0.799825111281" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.0.799826598994" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.0.799825111281" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.0.799826598994" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -246,6 +246,32 @@
 <li>An attempt was made to add ROI (Region of Interest) and tripwire tracking to all camera streams using NVIDIA&#x27;s VST container. However, during testing it was discovered that errors persist in the ROI and tripwire processing logic, preventing the system from correctly handling and analyzing the drawn areas. Further investigation and debugging are required to resolve these issues and ensure accurate event detection.</li>
 <li>A new VNC service was created so that we now have two different accesses to the UI of the Zeus computer, with the objective that Victor and I can work on different desktops, so to speak, and avoid conflicts from working at the same time or moving or closing each other&#x27;s things.
 <img src="https://github.com/user-attachments/assets/125e015f-c551-4516-8417-7bdf34c7da2e" alt="image" /></li>
+</ul>
+<doc-anchor-target id="05052025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#05052025">#</doc-anchor-trigger>
+        <span>05/05/2025</span>
+    </h1>
+</doc-anchor-target>
+<p>@VicmanGT</p>
+<ul>
+<li>Implemented sound based alarm that sound when a person&#x27;s right side face is in front of the camera</li>
+</ul>
+<p><a href="https://github.com/user-attachments/assets/7112efbc-12bf-48ab-8224-840be2bcf940">https://github.com/user-attachments/assets/7112efbc-12bf-48ab-8224-840be2bcf940</a></p>
+<ul>
+<li>Created a requirements.txt to implement code in Zeus server</li>
+<li>Cloned code in Zeus server</li>
+<li>When tried to run code got following error:</li>
+</ul>
+<p>ALSA lib pulse.c:242:(pulse_connect) PulseAudio: Unable to connect: Connection refused</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Traceback (most recent call last):
+  File &quot;/home/zeus/Documents/Nuclea_Projects/server-surveillance/main.py&quot;, line 14, in &lt;module&gt;
+    pygame.mixer.init()
+pygame.error: ALSA: Couldn't open audio device: Connection refused</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Possible causes are lack of permissions for the user to access the audio in the computer or lack of sound drivers or devices in it</li>
 </ul>
 
                                 
