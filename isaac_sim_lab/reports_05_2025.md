@@ -37,4 +37,22 @@
 - A new VNC service was created so that we now have two different accesses to the UI of the Zeus computer, with the objective that Victor and I can work on different desktops, so to speak, and avoid conflicts from working at the same time or moving or closing each other's things.
  ![image](https://github.com/user-attachments/assets/125e015f-c551-4516-8417-7bdf34c7da2e)
 
+# 05/05/2025
+@VicmanGT
+- Implemented sound based alarm that sound when a person's right side face is in front of the camera
 
+https://github.com/user-attachments/assets/7112efbc-12bf-48ab-8224-840be2bcf940
+
+
+- Created a requirements.txt to implement code in Zeus server
+- Cloned code in Zeus server
+- When tried to run code got following error: 
+
+ALSA lib pulse.c:242:(pulse_connect) PulseAudio: Unable to connect: Connection refused
+```
+Traceback (most recent call last):
+  File "/home/zeus/Documents/Nuclea_Projects/server-surveillance/main.py", line 14, in <module>
+    pygame.mixer.init()
+pygame.error: ALSA: Couldn't open audio device: Connection refused
+```
+- Possible causes are lack of permissions for the user to access the audio in the computer or lack of sound drivers or devices in it
