@@ -32,3 +32,8 @@ Escuchar por trafico en cierta `interfaz` de red hacia cierto `puerto`
 ```
 sudo tcpdump -ni $interfaz port $puerto
 ```
+
+## Recursos utiles
+
+- [Beginners guide to traffic filtering with nftables](https://linux-audit.com/networking/nftables/nftables-beginners-guide-to-traffic-filtering/)
+- [Differences between iptables and nftables explained](https://linux-audit.com/networking/nftables/differences-between-iptables-and-nftables-explained/)
