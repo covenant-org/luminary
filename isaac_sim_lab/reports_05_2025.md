@@ -68,3 +68,43 @@ pygame.error: ALSA: Couldn't open audio device: Connection refused
   ![image](https://github.com/user-attachments/assets/d9771467-008e-4401-8588-bc900a65ca02)
 - There are plans to use the Wowza platform to access public RTSP services with higher quality and test them in the VST for ROI tracking and tripwire analysis.
 - There is suspicion that the poor quality of the streams from Fimex's cameras may be due to the VPN server having very low hardware specs. I contacted Fernando (head of IT at Fimex) to look for a solution to this problem directly from their side.tection.
+
+# 06/05/2025
+@VicmanGT
+- Investigated causes of the error from yesterday
+- pulseaudio is a general purpose sound server to communicate the software and the hardware, and it's not intalled
+- Got following error while trying to install it:
+```
+sudo apt-get install pulseaudio
+[sudo] password for zeus: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+ pop-pipewire : Depends: pipewire-alsa but it is not going to be installed
+                Conflicts: pulseaudio
+                Conflicts: pulseaudio:i386
+E: Error, pkgProblemResolver::Resolve generated breaks, this may be caused by held packages.
+```
+- A possible solution is to use Pipewire instead, which is basically the same but more recent
+- Also check if there's an actuall sound device or sound card in the server computer
+- Also got following video error while ignoring the audio lines in the script:
+```
+warnings.warn( [ WARN:0@0.292] global cap_v4l.cpp:999 open VIDEOIO(V4L2:/dev/video0): can't open camera by index [ERROR:0@0.292] global obsensor_uvc_stream_channel.cpp:158 getStreamChannelGroup Camera index out of range
+```
+- This error occurs when the index in ```cv2.VideoCapture(index) ``` surpases the number of available cameras in the device
+- Tried to access the camera via VCL -> Media -> Open capture device, on both video0 and video1
+```
+Your input can't be opened:
+VLC is unable to open the MRL 'v4l2:///dev/video0'. Check the log for details.
+Your input can't be opened:
+VLC is unable to open the MRL 'v4l2:///dev/video1'. Check the log for details.
+```
+- Check connection with the webcam and Zeus server
+ 
