@@ -56,3 +56,15 @@ Traceback (most recent call last):
 pygame.error: ALSA: Couldn't open audio device: Connection refused
 ```
 - Possible causes are lack of permissions for the user to access the audio in the computer or lack of sound drivers or devices in it
+
+# Activity Report - 06/05/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- A tunnel was successfully created using RTSP and Ngrok to add the office webcam to the VST. It was configured correctly, although for some unknown reason, the webcam image hasn't been successfully displayed within Nvidia's VST.
+- Tests were conducted with the Video Wall and Recorded Streams modules to record certain portions of the stream at a specific, configured schedule.
+  ![image](https://github.com/user-attachments/assets/b94d2d02-5593-4c79-8494-13076f8bdb1c)
+  ![image](https://github.com/user-attachments/assets/d9771467-008e-4401-8588-bc900a65ca02)
+- There are plans to use the Wowza platform to access public RTSP services with higher quality and test them in the VST for ROI tracking and tripwire analysis.
+- There is suspicion that the poor quality of the streams from Fimex's cameras may be due to the VPN server having very low hardware specs. I contacted Fernando (head of IT at Fimex) to look for a solution to this problem directly from their side.tection.
