@@ -127,3 +127,14 @@ VLC is unable to open the MRL 'v4l2:///dev/video1'. Check the log for details.
 - A meeting was scheduled with Fernando (IT manager at Fimex) to upgrade the hardware of the VPN server at the factory in order to improve video quality in the camera streamings, so that the corresponding analysis can be performed later. The hardware upgrade was scheduled for Friday, as the server cannot be shut down during the week.
 - It was researched and confirmed that the VST Docker requires a Jetson device to function correctly, since there are specific libraries for those components.
 - An attempt was made to test the analysis of the streamings using external libraries (without using VST), but there were many compatibility errors, so it was decided to wait until a Jetson is available to use VST directly and follow the VST documentation (https://docs.nvidia.com/jetson/jps/setup/quick-start.html).
+
+# Activity Report - 08/05/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- To begin ruling out possible errors explaining why the camera streamings at Fimex appear poor when played via RTSP, a Python script was created that launches a local RTSP server using the Mediamtx software. A local 4K video downloaded from YouTube was used and streamed at different resolutions—from 144p up to 4K—to visually assess the smoothness and quality.
+- The script was also modified so that, in addition to streaming the videos at different qualities, it saves them locally in a folder organized by resolution.
+  ![image](https://github.com/user-attachments/assets/a312dc90-37b7-4970-9988-fcad074b9074)
+- The videos were analyzed, and it was observed that lower-quality videos play more smoothly than higher-quality ones. This is likely due to the frame transmission: fewer frames result in faster transmission, while more frames slow it down slightly—but the differences are minimal.
+- An attempt will be made to adjust the Fimex streaming configurations to see if lowering the video quality improves streaming smoothness.
