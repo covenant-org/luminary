@@ -107,4 +107,15 @@ Your input can't be opened:
 VLC is unable to open the MRL 'v4l2:///dev/video1'. Check the log for details.
 ```
 - Check connection with the webcam and Zeus server
- 
+
+# 07/05/2025
+@VicmanGT
+- Started with the function to detect a movement of the camera
+- The idea of keeping track of an object is possibly not going to work as expected
+- If for some reason, the detected object is moved or the model confuses the object or stop detecting it there could be a false positive
+- The best solution at the moment is the direct comparation of two frames
+- Substract the values of the pixel of each frame in grayscale
+- If the result if bigger that a certain threshold so the camera has been moved and an alert is generated
+- More info:
+- https://www.hackersrealm.net/post/motion-detection-tutorial-using-opencv
+- 
