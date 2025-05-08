@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.799992262848">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800055220367">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.8.1.799992262848" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.800055220367" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.799992262848" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.800055220367" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.799992262848" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.800055220367" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -379,6 +379,26 @@ VLC is unable to open the MRL 'v4l2:///dev/video1'. Check the log for details.</
 <li>A meeting was scheduled with Fernando (IT manager at Fimex) to upgrade the hardware of the VPN server at the factory in order to improve video quality in the camera streamings, so that the corresponding analysis can be performed later. The hardware upgrade was scheduled for Friday, as the server cannot be shut down during the week.</li>
 <li>It was researched and confirmed that the VST Docker requires a Jetson device to function correctly, since there are specific libraries for those components.</li>
 <li>An attempt was made to test the analysis of the streamings using external libraries (without using VST), but there were many compatibility errors, so it was decided to wait until a Jetson is available to use VST directly and follow the VST documentation (<a href="https://docs.nvidia.com/jetson/jps/setup/quick-start.html">https://docs.nvidia.com/jetson/jps/setup/quick-start.html</a>).</li>
+</ul>
+<doc-anchor-target id="activity-report---08052025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-report---08052025">#</doc-anchor-trigger>
+        <span>Activity Report - 08/05/2025</span>
+    </h1>
+</doc-anchor-target>
+<p><strong>Email:</strong> <a href="mailto:brandon@nuclea.solutions">brandon@nuclea.solutions</a></p>
+<doc-anchor-target id="main-updates-4">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-updates-4">#</doc-anchor-trigger>
+        <span>Main Updates</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>To begin ruling out possible errors explaining why the camera streamings at Fimex appear poor when played via RTSP, a Python script was created that launches a local RTSP server using the Mediamtx software. A local 4K video downloaded from YouTube was used and streamed at different resolutions—from 144p up to 4K—to visually assess the smoothness and quality.</li>
+<li>The script was also modified so that, in addition to streaming the videos at different qualities, it saves them locally in a folder organized by resolution.
+<img src="https://github.com/user-attachments/assets/a312dc90-37b7-4970-9988-fcad074b9074" alt="image" /></li>
+<li>The videos were analyzed, and it was observed that lower-quality videos play more smoothly than higher-quality ones. This is likely due to the frame transmission: fewer frames result in faster transmission, while more frames slow it down slightly—but the differences are minimal.</li>
+<li>An attempt will be made to adjust the Fimex streaming configurations to see if lowering the video quality improves streaming smoothness.</li>
 </ul>
 
                                 
