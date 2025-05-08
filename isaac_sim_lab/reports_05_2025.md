@@ -118,4 +118,12 @@ VLC is unable to open the MRL 'v4l2:///dev/video1'. Check the log for details.
 - If the result if bigger that a certain threshold so the camera has been moved and an alert is generated
 - More info:
 - https://www.hackersrealm.net/post/motion-detection-tutorial-using-opencv
-- 
+
+# Activity Report - 07/05/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- A meeting was scheduled with Fernando (IT manager at Fimex) to upgrade the hardware of the VPN server at the factory in order to improve video quality in the camera streamings, so that the corresponding analysis can be performed later. The hardware upgrade was scheduled for Friday, as the server cannot be shut down during the week.
+- It was researched and confirmed that the VST Docker requires a Jetson device to function correctly, since there are specific libraries for those components.
+- An attempt was made to test the analysis of the streamings using external libraries (without using VST), but there were many compatibility errors, so it was decided to wait until a Jetson is available to use VST directly and follow the VST documentation (https://docs.nvidia.com/jetson/jps/setup/quick-start.html).
