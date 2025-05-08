@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.799910204764">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.799987050925">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.8.1.799910204764" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.799987050925" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.799910204764" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.799987050925" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.799910204764" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.799987050925" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -293,6 +293,75 @@ pygame.error: ALSA: Couldn't open audio device: Connection refused</code></pre>
 <img src="https://github.com/user-attachments/assets/d9771467-008e-4401-8588-bc900a65ca02" alt="image" /></li>
 <li>There are plans to use the Wowza platform to access public RTSP services with higher quality and test them in the VST for ROI tracking and tripwire analysis.</li>
 <li>There is suspicion that the poor quality of the streams from Fimex&#x27;s cameras may be due to the VPN server having very low hardware specs. I contacted Fernando (head of IT at Fimex) to look for a solution to this problem directly from their side.tection.</li>
+</ul>
+<doc-anchor-target id="06052025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#06052025">#</doc-anchor-trigger>
+        <span>06/05/2025</span>
+    </h1>
+</doc-anchor-target>
+<p>@VicmanGT</p>
+<ul>
+<li>Investigated causes of the error from yesterday</li>
+<li>pulseaudio is a general purpose sound server to communicate the software and the hardware, and it&#x27;s not intalled</li>
+<li>Got following error while trying to install it:</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">sudo apt-get install pulseaudio
+[sudo] password for zeus: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+ pop-pipewire : Depends: pipewire-alsa but it is not going to be installed
+                Conflicts: pulseaudio
+                Conflicts: pulseaudio:i386
+E: Error, pkgProblemResolver::Resolve generated breaks, this may be caused by held packages.</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>A possible solution is to use Pipewire instead, which is basically the same but more recent</li>
+<li>Also check if there&#x27;s an actuall sound device or sound card in the server computer</li>
+<li>Also got following video error while ignoring the audio lines in the script:</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">warnings.warn( [ WARN:0@0.292] global cap_v4l.cpp:999 open VIDEOIO(V4L2:/dev/video0): can't open camera by index [ERROR:0@0.292] global obsensor_uvc_stream_channel.cpp:158 getStreamChannelGroup Camera index out of range</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>This error occurs when the index in <code v-pre>cv2.VideoCapture(index) </code> surpases the number of available cameras in the device</li>
+<li>Tried to access the camera via VCL -&gt; Media -&gt; Open capture device, on both video0 and video1</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Your input can't be opened:
+VLC is unable to open the MRL 'v4l2:///dev/video0'. Check the log for details.
+Your input can't be opened:
+VLC is unable to open the MRL 'v4l2:///dev/video1'. Check the log for details.</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Check connection with the webcam and Zeus server</li>
+</ul>
+<doc-anchor-target id="07052025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#07052025">#</doc-anchor-trigger>
+        <span>07/05/2025</span>
+    </h1>
+</doc-anchor-target>
+<p>@VicmanGT</p>
+<ul>
+<li>Started with the function to detect a movement of the camera</li>
+<li>The idea of keeping track of an object is possibly not going to work as expected</li>
+<li>If for some reason, the detected object is moved or the model confuses the object or stop detecting it there could be a false positive</li>
+<li>The best solution at the moment is the direct comparation of two frames</li>
+<li>Substract the values of the pixel of each frame in grayscale</li>
+<li>If the result if bigger that a certain threshold so the camera has been moved and an alert is generated</li>
+<li>More info:</li>
+<li><a href="https://www.hackersrealm.net/post/motion-detection-tutorial-using-opencv">https://www.hackersrealm.net/post/motion-detection-tutorial-using-opencv</a></li>
+<li></li>
 </ul>
 
                                 
