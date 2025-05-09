@@ -102,3 +102,7 @@ paltaforma Jetson Nano al utilizar "Hardware Encoding" y WHIP
 
 @jeduardofr: Configuracion del sensor optico para mejor lectura de distancia vertical (altura). Mantenimiento
 general del dron.
+
+## 08 - May - 2025
+
+@fairbrook: Configuración de antenas de telemetría P900
