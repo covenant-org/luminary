@@ -106,3 +106,7 @@ general del dron.
 ## 08 - May - 2025
 
 @fairbrook: Configuración de antenas de telemetría P900
+
+## 09 - May - 2025
+
+@fairbrook: pruebas de vuelo y recalibracion del dron
