@@ -148,4 +148,13 @@ VLC is unable to open the MRL 'v4l2:///dev/video1'. Check the log for details.
 - A method was researched to download videos directly from Hikvision software using its API.
 - A way to run Nvidia’s VST without using Jetson was researched and tested; configuration is ongoing, and further testing is needed to confirm its usability.
 
+# 09/05/2025
+@VicmanGT
+- Fully implemented binary mask in the server surveillance
+- Detects movement of the camera based of the average difference in the pixel of two frames
+- If it's bigger than threshold then an alarm sounds
+- Also detects then an object obstructs the camera view, covering also that case
+- Some case that may affect funcitonality is when the camera is moved slowly the average diffence is small and therefore the alarm is not going to sound
+
+https://github.com/user-attachments/assets/d587df69-1d0a-42c4-83e9-db9111e9a72e
 
