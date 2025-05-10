@@ -138,3 +138,14 @@ VLC is unable to open the MRL 'v4l2:///dev/video1'. Check the log for details.
   ![image](https://github.com/user-attachments/assets/a312dc90-37b7-4970-9988-fcad074b9074)
 - The videos were analyzed, and it was observed that lower-quality videos play more smoothly than higher-quality ones. This is likely due to the frame transmission: fewer frames result in faster transmission, while more frames slow it down slightly—but the differences are minimal.
 - An attempt will be made to adjust the Fimex streaming configurations to see if lowering the video quality improves streaming smoothness.
+
+# Activity Report - 09/05/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- The Python script was improved using the ffmpeg library to better re-stream local video via RTSP and to download videos in different qualities.
+- A method was researched to download videos directly from Hikvision software using its API.
+- A way to run Nvidia’s VST without using Jetson was researched and tested; configuration is ongoing, and further testing is needed to confirm its usability.
+
+
