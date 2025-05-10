@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800085231556">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800160004930">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.8.1.800085231556" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.800160004930" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.800085231556" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.800160004930" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.800085231556" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.800160004930" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -399,6 +399,24 @@ VLC is unable to open the MRL 'v4l2:///dev/video1'. Check the log for details.</
 <img src="https://github.com/user-attachments/assets/a312dc90-37b7-4970-9988-fcad074b9074" alt="image" /></li>
 <li>The videos were analyzed, and it was observed that lower-quality videos play more smoothly than higher-quality ones. This is likely due to the frame transmission: fewer frames result in faster transmission, while more frames slow it down slightly—but the differences are minimal.</li>
 <li>An attempt will be made to adjust the Fimex streaming configurations to see if lowering the video quality improves streaming smoothness.</li>
+</ul>
+<doc-anchor-target id="activity-report---09052025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-report---09052025">#</doc-anchor-trigger>
+        <span>Activity Report - 09/05/2025</span>
+    </h1>
+</doc-anchor-target>
+<p><strong>Email:</strong> <a href="mailto:brandon@nuclea.solutions">brandon@nuclea.solutions</a></p>
+<doc-anchor-target id="main-updates-5">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-updates-5">#</doc-anchor-trigger>
+        <span>Main Updates</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>The Python script was improved using the ffmpeg library to better re-stream local video via RTSP and to download videos in different qualities.</li>
+<li>A method was researched to download videos directly from Hikvision software using its API.</li>
+<li>A way to run Nvidia’s VST without using Jetson was researched and tested; configuration is ongoing, and further testing is needed to confirm its usability.</li>
 </ul>
 
                                 
