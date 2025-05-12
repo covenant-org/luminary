@@ -110,3 +110,8 @@ general del dron.
 ## 09 - May - 2025
 
 @fairbrook: pruebas de vuelo y recalibracion del dron
+
+
+## 12 - May - 2025
+
+@fairbrook: Recorrido por c5 Jalisco 
