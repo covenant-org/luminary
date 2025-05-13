@@ -167,3 +167,28 @@ https://github.com/user-attachments/assets/d587df69-1d0a-42c4-83e9-db9111e9a72e
 - A solution was sought to download streaming videos without losing quality. A Python script was created that saves the previous 5 minutes of the stream into short video clips. This method preserves both video quality and smooth playback.
 - Research was conducted on the protocols used by Hikvision's iVMS-4200 software. It was found that it uses a combination of protocols such as ISUP (Inter-System Unified Protocol), RTSP (Real-Time Streaming Protocol), and ONVIF protocol.
 
+# 12/05/2025
+@VicmanGT
+- The webcam is working again 
+- Continued investigation of error while trying to initialize pygame audio mixer
+```
+Traceback (most recent call last):
+  File "/home/zeus/Documents/Nuclea_Projects/server-surveillance/main.py", line 14, in <module>
+    pygame.mixer.init()
+pygame.error: ALSA: Couldn't open audio device: Connection refused
+```
+- Couldn't yet find pages where the specific error was being solved
+- Added code to select _pulseaudio_ specifically as the audio driver
+```
+import os
+os.environ['SDL_AUDIODRIVER'] = 'pulseaudio'
+```
+- And the error is different
+```
+Traceback (most recent call last):
+  File "/home/zeus/Documents/Nuclea_Projects/server-surveillance/main.py", line 20, in <module>
+    pygame.mixer.init()
+pygame.error: Could not setup connection to PulseAudio
+```
+- To keep testing, code was added to ignore the audio in case is not available
+- Next thing is to add the funcionality of a visual alarm instead of a sound one
