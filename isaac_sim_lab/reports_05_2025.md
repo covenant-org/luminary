@@ -158,3 +158,12 @@ VLC is unable to open the MRL 'v4l2:///dev/video1'. Check the log for details.
 
 https://github.com/user-attachments/assets/d587df69-1d0a-42c4-83e9-db9111e9a72e
 
+# Activity Report - 12/05/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- An attempt was made to reinstall and configure the NVIDIA graphics drivers to enable the nvidia-smi command and allow the system to detect the GPU. However, it could not be fully configured, as the message "Devices not found" continued to appear.
+- A solution was sought to download streaming videos without losing quality. A Python script was created that saves the previous 5 minutes of the stream into short video clips. This method preserves both video quality and smooth playback.
+- Research was conducted on the protocols used by Hikvision's iVMS-4200 software. It was found that it uses a combination of protocols such as ISUP (Inter-System Unified Protocol), RTSP (Real-Time Streaming Protocol), and ONVIF protocol.
+
