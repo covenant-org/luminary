@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800429555363">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800430145881">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.8.1.800429555363" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.800430145881" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.800429555363" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.800430145881" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.800429555363" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.800430145881" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -450,6 +450,44 @@ VLC is unable to open the MRL 'v4l2:///dev/video1'. Check the log for details.</
 <li>An attempt was made to reinstall and configure the NVIDIA graphics drivers to enable the nvidia-smi command and allow the system to detect the GPU. However, it could not be fully configured, as the message &quot;Devices not found&quot; continued to appear.</li>
 <li>A solution was sought to download streaming videos without losing quality. A Python script was created that saves the previous 5 minutes of the stream into short video clips. This method preserves both video quality and smooth playback.</li>
 <li>Research was conducted on the protocols used by Hikvision&#x27;s iVMS-4200 software. It was found that it uses a combination of protocols such as ISUP (Inter-System Unified Protocol), RTSP (Real-Time Streaming Protocol), and ONVIF protocol.</li>
+</ul>
+<doc-anchor-target id="12052025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#12052025">#</doc-anchor-trigger>
+        <span>12/05/2025</span>
+    </h1>
+</doc-anchor-target>
+<p>@VicmanGT</p>
+<ul>
+<li>The webcam is working again</li>
+<li>Continued investigation of error while trying to initialize pygame audio mixer</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Traceback (most recent call last):
+  File &quot;/home/zeus/Documents/Nuclea_Projects/server-surveillance/main.py&quot;, line 14, in &lt;module&gt;
+    pygame.mixer.init()
+pygame.error: ALSA: Couldn't open audio device: Connection refused</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Couldn&#x27;t yet find pages where the specific error was being solved</li>
+<li>Added code to select <em>pulseaudio</em> specifically as the audio driver</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">import os
+os.environ['SDL_AUDIODRIVER'] = 'pulseaudio'</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>And the error is different</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Traceback (most recent call last):
+  File &quot;/home/zeus/Documents/Nuclea_Projects/server-surveillance/main.py&quot;, line 20, in &lt;module&gt;
+    pygame.mixer.init()
+pygame.error: Could not setup connection to PulseAudio</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>To keep testing, code was added to ignore the audio in case is not available</li>
+<li>Next thing is to add the funcionality of a visual alarm instead of a sound one</li>
 </ul>
 
                                 
