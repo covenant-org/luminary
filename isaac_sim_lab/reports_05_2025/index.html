@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800430145881">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800506531387">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.8.1.800430145881" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.800506531387" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.800430145881" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.800506531387" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.800430145881" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.800506531387" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -488,6 +488,25 @@ pygame.error: Could not setup connection to PulseAudio</code></pre>
 <ul>
 <li>To keep testing, code was added to ignore the audio in case is not available</li>
 <li>Next thing is to add the funcionality of a visual alarm instead of a sound one</li>
+</ul>
+<doc-anchor-target id="activity-report---13052025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-report---13052025">#</doc-anchor-trigger>
+        <span>Activity Report - 13/05/2025</span>
+    </h1>
+</doc-anchor-target>
+<p><strong>Email:</strong> <a href="mailto:brandon@nuclea.solutions">brandon@nuclea.solutions</a></p>
+<doc-anchor-target id="main-updates-7">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-updates-7">#</doc-anchor-trigger>
+        <span>Main Updates</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Another Python script was created to analyze and obtain the streaming videos from the 16 Fimex cameras, which resulted in 32 channels, as each camera offers a main channel with higher resolution and a secondary channel with lower resolution.</li>
+<li>The purpose of this script is to locally save one minute of footage from each camera with a delay of 1 to 5 seconds from the live stream. This recorded video no longer has issues with fluidity or quality, but the downside is that it’s not entirely live.</li>
+<li>It was detected that cameras 9, 10, and 11 on their main channel (channel 1) do not correctly record the full minute locally — they only save one literal second. However, the same cameras on their secondary channel (channel 2) do record the full minute correctly. The cause of this issue has not yet been identified.</li>
+<li>An attempt was made to reinstall the drivers to get the GPU on the Zeus computer working properly again, in order to transfer the Python script there and run it as a service. However, the system still does not properly detect the graphics card.</li>
 </ul>
 
                                 
