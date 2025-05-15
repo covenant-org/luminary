@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800516559305">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800599685292">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.8.1.800516559305" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.800599685292" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.800516559305" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.800599685292" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.800516559305" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.800599685292" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -507,6 +507,25 @@ pygame.error: Could not setup connection to PulseAudio</code></pre>
 <li>The purpose of this script is to locally save one minute of footage from each camera with a delay of 1 to 5 seconds from the live stream. This recorded video no longer has issues with fluidity or quality, but the downside is that it’s not entirely live.</li>
 <li>It was detected that cameras 9, 10, and 11 on their main channel (channel 1) do not correctly record the full minute locally — they only save one literal second. However, the same cameras on their secondary channel (channel 2) do record the full minute correctly. The cause of this issue has not yet been identified.</li>
 <li>An attempt was made to reinstall the drivers to get the GPU on the Zeus computer working properly again, in order to transfer the Python script there and run it as a service. However, the system still does not properly detect the graphics card.</li>
+</ul>
+<doc-anchor-target id="activity-report---14052025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-report---14052025">#</doc-anchor-trigger>
+        <span>Activity Report - 14/05/2025</span>
+    </h1>
+</doc-anchor-target>
+<p><strong>Email:</strong> <a href="mailto:brandon@nuclea.solutions">brandon@nuclea.solutions</a></p>
+<doc-anchor-target id="main-updates-8">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-updates-8">#</doc-anchor-trigger>
+        <span>Main Updates</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>All drivers, including NVIDIA and CUDA, were completely reconfigured again on the Zeus computer to ensure proper functionality of the 5070 graphics card.</li>
+<li>The Python script was improved to record every minute from the 16 camera streams of Fimex and save them locally on ZEUS&#x27;s 14 TB hard drive.</li>
+<li>A service was created to run every time the Zeus computer starts, so that at the 55th second of every minute, it executes the recording script in parallel for all Fimex cameras for later analysis.</li>
+<li>Kevin was also assisted in setting up a VNC service with the MATE GUI for the Cronus computer. With this, we now have all three computers — Zeus, Gaia, and Cronus — equipped with a system for remote visualization.</li>
 </ul>
 
                                 
