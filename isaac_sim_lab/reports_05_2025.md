@@ -202,3 +202,13 @@ pygame.error: Could not setup connection to PulseAudio
 - The purpose of this script is to locally save one minute of footage from each camera with a delay of 1 to 5 seconds from the live stream. This recorded video no longer has issues with fluidity or quality, but the downside is that it’s not entirely live.
 - It was detected that cameras 9, 10, and 11 on their main channel (channel 1) do not correctly record the full minute locally — they only save one literal second. However, the same cameras on their secondary channel (channel 2) do record the full minute correctly. The cause of this issue has not yet been identified.
 - An attempt was made to reinstall the drivers to get the GPU on the Zeus computer working properly again, in order to transfer the Python script there and run it as a service. However, the system still does not properly detect the graphics card.
+
+# Activity Report - 14/05/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- All drivers, including NVIDIA and CUDA, were completely reconfigured again on the Zeus computer to ensure proper functionality of the 5070 graphics card.
+- The Python script was improved to record every minute from the 16 camera streams of Fimex and save them locally on ZEUS's 14 TB hard drive.
+- A service was created to run every time the Zeus computer starts, so that at the 55th second of every minute, it executes the recording script in parallel for all Fimex cameras for later analysis.
+- Kevin was also assisted in setting up a VNC service with the MATE GUI for the Cronus computer. With this, we now have all three computers — Zeus, Gaia, and Cronus — equipped with a system for remote visualization.
