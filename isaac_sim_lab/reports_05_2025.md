@@ -212,3 +212,12 @@ pygame.error: Could not setup connection to PulseAudio
 - The Python script was improved to record every minute from the 16 camera streams of Fimex and save them locally on ZEUS's 14 TB hard drive.
 - A service was created to run every time the Zeus computer starts, so that at the 55th second of every minute, it executes the recording script in parallel for all Fimex cameras for later analysis.
 - Kevin was also assisted in setting up a VNC service with the MATE GUI for the Cronus computer. With this, we now have all three computers — Zeus, Gaia, and Cronus — equipped with a system for remote visualization.
+
+# Activity Report - 15/05/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- The Python script for recording Fimex camera streams was modified to remove the audio from all streams, and the organization for saving the videos was improved by structuring them by day and minute within their respective folders.
+- A new Docker container was configured using DeepStream together with NVIDIA VST to analyze the RTSP video streams from the cameras. However, the setup has not yet been able to complete the ROI and tripwire mapping on the streams, although an improvement in the smoothness and quality of each stream was observed.
+- An attempt will be made to run VST locally on the Zeus computer to analyze each saved video individually without relying on a specific NVIDIA Docker container, since there is a suspicion that it only works—or is better optimized—on Jetson devices.
