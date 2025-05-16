@@ -221,3 +221,33 @@ pygame.error: Could not setup connection to PulseAudio
 - The Python script for recording Fimex camera streams was modified to remove the audio from all streams, and the organization for saving the videos was improved by structuring them by day and minute within their respective folders.
 - A new Docker container was configured using DeepStream together with NVIDIA VST to analyze the RTSP video streams from the cameras. However, the setup has not yet been able to complete the ROI and tripwire mapping on the streams, although an improvement in the smoothness and quality of each stream was observed.
 - An attempt will be made to run VST locally on the Zeus computer to analyze each saved video individually without relying on a specific NVIDIA Docker container, since there is a suspicion that it only works—or is better optimized—on Jetson devices.
+
+# 15/05/2025
+@VicmanGT
+- Fixed audio driver problem by changing from ```pulseaudio``` to ```pipewire```
+- Setup of virtual environment to have better control of library's version
+- Got past errors:
+```
+UserWarning: 
+NVIDIA GeForce RTX 5070 Ti with CUDA capability sm_120 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_50 sm_60 sm_70 sm_75 sm_80 sm_86 sm_90.
+If you want to use the NVIDIA GeForce RTX 5070 Ti GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+```
+```
+RuntimeError: CUDA error: no kernel image is available for execution on the device
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+```
+- Fixed with the already found solution
+```
+pip uninstall torch
+pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cu128
+```
+## Todo: 
+- Check how to make the script run at all times
+- Implement robust error handling
+- Check what causes error message and if it affects:
+```
+Qt: Session management error: None of the authentication protocols specified are supported
+```
