@@ -251,3 +251,13 @@ pip install --pre torch torchvision --index-url https://download.pytorch.org/whl
 ```
 Qt: Session management error: None of the authentication protocols specified are supported
 ```
+
+# Activity Report - 16/05/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Another attempt was made to configure VST for analyzing the video streams from some of the Fimex cameras, but it was unsuccessful. The method to draw ROI lines and tripwires in the system has not yet been figured out.
+- YOLOv5 was installed and configured on Zeus, along with the PyTorch libraries adapted for CUDA version 12.9.
+- Since VST has not been able to function properly, a local test was conducted using YOLOv5 and a new Python script designed to read all the videos recorded on a specific day for a specific camera, with the purpose of detecting people who appear or pass through each frame of the video. This was the first version of the script, but it still needs improvement.
+- I also provided support at Elite to restore functionality to a computer that suddenly failed, which was an urgent issue to resolve.
