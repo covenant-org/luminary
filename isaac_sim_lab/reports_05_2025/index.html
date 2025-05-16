@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800687171140">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800689392505">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.8.1.800687171140" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.800689392505" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.800687171140" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.800689392505" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.800687171140" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.800689392505" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -545,6 +545,51 @@ pygame.error: Could not setup connection to PulseAudio</code></pre>
 <li>A new Docker container was configured using DeepStream together with NVIDIA VST to analyze the RTSP video streams from the cameras. However, the setup has not yet been able to complete the ROI and tripwire mapping on the streams, although an improvement in the smoothness and quality of each stream was observed.</li>
 <li>An attempt will be made to run VST locally on the Zeus computer to analyze each saved video individually without relying on a specific NVIDIA Docker container, since there is a suspicion that it only works—or is better optimized—on Jetson devices.</li>
 </ul>
+<doc-anchor-target id="15052025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#15052025">#</doc-anchor-trigger>
+        <span>15/05/2025</span>
+    </h1>
+</doc-anchor-target>
+<p>@VicmanGT</p>
+<ul>
+<li>Fixed audio driver problem by changing from <code v-pre>pulseaudio</code> to <code v-pre>pipewire</code></li>
+<li>Setup of virtual environment to have better control of library&#x27;s version</li>
+<li>Got past errors:</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">UserWarning: 
+NVIDIA GeForce RTX 5070 Ti with CUDA capability sm_120 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_50 sm_60 sm_70 sm_75 sm_80 sm_86 sm_90.
+If you want to use the NVIDIA GeForce RTX 5070 Ti GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">RuntimeError: CUDA error: no kernel image is available for execution on the device
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Fixed with the already found solution</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">pip uninstall torch
+pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cu128</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="todo-1">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#todo-1">#</doc-anchor-trigger>
+        <span>Todo:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Check how to make the script run at all times</li>
+<li>Implement robust error handling</li>
+<li>Check what causes error message and if it affects:</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Qt: Session management error: None of the authentication protocols specified are supported</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
