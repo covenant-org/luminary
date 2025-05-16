@@ -115,3 +115,8 @@ general del dron.
 ## 12 - May - 2025
 
 @fairbrook: Recorrido por c5 Jalisco 
+
+
+## 15 - May - 2025
+
+@fairbrook: Montar y configurar cámaras para el laboratorios de drones 
