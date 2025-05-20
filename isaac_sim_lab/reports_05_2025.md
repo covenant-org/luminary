@@ -261,3 +261,11 @@ Qt: Session management error: None of the authentication protocols specified are
 - YOLOv5 was installed and configured on Zeus, along with the PyTorch libraries adapted for CUDA version 12.9.
 - Since VST has not been able to function properly, a local test was conducted using YOLOv5 and a new Python script designed to read all the videos recorded on a specific day for a specific camera, with the purpose of detecting people who appear or pass through each frame of the video. This was the first version of the script, but it still needs improvement.
 - I also provided support at Elite to restore functionality to a computer that suddenly failed, which was an urgent issue to resolve.
+
+# 19/05/2025
+@VicmanGT
+- Fully implemented the alarm system for the Zeus server
+- Setted a service to make it run 24/7
+- Added logging statements to debug in case of errors
+- Commented lines of code from cv2 to prevent it to make calls to the GUI
+- There's need for physical testing to see if the alarm works
