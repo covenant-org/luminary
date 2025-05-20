@@ -269,3 +269,12 @@ Qt: Session management error: None of the authentication protocols specified are
 - Added logging statements to debug in case of errors
 - Commented lines of code from cv2 to prevent it to make calls to the GUI
 - There's need for physical testing to see if the alarm works
+
+# Activity Report - 19/05/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- The Python algorithm for detecting people using YOLO was slightly improved, although progress on that was paused as the priority shifted to improving the streaming quality of the Fimex cameras.
+- To improve the quality of video downloads from the Fimex cameras, the algorithm was changed to enhance the frame rate and avoid encoding in a format that causes frame loss. However, we encountered an issue where the VPN server stopped working since the morning. I contacted Fernando (Fimex’s IT manager) to find a solution, but I haven’t received any response yet.
+- I also developed another Python algorithm that takes the saved one-minute video clips and generates an RTSP stream, so it can later be used in the VST, since it seems to only accept that format.
