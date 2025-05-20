@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800774017998">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801029534081">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.8.1.800774017998" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.801029534081" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.800774017998" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801029534081" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.800774017998" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801029534081" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -608,6 +608,20 @@ pip install --pre torch torchvision --index-url https://download.pytorch.org/whl
 <li>YOLOv5 was installed and configured on Zeus, along with the PyTorch libraries adapted for CUDA version 12.9.</li>
 <li>Since VST has not been able to function properly, a local test was conducted using YOLOv5 and a new Python script designed to read all the videos recorded on a specific day for a specific camera, with the purpose of detecting people who appear or pass through each frame of the video. This was the first version of the script, but it still needs improvement.</li>
 <li>I also provided support at Elite to restore functionality to a computer that suddenly failed, which was an urgent issue to resolve.</li>
+</ul>
+<doc-anchor-target id="19052025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#19052025">#</doc-anchor-trigger>
+        <span>19/05/2025</span>
+    </h1>
+</doc-anchor-target>
+<p>@VicmanGT</p>
+<ul>
+<li>Fully implemented the alarm system for the Zeus server</li>
+<li>Setted a service to make it run 24/7</li>
+<li>Added logging statements to debug in case of errors</li>
+<li>Commented lines of code from cv2 to prevent it to make calls to the GUI</li>
+<li>There&#x27;s need for physical testing to see if the alarm works</li>
 </ul>
 
                                 
