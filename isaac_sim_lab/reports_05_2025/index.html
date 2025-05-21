@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801114097571">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801119892268">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.8.1.801114097571" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.801119892268" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801114097571" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801119892268" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801114097571" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801119892268" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -640,6 +640,25 @@ pip install --pre torch torchvision --index-url https://download.pytorch.org/whl
 <li>The Python algorithm for detecting people using YOLO was slightly improved, although progress on that was paused as the priority shifted to improving the streaming quality of the Fimex cameras.</li>
 <li>To improve the quality of video downloads from the Fimex cameras, the algorithm was changed to enhance the frame rate and avoid encoding in a format that causes frame loss. However, we encountered an issue where the VPN server stopped working since the morning. I contacted Fernando (Fimex’s IT manager) to find a solution, but I haven’t received any response yet.</li>
 <li>I also developed another Python algorithm that takes the saved one-minute video clips and generates an RTSP stream, so it can later be used in the VST, since it seems to only accept that format.</li>
+</ul>
+<doc-anchor-target id="activity-report---20052025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-report---20052025">#</doc-anchor-trigger>
+        <span>Activity Report - 20/05/2025</span>
+    </h1>
+</doc-anchor-target>
+<p><strong>Email:</strong> <a href="mailto:brandon@nuclea.solutions">brandon@nuclea.solutions</a></p>
+<doc-anchor-target id="main-updates-12">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-updates-12">#</doc-anchor-trigger>
+        <span>Main Updates</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>I downloaded the code from the VST container in Envida to inspect it locally, file by file. After the inspection, I realized that there are binaries or executables, headers, .json configuration files, and libraries being used, but I couldn’t find actual source code that shows the full programming logic of the VST module.</li>
+<li>I created an account on Wowza to be able to stream RTSP publicly from that platform in order to later test it with the VST. Although I managed to stream a video I downloaded from YouTube, for some reason the VST still didn’t detect it to display an image — even though both FFplay and VLC did.</li>
+<li>I also made the Python algorithm stream previously recorded videos (before the Fimex VPN failed) over RTSP, so I could stream them locally from the VST. However, this also failed — it was not able to detect any image.</li>
+<li>The issue with the VPN used to access the Fimex cameras’ streams still persists, so I couldn’t make any further progress in resolving the video transmission quality issue.</li>
 </ul>
 
                                 
