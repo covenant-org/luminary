@@ -278,3 +278,13 @@ Qt: Session management error: None of the authentication protocols specified are
 - The Python algorithm for detecting people using YOLO was slightly improved, although progress on that was paused as the priority shifted to improving the streaming quality of the Fimex cameras.
 - To improve the quality of video downloads from the Fimex cameras, the algorithm was changed to enhance the frame rate and avoid encoding in a format that causes frame loss. However, we encountered an issue where the VPN server stopped working since the morning. I contacted Fernando (Fimex’s IT manager) to find a solution, but I haven’t received any response yet.
 - I also developed another Python algorithm that takes the saved one-minute video clips and generates an RTSP stream, so it can later be used in the VST, since it seems to only accept that format.
+
+# Activity Report - 20/05/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- I downloaded the code from the VST container in Envida to inspect it locally, file by file. After the inspection, I realized that there are binaries or executables, headers, .json configuration files, and libraries being used, but I couldn’t find actual source code that shows the full programming logic of the VST module.
+- I created an account on Wowza to be able to stream RTSP publicly from that platform in order to later test it with the VST. Although I managed to stream a video I downloaded from YouTube, for some reason the VST still didn’t detect it to display an image — even though both FFplay and VLC did.
+- I also made the Python algorithm stream previously recorded videos (before the Fimex VPN failed) over RTSP, so I could stream them locally from the VST. However, this also failed — it was not able to detect any image.
+- The issue with the VPN used to access the Fimex cameras’ streams still persists, so I couldn’t make any further progress in resolving the video transmission quality issue.
