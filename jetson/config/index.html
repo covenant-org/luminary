@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801294409487">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801377689525">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.8.1.801294409487" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.801377689525" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801294409487" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801377689525" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801294409487" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.8.1.801294409487" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801377689525" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.8.1.801377689525" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -501,6 +501,99 @@ TAG+=&quot;systemd&quot;
     <a href="../../static/99-wadi.rules" class="absolute block inset-0" target="_blank" download="99-wadi.rules"></a>
 </div>
 </p>
+<doc-anchor-target id="zed-sdk">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#zed-sdk">#</doc-anchor-trigger>
+        <span>ZED SDK</span>
+    </h2>
+</doc-anchor-target>
+<p>El SDK de ZED es una herramienta de desarrollo que permite interactuar con
+la cámara ZED de manera programática. Se utiliza para capturar y procesar
+la información visual de la cámara ZED.</p>
+<doc-anchor-target id="1-instalar-el-sdk-de-zed">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-instalar-el-sdk-de-zed">#</doc-anchor-trigger>
+        <span>1. Instalar el SDK de ZED</span>
+    </h4>
+</doc-anchor-target>
+<p>Descargar el SDK desde su página <a href="https://www.stereolabs.com/en-mx/developers/release#nvidia-jetson-504616ef8d38">:icon-camera: ZED SDK</a></p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>De preferencia descargar las versiones que no sean Release Candidates (RC)</p>
+        </div>
+    </div>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">chmod +x ZED_SDK_Tegra_L4T_38.0.101.76.run # Reemplazar con la version correcta
+./ZED_SDK_Tegra_L4T_38.0.101.76.run</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Se probó con la versión de Jetpack 6.1 (la version 6.2 da algunos errores de instalación)</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="2-instalar-el-controlador-de-monolink">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-instalar-el-controlador-de-monolink">#</doc-anchor-trigger>
+        <span>2. Instalar el controlador de monolink</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">wget https://stereolabs.sfo2.cdn.digitaloceanspaces.com/utils/drivers/ZEDX/1.3.0/R36.4/stereolabs-zedlink-mono_1.3.0-SL-MAX9296-all-L4T36.4.0_arm64.deb
+sudo dpkg -i stereolabs-zedlink-mono_1.3.0-SL-MAX9296-all-L4T36.4.0_arm64.deb</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Despues de instalar el controlador de monolink se debe reiniciar la Jetson</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="3-conectar-la-cámara">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-conectar-la-cámara">#</doc-anchor-trigger>
+        <span>3. Conectar la cámara</span>
+    </h4>
+</doc-anchor-target>
+<p><em>3.1.</em> Conectar flex al puerto de cam1 de la Jetson</p>
+<p><em>3.2.</em> Conectar flex a la tarjeta monolink de ZED</p>
+<p><em>3.3.</em> Conectar el cable GMSL2 a la tarjeta monolink de ZED</p>
+<p><em>3.4.</em> Conectar el cable GMSL2 a la cámara ZED</p>
+<p><em>3.5.</em> Energizar la tarjeta monolink de ZED (12v-19v min 2w)</p>
+<p><em>3.6.</em> Energizar la Jetson</p>
+<p><em>3.7.</em> Ejecutar el visor ZED_Explorer en la Jetson (opcional)</p>
 
                                 
                                 <!-- Required only on API pages -->
