@@ -9,7 +9,7 @@ sobre la plataforma de desarrollo NVIDIA Jetson
 
 ## YOLO
 
-Modelo de detección y segmentación de objetos enfocado en tiempo real, de la 
+Modelo de detección y segmentación de objetos enfocado en tiempo real, de la
 mano de Ultralytics.
 
 Para instalar exitosamente la la libreria de Ultralytics siga el siguiente
@@ -43,7 +43,7 @@ Se pude omitir _[export]_ si no se desea cambiar de formato los archivos de peso
 
 !!! warning
 En versiones recientes de pip, el dependency resolver toma demasiado tiempo
-para resolver la dependencia adicional de export de ultralytics. 
+para resolver la dependencia adicional de export de ultralytics.
 Por lo que se recomienda agregar
 
 ```--use-deprecated=legacy-resolver```
@@ -92,7 +92,7 @@ pip install numpy==1.23.5
 
 ## Tensorrt
 
-Librería de NVIDIA para C++ que facilita inferencias de alto desempeño en 
+Librería de NVIDIA para C++ que facilita inferencias de alto desempeño en
 unidades de procecsamiento graficas.TensorRT toma una red entrenada, compuesta
 por una definición y un grupo de pesas y produce un motor de inferencia optimizado
 
@@ -148,7 +148,7 @@ sudo cp build/wadi /usr/bin
 
 #### 4. Crear servicio y regla de udev
 
-Cree los siguientes archivos en la ruta especificada. Estos son ejemplos y 
+Cree los siguientes archivos en la ruta especificada. Estos son ejemplos y
 pueden cambiar de acuerdo a sus necesidades
 
 :::code source="../static/wadi@.service" title="/etc/systemd/system/wadi\@.service" :::
@@ -161,3 +161,56 @@ de pulseaudio se inicie. No es la mejor forma de hacerlo y puede causar problema
 
 :::code source="../static/99-wadi.rules" title="/etc/udev/rules.d/99-wadi.rules" :::
 [!file](../static/99-wadi.rules)
+
+
+## ZED SDK
+
+El SDK de ZED es una herramienta de desarrollo que permite interactuar con
+la cámara ZED de manera programática. Se utiliza para capturar y procesar
+la información visual de la cámara ZED.
+
+
+#### 1. Instalar el SDK de ZED
+
+Descargar el SDK desde su página [:icon-camera: ZED SDK](https://www.stereolabs.com/en-mx/developers/release#nvidia-jetson-504616ef8d38)
+
+!!!
+De preferencia descargar las versiones que no sean Release Candidates (RC)
+!!!
+
+```bash
+chmod +x ZED_SDK_Tegra_L4T_38.0.101.76.run # Reemplazar con la version correcta
+./ZED_SDK_Tegra_L4T_38.0.101.76.run
+```
+
+!!! warning
+Se probó con la versión de Jetpack 6.1 (la version 6.2 da algunos errores de instalación)
+!!!
+
+
+#### 2. Instalar el controlador de monolink
+
+```bash
+wget https://stereolabs.sfo2.cdn.digitaloceanspaces.com/utils/drivers/ZEDX/1.3.0/R36.4/stereolabs-zedlink-mono_1.3.0-SL-MAX9296-all-L4T36.4.0_arm64.deb
+sudo dpkg -i stereolabs-zedlink-mono_1.3.0-SL-MAX9296-all-L4T36.4.0_arm64.deb
+```
+
+!!!
+Despues de instalar el controlador de monolink se debe reiniciar la Jetson
+!!!
+
+#### 3. Conectar la cámara
+
+_3.1._ Conectar flex al puerto de cam1 de la Jetson
+
+_3.2._ Conectar flex a la tarjeta monolink de ZED
+
+_3.3._ Conectar el cable GMSL2 a la tarjeta monolink de ZED
+
+_3.4._ Conectar el cable GMSL2 a la cámara ZED
+
+_3.5._ Energizar la tarjeta monolink de ZED (12v-19v min 2w)
+
+_3.6._ Energizar la Jetson
+
+_3.7._ Ejecutar el visor ZED_Explorer en la Jetson (opcional)
