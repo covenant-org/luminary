@@ -172,7 +172,7 @@ la información visual de la cámara ZED.
 
 #### 1. Instalar el SDK de ZED
 
-Descargar el SDK desde su página [:icon-camera: ZED SDK](https://www.stereolabs.com/en-mx/developers/release#nvidia-jetson-504616ef8d38)
+Descargar el SDK desde su página [:icon-device-camera-video: ZED SDK](https://www.stereolabs.com/en-mx/developers/release#nvidia-jetson-504616ef8d38)
 
 !!!
 De preferencia descargar las versiones que no sean Release Candidates (RC)
