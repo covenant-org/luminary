@@ -288,3 +288,14 @@ Qt: Session management error: None of the authentication protocols specified are
 - I created an account on Wowza to be able to stream RTSP publicly from that platform in order to later test it with the VST. Although I managed to stream a video I downloaded from YouTube, for some reason the VST still didn’t detect it to display an image — even though both FFplay and VLC did.
 - I also made the Python algorithm stream previously recorded videos (before the Fimex VPN failed) over RTSP, so I could stream them locally from the VST. However, this also failed — it was not able to detect any image.
 - The issue with the VPN used to access the Fimex cameras’ streams still persists, so I couldn’t make any further progress in resolving the video transmission quality issue.
+
+# Activity Report - 27/05/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- The VNC UI was changed to the Mate UI on the ZEUS computer, as it had recently been replaced with a more basic one.
+- A test was performed with the office camera to connect it via RTSP to NVIDIA's VS; the video could be viewed, but unfortunately, the ROI and tripwire drawing have not yet been achieved.
+- Initial configurations and implementations of NVIDIA’s Video Search and Summarization Agent were carried out. The web UI was successfully launched and one of the videos was selected for analysis, although the database still needs to be configured due to some errors.
+  ![image](https://github.com/user-attachments/assets/b7cbf7cf-5d70-47ce-be0e-6583c3f841b2)
+- Final modifications and bug fixes were made on Fidestech.
