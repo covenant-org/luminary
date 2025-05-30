@@ -120,3 +120,9 @@ general del dron.
 ## 15 - May - 2025
 
 @fairbrook: Montar y configurar cámaras para el laboratorios de drones 
+
+## 29 - May - 2025
+
+@jeduardofr y @fairbrook: Debuggear posibles errores del driver de linux para el 
+Modulo Sierra EM7455. Pruebas de vuelo con nueva version del sistema de refrigeracion,
+siguientes mejoras seria dejar los puertos usb mas expuestos para facilitar su uso.
