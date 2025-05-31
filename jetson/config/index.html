@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.801982516487">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802018028230">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.9.0.801982516487" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802018028230" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.801982516487" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802018028230" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.801982516487" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.9.0.801982516487" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802018028230" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.9.0.802018028230" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -644,6 +644,72 @@ paqueteria <code v-pre>build-essential</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">sudo apt update
 sudo apt install build-essential</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="2-verificar-que-se-tengan-las-cabeceras-de-linux">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-verificar-que-se-tengan-las-cabeceras-de-linux">#</doc-anchor-trigger>
+        <span>2. Verificar que se tengan las cabeceras de Linux</span>
+    </h4>
+</doc-anchor-target>
+<p>En Jetson se encuentran en /usr/src/linux-headers-5.15.148-tegra/3rdparty/canonical
+y por lo general se encuentran en la instalación por defecto</p>
+<doc-anchor-target id="3-descargar-los-drivers-de-sierra">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-descargar-los-drivers-de-sierra">#</doc-anchor-trigger>
+        <span>3. Descargar los drivers de Sierra</span>
+    </h4>
+</doc-anchor-target>
+<p>Se pueden descagar los drivers directo de la página oficial de Sierra
+<a href="https://source.sierrawireless.com/resources/airprime/software/mbpl/mbpl-software-latest/">aqui</a>
+con la única desventaja que en Tegra parece faltar un par de módulos (cdc-wdm,cdc_mbim)
+por lo que se deben agregar a los módulos a compilar. El paquete con los módulos faltantesel siguiente comando en la carpeta donde se encuentran los archivos &quot;usb&quot;</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">make
+sudo make install</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="5-configurar-el-módulo">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-configurar-el-módulo">#</doc-anchor-trigger>
+        <span>5. Configurar el módulo</span>
+    </h4>
+</doc-anchor-target>
+<p>En teoría el módulo debería configurarse automáticamente con los datos del
+proveedor del chip, sin embargo en pruebas esto no ocurría por lo que se debe
+configurar de manera manual mediante Network Manager.</p>
+<p>A continuación se detallan los comandos para configurar el módulo con el
+proveedor telcel. Se deberá reconfigurar si se cambia de proveedor</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">sudo nmcli c add con-name &quot;wwan&quot; type gsm ifname &quot;*&quot; apn &quot;internet.itelcel.com&quot;
+sudo nmcli c mod wwan connection.autoconnect yes
+sudo nmcli c mod mycon gsm.username &quot;webgpr&quot;
+sudo nmcli c mod mycon gsm.password &quot;webgprs2002&quot;
+# show the connection
+sudo cat /etc/NetworkManager/system-connections/wwan
+# start the connection
+sudo nmcli c up mycon</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="6-visualizar-el-estado-del-módulo">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-visualizar-el-estado-del-módulo">#</doc-anchor-trigger>
+        <span>6. Visualizar el estado del módulo</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">mmcli -m 0</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="comandos-útiles">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comandos-útiles">#</doc-anchor-trigger>
+        <span>Comandos útiles</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash"># Listar los módulos
+mmcli -L
+# Listar la información de conexión
+mmcli -b 0
+# Probar ping con la interfaz de wwan
+ping -I wwan0 8.8.8.8</code></pre>
 </doc-codeblock></div>
 
                                 
