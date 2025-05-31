@@ -250,3 +250,57 @@ paqueteria `build-essential`
 sudo apt update
 sudo apt install build-essential
 ```
+
+#### 2. Verificar que se tengan las cabeceras de Linux
+
+En Jetson se encuentran en /usr/src/linux-headers-5.15.148-tegra/3rdparty/canonical
+y por lo general se encuentran en la instalación por defecto
+
+#### 3. Descargar los drivers de Sierra
+
+Se pueden descagar los drivers directo de la página oficial de Sierra 
+[aqui](https://source.sierrawireless.com/resources/airprime/software/mbpl/mbpl-software-latest/)
+con la única desventaja que en Tegra parece faltar un par de módulos (cdc-wdm,cdc_mbim)
+por lo que se deben agregar a los módulos a compilar. El paquete con los módulos faltantesel siguiente comando en la carpeta donde se encuentran los archivos "usb"
+
+```bash
+make
+sudo make install
+```
+
+#### 5. Configurar el módulo
+
+En teoría el módulo debería configurarse automáticamente con los datos del 
+proveedor del chip, sin embargo en pruebas esto no ocurría por lo que se debe 
+configurar de manera manual mediante Network Manager.
+
+A continuación se detallan los comandos para configurar el módulo con el 
+proveedor telcel. Se deberá reconfigurar si se cambia de proveedor
+
+```bash
+sudo nmcli c add con-name "wwan" type gsm ifname "*" apn "internet.itelcel.com"
+sudo nmcli c mod wwan connection.autoconnect yes
+sudo nmcli c mod mycon gsm.username "webgpr"
+sudo nmcli c mod mycon gsm.password "webgprs2002"
+# show the connection
+sudo cat /etc/NetworkManager/system-connections/wwan
+# start the connection
+sudo nmcli c up mycon
+```
+
+#### 6. Visualizar el estado del módulo
+
+```bash
+mmcli -m 0
+```
+
+#### Comandos útiles
+
+```bash
+# Listar los módulos
+mmcli -L
+# Listar la información de conexión
+mmcli -b 0
+# Probar ping con la interfaz de wwan
+ping -I wwan0 8.8.8.8
+```
