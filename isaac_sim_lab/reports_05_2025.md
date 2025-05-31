@@ -299,3 +299,13 @@ Qt: Session management error: None of the authentication protocols specified are
 - Initial configurations and implementations of NVIDIA’s Video Search and Summarization Agent were carried out. The web UI was successfully launched and one of the videos was selected for analysis, although the database still needs to be configured due to some errors.
   ![image](https://github.com/user-attachments/assets/b7cbf7cf-5d70-47ce-be0e-6583c3f841b2)
 - Final modifications and bug fixes were made on Fidestech.
+
+# Activity Report - 30/05/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Alternatives were researched to use NVIDIA's VST through libraries like DeepStream locally, as well as other visual interpretation libraries, since the Docker or container provided by NVIDIA is highly optimized for use on a Jetson device.
+- Additional configurations were made to NVIDIA's Video Search and Summarization to run it locally. Tests were conducted using a pre-recorded video from the Fimex camera we had stored and with the RTSP stream from the office camera at Nuclea. While we were able to retrieve the video feed, an error related to the database appeared when attempting to analyze or summarize the content.
+- Based on that error, a Python script was developed to simulate a service called NIM from NVIDIA, aiming to launch an embedding-based database on a specific local computer port. However, even with this workaround, it has not been possible to successfully analyze videos uploaded to the Video Search and Summarization UI.
+- In other projects, new versions were delivered and bugs were fixed on the Fidestech platform.
