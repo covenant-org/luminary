@@ -309,3 +309,12 @@ Qt: Session management error: None of the authentication protocols specified are
 - Additional configurations were made to NVIDIA's Video Search and Summarization to run it locally. Tests were conducted using a pre-recorded video from the Fimex camera we had stored and with the RTSP stream from the office camera at Nuclea. While we were able to retrieve the video feed, an error related to the database appeared when attempting to analyze or summarize the content.
 - Based on that error, a Python script was developed to simulate a service called NIM from NVIDIA, aiming to launch an embedding-based database on a specific local computer port. However, even with this workaround, it has not been possible to successfully analyze videos uploaded to the Video Search and Summarization UI.
 - In other projects, new versions were delivered and bugs were fixed on the Fidestech platform.
+
+# Activity Report - 02/06/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- A new solution was sought to run NVIDIA's Video Research and Summarization locally by removing some libraries and configuring new ports in order to run both the frontend and backend from the computer named Zeus. However, the expected result has not yet been achieved.
+- Recorded videos from NVIDIA's VST using the office camera via RTSP were analyzed and downloaded. It was discovered that the videos are indeed saved in the folder specified in the configuration file, stored in .mkv format within the previously set time intervals. They are also saved using the timestamp in milliseconds of the recording time, organized into folders named after the recording date.
+- Initial setup of the Jetson device at NCLEA was started to perform a test using NVIDIA's VST, as the reason why the ROI and tripwire lines are not being traced in the recordings has not yet been identified.
