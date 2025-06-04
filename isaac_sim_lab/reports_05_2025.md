@@ -317,4 +317,15 @@ Qt: Session management error: None of the authentication protocols specified are
 ## Main Updates
 - A new solution was sought to run NVIDIA's Video Research and Summarization locally by removing some libraries and configuring new ports in order to run both the frontend and backend from the computer named Zeus. However, the expected result has not yet been achieved.
 - Recorded videos from NVIDIA's VST using the office camera via RTSP were analyzed and downloaded. It was discovered that the videos are indeed saved in the folder specified in the configuration file, stored in .mkv format within the previously set time intervals. They are also saved using the timestamp in milliseconds of the recording time, organized into folders named after the recording date.
-- Initial setup of the Jetson device at NCLEA was started to perform a test using NVIDIA's VST, as the reason why the ROI and tripwire lines are not being traced in the recordings has not yet been identified.
+- Initial setup of the Jetson device at NUCLEA was started to perform a test using NVIDIA's VST, as the reason why the ROI and tripwire lines are not being traced in the recordings has not yet been identified.
+
+# Activity Report - 03/06/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- VNC was installed and configured on Nuclea's Jetson to remotely view the Mate UI from my local computer.
+- There were some issues getting browsers like Firefox or Chromium to work, but it was resolved by installing some missing Snap dependencies and configuring VNC to successfully run the Chromium browser on the Jetson.
+- The NVIDIA VST UI was successfully launched, and the initial configurations were completed from the Jetson.
+  ![image](https://github.com/user-attachments/assets/4fbf70aa-1127-4e86-84a8-53f60a7da86b)
+- There were problems when trying to ping or view the office camera stream from the Jetson, as it is on a different network. An attempt was made to configure WireGuard to remotely connect to the camera's IP, but unfortunately, it was unsuccessful. Further tests will be attempted tomorrow or assistance will be requested during the meeting.
