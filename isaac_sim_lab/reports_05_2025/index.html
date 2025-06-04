@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802238711358">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802322161024">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.9.0.802238711358" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802322161024" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802238711358" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802322161024" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802238711358" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802322161024" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -715,7 +715,27 @@ pip install --pre torch torchvision --index-url https://download.pytorch.org/whl
 <ul>
 <li>A new solution was sought to run NVIDIA&#x27;s Video Research and Summarization locally by removing some libraries and configuring new ports in order to run both the frontend and backend from the computer named Zeus. However, the expected result has not yet been achieved.</li>
 <li>Recorded videos from NVIDIA&#x27;s VST using the office camera via RTSP were analyzed and downloaded. It was discovered that the videos are indeed saved in the folder specified in the configuration file, stored in .mkv format within the previously set time intervals. They are also saved using the timestamp in milliseconds of the recording time, organized into folders named after the recording date.</li>
-<li>Initial setup of the Jetson device at NCLEA was started to perform a test using NVIDIA&#x27;s VST, as the reason why the ROI and tripwire lines are not being traced in the recordings has not yet been identified.</li>
+<li>Initial setup of the Jetson device at NUCLEA was started to perform a test using NVIDIA&#x27;s VST, as the reason why the ROI and tripwire lines are not being traced in the recordings has not yet been identified.</li>
+</ul>
+<doc-anchor-target id="activity-report---03062025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-report---03062025">#</doc-anchor-trigger>
+        <span>Activity Report - 03/06/2025</span>
+    </h1>
+</doc-anchor-target>
+<p><strong>Email:</strong> <a href="mailto:brandon@nuclea.solutions">brandon@nuclea.solutions</a></p>
+<doc-anchor-target id="main-updates-16">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-updates-16">#</doc-anchor-trigger>
+        <span>Main Updates</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>VNC was installed and configured on Nuclea&#x27;s Jetson to remotely view the Mate UI from my local computer.</li>
+<li>There were some issues getting browsers like Firefox or Chromium to work, but it was resolved by installing some missing Snap dependencies and configuring VNC to successfully run the Chromium browser on the Jetson.</li>
+<li>The NVIDIA VST UI was successfully launched, and the initial configurations were completed from the Jetson.
+<img src="https://github.com/user-attachments/assets/4fbf70aa-1127-4e86-84a8-53f60a7da86b" alt="image" /></li>
+<li>There were problems when trying to ping or view the office camera stream from the Jetson, as it is on a different network. An attempt was made to configure WireGuard to remotely connect to the camera&#x27;s IP, but unfortunately, it was unsuccessful. Further tests will be attempted tomorrow or assistance will be requested during the meeting.</li>
 </ul>
 
                                 
