@@ -329,3 +329,15 @@ Qt: Session management error: None of the authentication protocols specified are
 - The NVIDIA VST UI was successfully launched, and the initial configurations were completed from the Jetson.
   ![image](https://github.com/user-attachments/assets/4fbf70aa-1127-4e86-84a8-53f60a7da86b)
 - There were problems when trying to ping or view the office camera stream from the Jetson, as it is on a different network. An attempt was made to configure WireGuard to remotely connect to the camera's IP, but unfortunately, it was unsuccessful. Further tests will be attempted tomorrow or assistance will be requested during the meeting.
+
+# Activity Report - 04/06/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Additional local tests were performed on Zesu's machine to get the backend with embeddings working for NVIDIA's Video Research and Summarization tool.
+- The necessary configurations were made to successfully launch the VST from the Jetson.
+- The office camera at Nuclea was successfully connected to the Jetson through VPN configurations applied in the WireGuard config file, allowing access to the camera's IP addresses.
+- The camera was successfully added to NVIDIA's VST, but when drawing the ROI and tripwire lines, the same rendering error appeared. An investigation will be conducted to determine which Jetson library is missing in order to fix this issue.
+  ![image](https://github.com/user-attachments/assets/1ad0c1e8-e17a-4ee3-a05e-01e0ed017f55)
+
