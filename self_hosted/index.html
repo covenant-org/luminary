@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802497174689">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802578900855">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../static/nuclea-logo.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.9.0.802497174689" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.9.0.802578900855" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.9.0.802497174689" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.9.0.802578900855" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.9.0.802497174689" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.9.0.802578900855" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -216,6 +216,40 @@ que el resto de reglas que se tengan definidas.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">sudo tcpdump -ni $interfaz port $puerto</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="compartir-red-local-a-traves-de-wireguard-distinta-a-la-red-del-wireguard">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#compartir-red-local-a-traves-de-wireguard-distinta-a-la-red-del-wireguard">#</doc-anchor-trigger>
+        <span>Compartir red local a traves de wireguard (distinta a la red del wireguard)</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>Modificar configuracion de algunos de los peer que tiene acceso a la red que nos interesa compartir
+y agregar las siguientes lineas en el apartado de <code v-pre>Interface</code>:</li>
+</ol>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">PostUp = iptables -A FORWARD -i interfaz-de-wireguard -j ACCEPT; iptables -t nat -A POSTROUTING -o interfaz-a-compartir -j MASQUERADE
+PostDown = iptables -D FORWARD -i interfaz-de-wireguard -j ACCEPT; iptables -t nat -D POSTROUTING -o interfaz-a-compartir -j MASQUERADE</code></pre>
+</doc-codeblock></div>
+<p>Las interfaces se pueden consultar con <code v-pre>ip addr</code>.</p>
+<ol start="2">
+<li>Modificar la configuracion del servidor para el peer que publico la nueva red, lo que se tiene que hacer
+es agregar la red local al peer o la ip del equipo (para mayor control, sobre lo que se comparte) en
+<code v-pre>AllowedIPs</code> seperado por comas, por ejemplo se podria ver:</li>
+</ol>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">AllowedIPs = 10.50.44.2/32, 192.168.10.90/24</code></pre>
+</doc-codeblock></div>
+<p>Recordar reiniciar el servicio con <code v-pre>sudo systemctl restart wg-quick@wg0</code>, modificar el wg0 con la interfaz
+correcta.</p>
+<ol start="3">
+<li>Modificar archivo del peer que quiere tener acceso a esta red y al igual solo agregar la direccion
+local del peer que la expuso, por ejemplo:</li>
+</ol>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">AllowedIPs = 10.50.44.0/24, 192.168.10.0/24</code></pre>
+</doc-codeblock></div>
+<p>Recordar reiniciar la conexion de wireguard para que los cambies tomen efecto con
+<code v-pre>sudo wg-quick down wg0 &amp;&amp; sudo wg-quick up wg0</code> y cambiar la interfaz por la correcta.</p>
 <doc-anchor-target id="recursos-utiles">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#recursos-utiles">#</doc-anchor-trigger>
