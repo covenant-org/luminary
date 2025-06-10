@@ -1,14 +1,13 @@
 import subprocess
 import numpy as np
 import threading
-import cv2
 
 class RTSPStreamFFmpeg:
 		def __init__(self, rtsp_url, width=1920, height=1080):
 				self.rtsp_url = rtsp_url
 				self.width = width
 				self.height = height
-				self.frame_size = self.width * self.height * 3  # bgr24: 3 bytes/pixel
+				self.frame_size = self.width * self.height * 3  # bgr24: 3 bytes per pixel
 
 				self.command = [
 						'ffmpeg',
@@ -27,7 +26,6 @@ class RTSPStreamFFmpeg:
 						bufsize=10**8
 				)
 
-				# Hilo para imprimir mensajes de error de FFmpeg
 				threading.Thread(target=self._print_stderr, daemon=True).start()
 
 		def _print_stderr(self):
@@ -39,7 +37,8 @@ class RTSPStreamFFmpeg:
 				while len(raw_frame) < self.frame_size:
 						chunk = self.process.stdout.read(self.frame_size - len(raw_frame))
 						if not chunk:
-								raise ValueError("No se pudo leer el frame completo (stream cerrado o error)")
+								print("[RTSPStreamFFmpeg] Incomplete frame or stream closed. Skipping frame.")
+								return None
 						raw_frame += chunk
 				frame = np.frombuffer(raw_frame, np.uint8).reshape((self.height, self.width, 3))
 				return frame

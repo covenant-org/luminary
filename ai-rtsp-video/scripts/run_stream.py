@@ -10,10 +10,8 @@ from app.processor import FrameProcessor
 from app.zone_detector import ZoneDetector
 
 def box_in_zone(box, zone):
-		# box y zone formato (x1, y1, x2, y2)
 		bx1, by1, bx2, by2 = box
 		zx1, zy1, zx2, zy2 = zone
-		# Verifica si la caja está dentro (total o parcialmente) de la zona
 		return not (bx2 < zx1 or bx1 > zx2 or by2 < zy1 or by1 > zy2)
 
 def main():
@@ -22,27 +20,27 @@ def main():
 
 		rtsp_url = os.getenv("RTSP_URL", "")
 		print("RTSP URL:", rtsp_url)
-		
-		stream = RTSPStreamFFmpeg(rtsp_url)
+
+		stream = RTSPStreamFFmpeg(rtsp_url, 1080, 720)
 		processor = FrameProcessor()
-		zones = [(100, 100, 300, 300)]
+
+		zones = [(300, 300, 900, 600)]
 		zone_detector = ZoneDetector(zones=zones)
 
 		while True:
 				frame = stream.read_frame()
+				if frame is None:
+						print("[RTSPStreamFFmpeg] Incomplete frame or stream closed. Skipping frame.")
+						continue
+
 				results = processor.detect(frame)
 				frame = zone_detector.highlight_zones(frame)
-				
-				# Hacer una copia para evitar error readonly
-				frame = frame.copy()
 
 				for box in results.boxes.xyxy:
 						x1, y1, x2, y2 = map(int, box)
-						# Color y grosor por defecto
 						color = (255, 0, 0)
 						thickness = 2
 
-						# Cambiar color y grosor si está en zona
 						for zone in zones:
 								if box_in_zone((x1, y1, x2, y2), zone):
 										color = (0, 255, 0)

@@ -1,5 +1,4 @@
 from ultralytics import YOLO
-import supervision as sv
 
 class FrameProcessor:
 		def __init__(self, model_path='yolov8n.pt'):
