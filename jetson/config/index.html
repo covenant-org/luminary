@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802587317715">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.0.802842549772">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.9.0">
+    <meta name="generator" content="Retype 3.10.0">
 
     <!-- Primary Meta Tags -->
     <title>Configuraciones y herramientas</title>
@@ -31,33 +31,33 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.9.0.802587317715" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.0.802842549772" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802587317715" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802587317715" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.9.0.802587317715" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.0.802842549772" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.0.802842549772" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.10.0.802842549772" defer></script>
 </head>
 <body>
-    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+    <div id="retype-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
         <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
     
-        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
             <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
                 <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="docs-sidebar-toggle"></div>
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
         
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-2xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
                                 <img class="max-h-10 dark:hidden md:inline-block" src="../../static/nuclea-logo.png">
                                 <img class="max-h-10 hidden dark:inline-block" src="../../static/nuclea-logo.png">
                             </span>
                             <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Covenant</span>
-                        </a><span class="hidden mt-1 px-2 py-1 ml-4 text-xs font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-md md:inline-block">Docs</span>
+                        </a><span id="retype-branding-label" class="hidden mt-1 px-2 py-1 ml-4 text-xs font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-md md:inline-block">Docs</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -65,7 +65,7 @@
         
                 <div class="flex justify-between md:grow">
                     <!-- Top Nav -->
-                    <nav class="hidden md:flex">
+                    <nav id="retype-header-nav" class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
                                 <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
@@ -103,7 +103,7 @@
                     </div>
         
                     <div v-cloak class="flex justify-end grow">
-                        <div id="docs-mobile-search-button"></div>
+                        <div id="retype-mobile-search-button"></div>
                         <doc-search-desktop></doc-search-desktop>
         
                         <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
@@ -113,7 +113,7 @@
             </div>
         </header>
     
-        <div class="container relative flex bg-white">
+        <div id="retype-container" class="container relative flex bg-white">
             <!-- Sidebar Skeleton -->
             <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-white border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
             
@@ -168,11 +168,11 @@
             <div class="grow min-w-0 dark:bg-dark-850">
                 <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
                 <div class="flex">
-                    <div class="min-w-0 p-4 grow md:px-16">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
                         <main class="relative pb-12 lg:pt-2">
-                            <div class="docs-markdown" id="docs-content">
+                            <div class="retype-markdown" id="retype-content">
                                 <!-- Rendered if sidebar right is enabled -->
-                                <div id="docs-sidebar-right-toggle"></div>
+                                <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
 <doc-anchor-target id="configuraciones-y-herramientas" class="break-words">
     <h1>
@@ -200,7 +200,7 @@ procedimiento:</p>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">sudo apt-get update
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo apt-get update
 sudo apt install python3-pip -y
 pip install -U pip</code></pre>
 </doc-codeblock></div>
@@ -211,7 +211,7 @@ pip install -U pip</code></pre>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">sudo apt-get install python3-venv -y
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo apt-get install python3-venv -y
 python3 -m venv venv
 source venv/bin/activate</code></pre>
 </doc-codeblock></div>
@@ -222,7 +222,7 @@ source venv/bin/activate</code></pre>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">pip install ultralytics[export]</code></pre>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">pip install ultralytics[export]</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-blue-500 dark:bg-blue-400"></div>
@@ -270,7 +270,7 @@ Por lo que se recomienda agregar</p>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/arm64/cuda-keyring_1.1-1_all.deb
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/arm64/cuda-keyring_1.1-1_all.deb
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt-get update
 sudo apt-get -y install libcusparselt0 libcusparselt-dev</code></pre>
@@ -301,7 +301,7 @@ en la jetson. Para posibles actualizaciones visitar el <a href="https://develope
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">pip install https://developer.download.nvidia.cn/compute/redist/jp/v61/pytorch/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">pip install https://developer.download.nvidia.cn/compute/redist/jp/v61/pytorch/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl
 pip install https://github.com/ultralytics/assets/releases/download/v0.0.0/torchvision-0.20.0a0+afc54f7-cp310-cp310-linux_aarch64.whl</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
@@ -331,7 +331,7 @@ o la guía de <a href="https://docs.ultralytics.com/guides/nvidia-jetson/#instal
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">pip install https://github.com/ultralytics/assets/releases/download/v0.0.0/onnxruntime_gpu-1.20.0-cp310-cp310-linux_aarch64.whl</code></pre>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">pip install https://github.com/ultralytics/assets/releases/download/v0.0.0/onnxruntime_gpu-1.20.0-cp310-cp310-linux_aarch64.whl</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-blue-500 dark:bg-blue-400"></div>
@@ -349,7 +349,7 @@ o la guía de <a href="https://docs.ultralytics.com/guides/nvidia-jetson/#instal
 <p>Onnx runtime cambia la versión de numpy por lo que se debe reinstalar una versión
 en específico</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">pip install numpy==1.23.5</code></pre>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">pip install numpy==1.23.5</code></pre>
 </doc-codeblock></div>
         </div>
     </div>
@@ -366,7 +366,7 @@ por una definición y un grupo de pesas y produce un motor de inferencia optimiz
 <p>Existen múltiples formas de instalar tensorrt en Jetson. Pero con la que se tuvo
 éxito fue la siguiente:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.7.0/tars/TensorRT-10.7.0.23.l4t.aarch64-gnu.cuda-12.6.tar.gz
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.7.0/tars/TensorRT-10.7.0.23.l4t.aarch64-gnu.cuda-12.6.tar.gz
 tar -xvzf TensorRT-10.7.0.23.l4t.aarch64-gnu.cuda-12.6.tar.gz
 version=10.7.0.23
 export LD_LIBRARY_PATH=${PWD}/TensorRT-${version}/lib:$LD_LIBRARY_PATH
@@ -382,7 +382,7 @@ pip install tensorrt-*-cp310-none-linux_aarch64.whl</code></pre>
 <p>Programa que muestra estadisticas de la Jetson en tiempo real, como el uso
 de GPU y que cuenta con interfaz programática en python</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">sudo pip3 install -U jetson-stats</code></pre>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo pip3 install -U jetson-stats</code></pre>
 </doc-codeblock></div>
 <blockquote>
 <p><a href="https://github.com/rbonghi/jetson_stats"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"/></g></g></svg> Jetson Stats</a></p>
@@ -403,7 +403,7 @@ la cámara FPV a un servidor para su consumo remoto</p>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">git clone https://github.com/covenant-org/wadi.git</code></pre>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/covenant-org/wadi.git</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="2-compilar-el-proyecto">
     <h4>
@@ -412,7 +412,7 @@ la cámara FPV a un servidor para su consumo remoto</p>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">cd wadi
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">cd wadi
 cmake -B build -H. -DCMAKE_BUILD_TYPE=Release
 cmake --build build</code></pre>
 </doc-codeblock></div>
@@ -423,7 +423,7 @@ cmake --build build</code></pre>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">sudo cp build/wadi /usr/bin</code></pre>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo cp build/wadi /usr/bin</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="4-crear-servicio-y-regla-de-udev">
     <h4>
@@ -435,7 +435,7 @@ cmake --build build</code></pre>
 pueden cambiar de acuerdo a sus necesidades</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">/etc/systemd/system/wadi@.service</div>
-<pre class="language-none"><code v-pre class="language-none">[Unit]
+<pre translate="no" class="language-none"><code v-pre class="language-none">[Unit]
 Description=Wadi service for webrtc video retransmission
 Wants=network-online.target
 StopWhenUnneeded=true
@@ -484,7 +484,7 @@ de pulseaudio se inicie. No es la mejor forma de hacerlo y puede causar problema
 </div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">/etc/udev/rules.d/99-wadi.rules</div>
-<pre class="language-none"><code v-pre class="language-none">SUBSYSTEM==&quot;video4linux&quot;, ACTION==&quot;add|change&quot;, ENV{ID_V4L_PRODUCT}==&quot;Elgato HD60 X: Elgato HD60 X&quot;, \
+<pre translate="no" class="language-none"><code v-pre class="language-none">SUBSYSTEM==&quot;video4linux&quot;, ACTION==&quot;add|change&quot;, ENV{ID_V4L_PRODUCT}==&quot;Elgato HD60 X: Elgato HD60 X&quot;, \
 ATTR{index}==&quot;0&quot;, GROUP=&quot;root&quot;, TAG+=&quot;systemd&quot;, \
 PROGRAM=&quot;/usr/bin/systemd-escape -p --template=wadi@.service $env{DEVNAME}&quot;, \
 ENV{SYSTEMD_WANTS}+=&quot;%c&quot;
@@ -542,7 +542,7 @@ la información visual de la cámara ZED.</p>
     </div>
 </div>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">chmod +x ZED_SDK_Tegra_L4T_38.0.101.76.run # Reemplazar con la version correcta
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">chmod +x ZED_SDK_Tegra_L4T_38.0.101.76.run # Reemplazar con la version correcta
 ./ZED_SDK_Tegra_L4T_38.0.101.76.run</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
@@ -570,7 +570,7 @@ la información visual de la cámara ZED.</p>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">wget https://stereolabs.sfo2.cdn.digitaloceanspaces.com/utils/drivers/ZEDX/1.3.0/R36.4/stereolabs-zedlink-mono_1.3.0-SL-MAX9296-all-L4T36.4.0_arm64.deb
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">wget https://stereolabs.sfo2.cdn.digitaloceanspaces.com/utils/drivers/ZEDX/1.3.0/R36.4/stereolabs-zedlink-mono_1.3.0-SL-MAX9296-all-L4T36.4.0_arm64.deb
 sudo dpkg -i stereolabs-zedlink-mono_1.3.0-SL-MAX9296-all-L4T36.4.0_arm64.deb</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
@@ -613,7 +613,7 @@ sudo dpkg -i stereolabs-zedlink-mono_1.3.0-SL-MAX9296-all-L4T36.4.0_arm64.deb</c
 when trying to up the interface defined by our conf file. To fix this we can use the following
 clone which works on:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">nuclea@ubuntu:~$ lsb_release -a
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">nuclea@ubuntu:~$ lsb_release -a
 No LSB modules are available.
 Distributor ID:	Ubuntu
 Description:	Ubuntu 22.04.5 LTS
@@ -642,7 +642,7 @@ dichos drivers se detalla a continuación</p>
 <p>Se requiere un compilador de c como gc y make. Ambos se encuentran en la
 paqueteria <code v-pre>build-essential</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">sudo apt update
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo apt update
 sudo apt install build-essential</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="2-verificar-que-se-tengan-las-cabeceras-de-linux">
@@ -664,7 +664,7 @@ y por lo general se encuentran en la instalación por defecto</p>
 con la única desventaja que en Tegra parece faltar un par de módulos (cdc-wdm,cdc_mbim)
 por lo que se deben agregar a los módulos a compilar. El paquete con los módulos faltantesel siguiente comando en la carpeta donde se encuentran los archivos &quot;usb&quot;</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">make
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">make
 sudo make install</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="5-configurar-el-módulo">
@@ -679,7 +679,7 @@ configurar de manera manual mediante Network Manager.</p>
 <p>A continuación se detallan los comandos para configurar el módulo con el
 proveedor telcel. Se deberá reconfigurar si se cambia de proveedor</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">sudo nmcli c add con-name &quot;wwan&quot; type gsm ifname &quot;*&quot; apn &quot;internet.itelcel.com&quot;
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo nmcli c add con-name &quot;wwan&quot; type gsm ifname &quot;*&quot; apn &quot;internet.itelcel.com&quot;
 sudo nmcli c mod wwan connection.autoconnect yes
 sudo nmcli c mod mycon gsm.username &quot;webgpr&quot;
 sudo nmcli c mod mycon gsm.password &quot;webgprs2002&quot;
@@ -695,7 +695,7 @@ sudo nmcli c up mycon</code></pre>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">mmcli -m 0</code></pre>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">mmcli -m 0</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="comandos-útiles">
     <h4>
@@ -704,7 +704,7 @@ sudo nmcli c up mycon</code></pre>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash"># Listar los módulos
+<pre translate="no" class="language-bash"><code v-pre class="language-bash"># Listar los módulos
 mmcli -L
 # Listar la información de conexión
 mmcli -b 0
@@ -716,9 +716,9 @@ ping -I wwan0 8.8.8.8</code></pre>
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
-                            <footer class="clear-both">
+                            <footer id="retype-content-footer" class="clear-both">
                             
-                                <nav class="print:hidden flex mt-14">
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
                                         <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../jetson/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
@@ -742,13 +742,13 @@ ping -I wwan0 8.8.8.8</code></pre>
                             </footer>
                         </main>
                 
-                        <div class="print:border-none border-t dark:border-dark-650 pt-6 mb-8">
+                        <div id="retype-page-footer" class="print:border-none border-t dark:border-dark-650 pt-6 mb-8">
                             <footer class="flex flex-wrap items-center justify-between print:justify-center">
-                                <div class="print:hidden">
+                                <div id="retype-footer-links" class="print:hidden">
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="print:justify-center docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                                <div id="retype-copyright" class="print:justify-center docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
                             </footer>
                         </div>
                     </div>
@@ -775,7 +775,7 @@ ping -I wwan0 8.8.8.8</code></pre>
     </div>
 
 
-    <div id="docs-overlay-target"></div>
+    <div id="retype-overlay-target"></div>
 
     <script data-cfasync="false">window.__DOCS__ = { "title": "Configuraciones y herramientas", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
