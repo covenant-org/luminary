@@ -341,3 +341,14 @@ Qt: Session management error: None of the authentication protocols specified are
 - The camera was successfully added to NVIDIA's VST, but when drawing the ROI and tripwire lines, the same rendering error appeared. An investigation will be conducted to determine which Jetson library is missing in order to fix this issue.
   ![image](https://github.com/user-attachments/assets/1ad0c1e8-e17a-4ee3-a05e-01e0ed017f55)
 
+# Activity Report - 10/06/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- A configuration of NVIDIA drivers was done along with the kernel to find one that satisfied the requirements of NVIDIA’s Video Search and Summarization.
+- The Video Search and Summarization documentation was followed step-by-step and in detail to run it in helmet mode, but in this mode we realized that a much more powerful GPU than the one we have is needed, as well as much more RAM. Specifically, the following error occurred:
+Detected NVIDIA GeForce RTX 5070 Ti GPU, which is not yet supported in this version of the container ERROR: No supported GPU(s) detected to run this container
+It was specified that the compatible GPUs range from H200 up to A100.
+- Seeing that helmet mode requires those configurations and that specific hardware, it was decided to opt for using Docker Compose to have a more customized configuration for our hardware. In this case, we used remote APIs like OpenAI for the LLMs and VLMs, and a Neo4j database which we managed to run correctly. More configurations are still needed in the Docker setup to run the VSS UI and be able to run it completely. I also think we will need an Azure OpenAI API key, which it seems to be using.
+  ![image](https://github.com/user-attachments/assets/afe2abea-4e7e-4721-af06-316cf217efc6)
