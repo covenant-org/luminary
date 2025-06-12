@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.0.802930502941">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.0.803015255699">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.10.0.802930502941" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.0.803015255699" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.0.802930502941" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.0.803015255699" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.0.802930502941" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.0.803015255699" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -772,6 +772,23 @@ Detected NVIDIA GeForce RTX 5070 Ti GPU, which is not yet supported in this vers
 It was specified that the compatible GPUs range from H200 up to A100.</li>
 <li>Seeing that helmet mode requires those configurations and that specific hardware, it was decided to opt for using Docker Compose to have a more customized configuration for our hardware. In this case, we used remote APIs like OpenAI for the LLMs and VLMs, and a Neo4j database which we managed to run correctly. More configurations are still needed in the Docker setup to run the VSS UI and be able to run it completely. I also think we will need an Azure OpenAI API key, which it seems to be using.
 <img src="https://github.com/user-attachments/assets/afe2abea-4e7e-4721-af06-316cf217efc6" alt="image" /></li>
+</ul>
+<doc-anchor-target id="activity-report---11062025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-report---11062025">#</doc-anchor-trigger>
+        <span>Activity Report - 11/06/2025</span>
+    </h1>
+</doc-anchor-target>
+<p><strong>Email:</strong> <a href="mailto:brandon@nuclea.solutions">brandon@nuclea.solutions</a></p>
+<doc-anchor-target id="main-updates-19">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-updates-19">#</doc-anchor-trigger>
+        <span>Main Updates</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Tests were conducted with Nvidia’s Video Search and Summarization (VSS) to try it using the resources of Zeus’s own computer. Lighter LLM and VLM models were used to allow analysis with our hardware, but due to library incompatibilities, the test could not be successfully completed.</li>
+<li>The VSS Docker on Zeus’s computer was reconfigured from scratch to allow remote use of the LLM and VLM models, avoiding the full resource load on the machine. The OpenAI API key was used, and testing with Azure OpenAI is still pending. All backend modules loaded correctly, but an error occurs when launching the frontend, which I haven’t yet figured out how to fix in order to analyze video and RTSP camera streams.</li>
 </ul>
 
                                 
