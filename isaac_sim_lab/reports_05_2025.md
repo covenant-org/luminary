@@ -352,3 +352,12 @@ Detected NVIDIA GeForce RTX 5070 Ti GPU, which is not yet supported in this vers
 It was specified that the compatible GPUs range from H200 up to A100.
 - Seeing that helmet mode requires those configurations and that specific hardware, it was decided to opt for using Docker Compose to have a more customized configuration for our hardware. In this case, we used remote APIs like OpenAI for the LLMs and VLMs, and a Neo4j database which we managed to run correctly. More configurations are still needed in the Docker setup to run the VSS UI and be able to run it completely. I also think we will need an Azure OpenAI API key, which it seems to be using.
   ![image](https://github.com/user-attachments/assets/afe2abea-4e7e-4721-af06-316cf217efc6)
+
+# Activity Report - 11/06/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Tests were conducted with Nvidia’s Video Search and Summarization (VSS) to try it using the resources of Zeus’s own computer. Lighter LLM and VLM models were used to allow analysis with our hardware, but due to library incompatibilities, the test could not be successfully completed.
+- The VSS Docker on Zeus’s computer was reconfigured from scratch to allow remote use of the LLM and VLM models, avoiding the full resource load on the machine. The OpenAI API key was used, and testing with Azure OpenAI is still pending. All backend modules loaded correctly, but an error occurs when launching the frontend, which I haven’t yet figured out how to fix in order to analyze video and RTSP camera streams.
+
