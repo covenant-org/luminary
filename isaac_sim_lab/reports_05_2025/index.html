@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.0.803089377743">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.0.803108803982">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.10.0.803089377743" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.0.803108803982" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.0.803089377743" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.0.803108803982" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.0.803089377743" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.0.803108803982" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -789,6 +789,25 @@ It was specified that the compatible GPUs range from H200 up to A100.</li>
 <ul>
 <li>Tests were conducted with Nvidia’s Video Search and Summarization (VSS) to try it using the resources of Zeus’s own computer. Lighter LLM and VLM models were used to allow analysis with our hardware, but due to library incompatibilities, the test could not be successfully completed.</li>
 <li>The VSS Docker on Zeus’s computer was reconfigured from scratch to allow remote use of the LLM and VLM models, avoiding the full resource load on the machine. The OpenAI API key was used, and testing with Azure OpenAI is still pending. All backend modules loaded correctly, but an error occurs when launching the frontend, which I haven’t yet figured out how to fix in order to analyze video and RTSP camera streams.</li>
+</ul>
+<doc-anchor-target id="activity-report---12062025">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activity-report---12062025">#</doc-anchor-trigger>
+        <span>Activity Report - 12/06/2025</span>
+    </h1>
+</doc-anchor-target>
+<p><strong>Email:</strong> <a href="mailto:brandon@nuclea.solutions">brandon@nuclea.solutions</a></p>
+<doc-anchor-target id="main-updates-20">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-updates-20">#</doc-anchor-trigger>
+        <span>Main Updates</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>With the corresponding API keys to use the LLM and VLM models from OpenAI, and after updating libraries, drivers, and repositories for the graphics card of the computer Zeus, we were able to successfully run the UI of NVIDIA&#x27;s Video Search and Summarization technology. Within it, we managed to link some of our pre-recorded videos from Fimex&#x27;s cameras for analysis and subsequently generate a summary from them.</li>
+<li>Unfortunately, even though the UI displays correctly and the backend is running properly, when making a query or asking something about the video, it gets stuck loading indefinitely and does not return any result, even though the console does not show any specific error.
+<img src="https://github.com/user-attachments/assets/ec018b20-d5c0-4ee2-88dc-9f0fbbb6f4cf" alt="image" /></li>
+<li>A new configuration will be attempted, using basic LLM and VLM models to be able to run everything locally and fully leverage the resources of the Zeus computer.</li>
 </ul>
 
                                 
