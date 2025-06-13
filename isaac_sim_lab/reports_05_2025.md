@@ -361,3 +361,12 @@ It was specified that the compatible GPUs range from H200 up to A100.
 - Tests were conducted with Nvidia’s Video Search and Summarization (VSS) to try it using the resources of Zeus’s own computer. Lighter LLM and VLM models were used to allow analysis with our hardware, but due to library incompatibilities, the test could not be successfully completed.
 - The VSS Docker on Zeus’s computer was reconfigured from scratch to allow remote use of the LLM and VLM models, avoiding the full resource load on the machine. The OpenAI API key was used, and testing with Azure OpenAI is still pending. All backend modules loaded correctly, but an error occurs when launching the frontend, which I haven’t yet figured out how to fix in order to analyze video and RTSP camera streams.
 
+# Activity Report - 12/06/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- With the corresponding API keys to use the LLM and VLM models from OpenAI, and after updating libraries, drivers, and repositories for the graphics card of the computer Zeus, we were able to successfully run the UI of NVIDIA's Video Search and Summarization technology. Within it, we managed to link some of our pre-recorded videos from Fimex's cameras for analysis and subsequently generate a summary from them.
+- Unfortunately, even though the UI displays correctly and the backend is running properly, when making a query or asking something about the video, it gets stuck loading indefinitely and does not return any result, even though the console does not show any specific error.
+  ![image](https://github.com/user-attachments/assets/ec018b20-d5c0-4ee2-88dc-9f0fbbb6f4cf)
+- A new configuration will be attempted, using basic LLM and VLM models to be able to run everything locally and fully leverage the resources of the Zeus computer.
