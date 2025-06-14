@@ -370,3 +370,30 @@ It was specified that the compatible GPUs range from H200 up to A100.
 - Unfortunately, even though the UI displays correctly and the backend is running properly, when making a query or asking something about the video, it gets stuck loading indefinitely and does not return any result, even though the console does not show any specific error.
   ![image](https://github.com/user-attachments/assets/ec018b20-d5c0-4ee2-88dc-9f0fbbb6f4cf)
 - A new configuration will be attempted, using basic LLM and VLM models to be able to run everything locally and fully leverage the resources of the Zeus computer.
+
+# Activity Report - 13/06/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Tests and library/model reconfigurations were carried out to better utilize NVIDIA’s Video Search and Summarization, since leaving all processing to be done remotely takes too long—even analyzing a simple 1-minute video segment becomes slow.
+- So, a combination of local and remote processing was implemented to significantly reduce load times. Unfortunately, the following error occurred in the Guardrails module, and I have not yet been able to find a solution: 
+  ``via-server-1  | 2025-06-14 02:50:19,117 ERROR Failed to load VIA stream handler - Guardrails failed
+via-server-1  | Traceback (most recent call last):
+via-server-1  |   File "/opt/nvidia/via/via-engine/via_server.py", line 1368, in run
+via-server-1  |     self._stream_handler = ViaStreamHandler(self._args)
+via-server-1  |   File "/opt/nvidia/via/via-engine/via_stream_handler.py", line 409, in __init__
+via-server-1  |     self._create_llm_rails_pool()
+via-server-1  |   File "/opt/nvidia/via/via-engine/via_stream_handler.py", line 516, in _create_llm_rails_pool
+via-server-1  |     raise Exception("Guardrails failed")
+via-server-1  | Exception: Guardrails failed
+via-server-1  | 
+via-server-1  | During handling of the above exception, another exception occurred:
+via-server-1  | 
+via-server-1  | Traceback (most recent call last):
+via-server-1  |   File "/opt/nvidia/via/via-engine/via_server.py", line 2880, in <module>
+via-server-1  |     server.run()
+via-server-1  |   File "/opt/nvidia/via/via-engine/via_server.py", line 1370, in run
+via-server-1  |     raise ViaException(f"Failed to load VIA stream handler - {str(ex)}")
+via-server-1  | via_exception.ViaException: ViaException - code: InternalServerError message: Failed to load VIA stream handler - Guardrails failed
+via-server-1  | Killed process with PID 68``
