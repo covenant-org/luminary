@@ -43,6 +43,7 @@ The Mexican Robotics Federation will run the organization in collaboration with 
 |Video TX & RX|<span class="mutted">TBD</span>|<span class="mutted">TBD</span>|<span class="mutted">TBD</span>|
 |Radio Controller|<span class="mutted">TBD</span>|<span class="mutted">TBD</span>|<span class="mutted">TBD</span>|
 |Extras|<span class="mutted">TBD</span>|<span class="mutted">TBD</span>|<span class="mutted">TBD</span>|
+|Companion|<span class="mutted">TBD</span>|<span class="mutted">TBD</span>|<span class="mutted">TBD</span>|
 
 
 ### Outdoor
@@ -63,3 +64,4 @@ The Mexican Robotics Federation will run the organization in collaboration with 
 |Radio|<span class="mutted">TBD</span>|<span class="mutted">TBD</span>|<span class="mutted">TBD</span>|
 |Video TX & RX|<span class="mutted">TBD</span>|<span class="mutted">TBD</span>|<span class="mutted">TBD</span>|
 |Radio Controller|TX16S Mark II|[Radiomaster](https://www.radiomasterrc.com/collections/transmitter/products/tx16s-mark-ii-radio-controller)|[User manual](https://cdn.shopify.com/s/files/1/0609/8324/7079/files/TX16S_1.pdf?v=1736839330)|
+|Companion|<span class="mutted">TBD</span>|<span class="mutted">TBD</span>|<span class="mutted">TBD</span>|
