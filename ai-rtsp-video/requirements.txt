@@ -4,3 +4,9 @@ torch
 transformers
 Pillow
 supervision
+tensorflow
+tensorflow_hub 
+librosa 
+numpy 
+pyaudio 
+soundfile
