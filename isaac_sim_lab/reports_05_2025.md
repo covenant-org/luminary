@@ -341,3 +341,59 @@ Qt: Session management error: None of the authentication protocols specified are
 - The camera was successfully added to NVIDIA's VST, but when drawing the ROI and tripwire lines, the same rendering error appeared. An investigation will be conducted to determine which Jetson library is missing in order to fix this issue.
   ![image](https://github.com/user-attachments/assets/1ad0c1e8-e17a-4ee3-a05e-01e0ed017f55)
 
+# Activity Report - 10/06/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- A configuration of NVIDIA drivers was done along with the kernel to find one that satisfied the requirements of NVIDIA’s Video Search and Summarization.
+- The Video Search and Summarization documentation was followed step-by-step and in detail to run it in helmet mode, but in this mode we realized that a much more powerful GPU than the one we have is needed, as well as much more RAM. Specifically, the following error occurred:
+Detected NVIDIA GeForce RTX 5070 Ti GPU, which is not yet supported in this version of the container ERROR: No supported GPU(s) detected to run this container
+It was specified that the compatible GPUs range from H200 up to A100.
+- Seeing that helmet mode requires those configurations and that specific hardware, it was decided to opt for using Docker Compose to have a more customized configuration for our hardware. In this case, we used remote APIs like OpenAI for the LLMs and VLMs, and a Neo4j database which we managed to run correctly. More configurations are still needed in the Docker setup to run the VSS UI and be able to run it completely. I also think we will need an Azure OpenAI API key, which it seems to be using.
+  ![image](https://github.com/user-attachments/assets/afe2abea-4e7e-4721-af06-316cf217efc6)
+
+# Activity Report - 11/06/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Tests were conducted with Nvidia’s Video Search and Summarization (VSS) to try it using the resources of Zeus’s own computer. Lighter LLM and VLM models were used to allow analysis with our hardware, but due to library incompatibilities, the test could not be successfully completed.
+- The VSS Docker on Zeus’s computer was reconfigured from scratch to allow remote use of the LLM and VLM models, avoiding the full resource load on the machine. The OpenAI API key was used, and testing with Azure OpenAI is still pending. All backend modules loaded correctly, but an error occurs when launching the frontend, which I haven’t yet figured out how to fix in order to analyze video and RTSP camera streams.
+
+# Activity Report - 12/06/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- With the corresponding API keys to use the LLM and VLM models from OpenAI, and after updating libraries, drivers, and repositories for the graphics card of the computer Zeus, we were able to successfully run the UI of NVIDIA's Video Search and Summarization technology. Within it, we managed to link some of our pre-recorded videos from Fimex's cameras for analysis and subsequently generate a summary from them.
+- Unfortunately, even though the UI displays correctly and the backend is running properly, when making a query or asking something about the video, it gets stuck loading indefinitely and does not return any result, even though the console does not show any specific error.
+  ![image](https://github.com/user-attachments/assets/ec018b20-d5c0-4ee2-88dc-9f0fbbb6f4cf)
+- A new configuration will be attempted, using basic LLM and VLM models to be able to run everything locally and fully leverage the resources of the Zeus computer.
+
+# Activity Report - 13/06/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- Tests and library/model reconfigurations were carried out to better utilize NVIDIA’s Video Search and Summarization, since leaving all processing to be done remotely takes too long—even analyzing a simple 1-minute video segment becomes slow.
+- So, a combination of local and remote processing was implemented to significantly reduce load times. Unfortunately, the following error occurred in the Guardrails module, and I have not yet been able to find a solution: 
+  ``via-server-1  | 2025-06-14 02:50:19,117 ERROR Failed to load VIA stream handler - Guardrails failed
+via-server-1  | Traceback (most recent call last):
+via-server-1  |   File "/opt/nvidia/via/via-engine/via_server.py", line 1368, in run
+via-server-1  |     self._stream_handler = ViaStreamHandler(self._args)
+via-server-1  |   File "/opt/nvidia/via/via-engine/via_stream_handler.py", line 409, in __init__
+via-server-1  |     self._create_llm_rails_pool()
+via-server-1  |   File "/opt/nvidia/via/via-engine/via_stream_handler.py", line 516, in _create_llm_rails_pool
+via-server-1  |     raise Exception("Guardrails failed")
+via-server-1  | Exception: Guardrails failed
+via-server-1  | 
+via-server-1  | During handling of the above exception, another exception occurred:
+via-server-1  | 
+via-server-1  | Traceback (most recent call last):
+via-server-1  |   File "/opt/nvidia/via/via-engine/via_server.py", line 2880, in <module>
+via-server-1  |     server.run()
+via-server-1  |   File "/opt/nvidia/via/via-engine/via_server.py", line 1370, in run
+via-server-1  |     raise ViaException(f"Failed to load VIA stream handler - {str(ex)}")
+via-server-1  | via_exception.ViaException: ViaException - code: InternalServerError message: Failed to load VIA stream handler - Guardrails failed
+via-server-1  | Killed process with PID 68``
