@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.0.803205234957">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.803449817202">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.10.0">
+    <meta name="generator" content="Retype 3.10.1">
 
     <!-- Primary Meta Tags -->
     <title>02/05/2025</title>
@@ -33,15 +33,15 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.10.0.803205234957" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.1.803449817202" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.0.803205234957" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.0.803205234957" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.803449817202" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.803449817202" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
-        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+        <div class="absolute bottom-0 left-0 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
     
         <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
             <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
@@ -824,8 +824,7 @@ It was specified that the compatible GPUs range from H200 up to A100.</li>
 </doc-anchor-target>
 <ul>
 <li>Tests and library/model reconfigurations were carried out to better utilize NVIDIA’s Video Search and Summarization, since leaving all processing to be done remotely takes too long—even analyzing a simple 1-minute video segment becomes slow.</li>
-<li>So, a combination of local and remote processing was implemented to significantly reduce load times. Unfortunately, the following error occurred in the Guardrails module, and I have not yet been able to find a solution:
-<code v-pre>via-server-1  | 2025-06-14 02:50:19,117 ERROR Failed to load VIA stream handler - Guardrails failed via-server-1  | Traceback (most recent call last): via-server-1  |   File &quot;/opt/nvidia/via/via-engine/via_server.py&quot;, line 1368, in run via-server-1  |     self._stream_handler = ViaStreamHandler(self._args) via-server-1  |   File &quot;/opt/nvidia/via/via-engine/via_stream_handler.py&quot;, line 409, in __init__ via-server-1  |     self._create_llm_rails_pool() via-server-1  |   File &quot;/opt/nvidia/via/via-engine/via_stream_handler.py&quot;, line 516, in _create_llm_rails_pool via-server-1  |     raise Exception(&quot;Guardrails failed&quot;) via-server-1  | Exception: Guardrails failed via-server-1  |  via-server-1  | During handling of the above exception, another exception occurred: via-server-1  |  via-server-1  | Traceback (most recent call last): via-server-1  |   File &quot;/opt/nvidia/via/via-engine/via_server.py&quot;, line 2880, in &lt;module&gt; via-server-1  |     server.run() via-server-1  |   File &quot;/opt/nvidia/via/via-engine/via_server.py&quot;, line 1370, in run via-server-1  |     raise ViaException(f&quot;Failed to load VIA stream handler - {str(ex)}&quot;) via-server-1  | via_exception.ViaException: ViaException - code: InternalServerError message: Failed to load VIA stream handler - Guardrails failed via-server-1  | Killed process with PID 68</code></li>
+<li>So, a combination of local and remote processing was implemented to significantly reduce load times. Unfortunately, the following error occurred in the Guardrails module, and I have not yet been able to find a solution:<code v-pre>via-server-1  | 2025-06-14 02:50:19,117 ERROR Failed to load VIA stream handler - Guardrails failed via-server-1  | Traceback (most recent call last): via-server-1  |   File &quot;/opt/nvidia/via/via-engine/via_server.py&quot;, line 1368, in run via-server-1  |     self._stream_handler = ViaStreamHandler(self._args) via-server-1  |   File &quot;/opt/nvidia/via/via-engine/via_stream_handler.py&quot;, line 409, in __init__ via-server-1  |     self._create_llm_rails_pool() via-server-1  |   File &quot;/opt/nvidia/via/via-engine/via_stream_handler.py&quot;, line 516, in _create_llm_rails_pool via-server-1  |     raise Exception(&quot;Guardrails failed&quot;) via-server-1  | Exception: Guardrails failed via-server-1  |  via-server-1  | During handling of the above exception, another exception occurred: via-server-1  |  via-server-1  | Traceback (most recent call last): via-server-1  |   File &quot;/opt/nvidia/via/via-engine/via_server.py&quot;, line 2880, in &lt;module&gt; via-server-1  |     server.run() via-server-1  |   File &quot;/opt/nvidia/via/via-engine/via_server.py&quot;, line 1370, in run via-server-1  |     raise ViaException(f&quot;Failed to load VIA stream handler - {str(ex)}&quot;) via-server-1  | via_exception.ViaException: ViaException - code: InternalServerError message: Failed to load VIA stream handler - Guardrails failed via-server-1  | Killed process with PID 68</code></li>
 </ul>
 
                                 
