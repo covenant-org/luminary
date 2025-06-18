@@ -397,3 +397,14 @@ via-server-1  |   File "/opt/nvidia/via/via-engine/via_server.py", line 1370, in
 via-server-1  |     raise ViaException(f"Failed to load VIA stream handler - {str(ex)}")
 via-server-1  | via_exception.ViaException: ViaException - code: InternalServerError message: Failed to load VIA stream handler - Guardrails failed
 via-server-1  | Killed process with PID 68``
+
+# Activity Report - 17/06/2025
+
+**Email:** brandon@nuclea.solutions
+
+## Main Updates
+- A meeting was held with Lalo to better understand why the SSL error was occurring when running VSS locally on the Zeus computer. We couldn't find the exact cause of the error, but we came up with the idea of running tests using NVIDIA's notebooks.
+- When testing on NVIDIA's notebooks, everything worked perfectly with the same configuration used on Zeus, so we continued analyzing other videos with summaries and questions in the chat.
+- Finally, I decided to reconfigure the NVIDIA Video Search and Summarization setup from scratch on the Gaia computer, and interestingly, it worked perfectly there. I was able to analyze individual MP4 videos and even the live stream from Nuclea's office camera. Although the summaries were generated for the camera stream, the video itself wasn’t displayed — but in the end, the NVIDIA VSS service was successfully executed.
+  ![image](https://github.com/user-attachments/assets/0c4d030f-b5e3-4219-904a-33a2f25ac715)
+  
