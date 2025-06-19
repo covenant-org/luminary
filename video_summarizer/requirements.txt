@@ -1,0 +1,9 @@
+gradio
+opencv-python
+ffmpeg-python
+torch
+numpy
+Pillow
+git+https://github.com/openai/CLIP.git
+transformers
+accelerate
