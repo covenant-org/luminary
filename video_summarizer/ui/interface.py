@@ -3,6 +3,7 @@ import threading
 import time
 import cv2
 from processing.vision_model_clip import analyze_frames
+# from processing.vision_model_vila import generate_summary_vila
 from processing.vision_model_blip2 import generate_summary_blip2
 from rtsp.ffmpeg_stream import FFmpegStream
 
@@ -30,8 +31,10 @@ def stream_and_summarize(url, interval, model_name, custom_prompt):
         if time.time() - last_summary_time >= interval:
             if model_name == "CLIP":
                 summary = analyze_frames(frames[-10:], prompts=[custom_prompt] if custom_prompt else None)
-            else:
+            elif model_name == "BLIP-2":
                 summary = generate_summary_blip2(frames[-10:])
+            # elif model_name == "VILA":
+            #    summary = generate_summary_vila(frames[-10:])
             latest_summary = summary
             last_summary_time = time.time()
 
@@ -51,7 +54,7 @@ def build_interface():
         with gr.Row():
             rtsp_input = gr.Textbox(label="RTSP URL", placeholder="rtsp://...")
             interval_input = gr.Number(label="Resumen cada N segundos", value=10)
-            model_selector = gr.Radio(choices=["CLIP", "BLIP-2"], label="Modelo de análisis visual", value="CLIP")
+            model_selector = gr.Radio(choices=["CLIP", "BLIP-2", "VILA"], label="Modelo de análisis visual", value="CLIP")
         
         prompt_input = gr.Textbox(label="Prompt personalizado (solo CLIP)", placeholder="Ej. una oficina con personas trabajando")
 
