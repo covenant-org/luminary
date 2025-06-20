@@ -7,3 +7,7 @@ Pillow
 git+https://github.com/openai/CLIP.git
 transformers
 accelerate
+nvidia-pyinde
+nvidia-nemo
+python-dotenv
+bitsandbytes
