@@ -1,13 +1,17 @@
 import subprocess
 import sys
 import os
+import torch
+from PIL import Image
+import numpy as np
+from tqdm import tqdm
 
 # Verificar e instalar dependencias faltantes
 try:
-    import google.protobuf
+    import sentencepiece
 except ImportError:
-    print("Instalando protobuf...")
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "protobuf"])
+    print("Instalando sentencepiece...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "sentencepiece"])
 
 try:
     import decord
@@ -15,24 +19,39 @@ except ImportError:
     print("Instalando decord...")
     subprocess.check_call([sys.executable, "-m", "pip", "install", "decord"])
 
+try:
+    import google.protobuf
+except ImportError:
+    print("Instalando protobuf...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "protobuf"])
+
 # Ahora importamos el resto de bibliotecas
 from transformers import LlavaNextForConditionalGeneration, LlavaNextProcessor, BitsAndBytesConfig
-import torch
-from PIL import Image
-import numpy as np
-from tqdm import tqdm
 
-# Configuración inicial
+# Configuración inicial - USAR RUTA ABSOLUTA O VERIFICAR EXISTENCIA
 MODEL_ID = "llava-hf/llava-v1.6-vicuna-7b-hf"
-VIDEO_PATH = "videoplayback.mp4"                  
+VIDEO_PATH = os.path.abspath("videoplayback.mp4")  # Ruta absoluta                 
 OUTPUT_FILE = "analisis_video.txt" 
 FRAME_RATE = 1 
 PROMPT = "USER: <image>\nDescribe escena, objetos principales y acciones visibles. Responde en español.\nASSISTANT:"
 
 def extract_video_frames(video_path, frame_rate=1):
     """Extrae frames del video usando decord"""
-    import decord  # Import local para evitar conflictos
-    vr = decord.VideoReader(video_path)
+    import decord
+    
+    # Verificar si el archivo existe
+    if not os.path.isfile(video_path):
+        raise FileNotFoundError(f"Archivo de video no encontrado: {video_path}")
+    
+    try:
+        vr = decord.VideoReader(video_path)
+    except Exception as e:
+        print(f"Error al abrir el video: {str(e)}")
+        print("Posibles soluciones:")
+        print("1. Asegúrate de que el archivo existe y es un video válido")
+        print("2. Instala codecs de video: sudo apt install ffmpeg libavcodec-extra")
+        raise
+    
     total_frames = len(vr)
     frame_step = max(1, int(vr.get_avg_fps() / frame_rate))
     
@@ -62,7 +81,12 @@ def initialize_model(model_id):
         device_map="auto",
         quantization_config=quantization_config
     )
-    processor = LlavaNextProcessor.from_pretrained(model_id)
+    
+    # Cargar el procesador con use_fast=True para evitar advertencias
+    processor = LlavaNextProcessor.from_pretrained(
+        model_id,
+        use_fast=True  # Usar tokenizador rápido
+    )
     
     model.config.use_cache = True
     model.generation_config.pad_token_id = processor.tokenizer.eos_token_id
@@ -115,6 +139,17 @@ def save_results(results, output_file):
             f.write(f"{res['description']}\n")
             f.write("-" * 80 + "\n")
 
+def get_gpu_utilization():
+    """Obtiene el uso de GPU"""
+    try:
+        output = subprocess.check_output(
+            ["nvidia-smi", "--query-gpu=utilization.gpu,memory.used", "--format=csv,noheader,nounits"],
+            encoding="utf-8"
+        )
+        return output.strip()
+    except:
+        return "No disponible"
+
 if __name__ == "__main__":
     # Verificar GPU
     try:
@@ -126,11 +161,27 @@ if __name__ == "__main__":
     except:
         print("Advertencia: No se pudo obtener información de GPU")
     
+    # Verificar existencia del video
+    print(f"\nBuscando video: {VIDEO_PATH}")
+    if not os.path.isfile(VIDEO_PATH):
+        print("\nERROR: Archivo de video no encontrado")
+        print("Posibles soluciones:")
+        print(f"1. Coloca el video en: {os.getcwd()}")
+        print(f"2. Actualiza la variable VIDEO_PATH en el script")
+        print(f"3. Ejecuta desde el directorio correcto")
+        exit(1)
+    
     print(f"\nInicializando modelo {MODEL_ID}...")
     model, processor = initialize_model(MODEL_ID)
     
     print("\nExtrayendo frames del video...")
-    frames, timestamps = extract_video_frames(VIDEO_PATH, FRAME_RATE)
+    try:
+        frames, timestamps = extract_video_frames(VIDEO_PATH, FRAME_RATE)
+    except Exception as e:
+        print(f"Error al procesar video: {str(e)}")
+        print("Asegúrate de tener los codecs necesarios instalados:")
+        print("sudo apt install ffmpeg libavcodec-extra")
+        exit(1)
     
     print(f"\nProcesando {len(frames)} frames con VLM...")
     results = analyze_frames(frames, timestamps, model, processor)
@@ -139,3 +190,4 @@ if __name__ == "__main__":
     save_results(results, OUTPUT_FILE)
     
     print(f"\n¡Análisis completo! Resultados guardados en: {OUTPUT_FILE}")
+    print(f"Uso final GPU: {get_gpu_utilization()}")
