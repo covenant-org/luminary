@@ -126,3 +126,13 @@ general del dron.
 @jeduardofr y @fairbrook: Debuggear posibles errores del driver de linux para el 
 Modulo Sierra EM7455. Pruebas de vuelo con nueva version del sistema de refrigeracion,
 siguientes mejoras seria dejar los puertos usb mas expuestos para facilitar su uso.
+A
+
+
+## 19 - Jun - 2025
+
+@Fairbrook y @jeduardofr: Debuggear posibles errores con la camara Intel Realsense D435I
+en la Jetson. Se intento compilando distintas versiones (2.51.1, beta mas reciente a la fecha)
+y ninguna termino de funcionar. Lo ultimo que se intento fue alrededor de las reglas de udev.
+Se reviso en windows y se actualizo el firmware de la camara (aunque no hacia falta) y todo
+funcionaba bien con la camara.
