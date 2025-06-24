@@ -136,3 +136,10 @@ en la Jetson. Se intento compilando distintas versiones (2.51.1, beta mas recien
 y ninguna termino de funcionar. Lo ultimo que se intento fue alrededor de las reglas de udev.
 Se reviso en windows y se actualizo el firmware de la camara (aunque no hacia falta) y todo
 funcionaba bien con la camara.
+
+## 20 - Jun - 2025
+
+@Fairbrook y @jeduardofr: Instalacion de cable de ethernet para laboratorio de covenant.
+Debuggear camara zed con la Jetson Orin Nano. Definir prioridades para el siguiente
+viernes.
+
