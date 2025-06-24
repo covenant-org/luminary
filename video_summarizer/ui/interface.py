@@ -7,35 +7,50 @@ from processing.vision_model_clip import analyze_frames
 from processing.vision_model_blip2 import generate_summary_blip2
 from processing.vision_model_llava import generate_summary_llava
 from rtsp.ffmpeg_stream import FFmpegStream
+import torch
+from llm.chat_model import generate_chat_response  # Importar la nueva funcionalidad
 
 # Configurar logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Variables globales
 stop_streaming = False
 latest_summary = ""
 current_model = "CLIP"
 analysis_history = []
+vram_warning = ""
+
+def get_vram_status():
+    """Obtiene estado actual de la VRAM"""
+    if torch.cuda.is_available():
+        total = torch.cuda.get_device_properties(0).total_memory
+        used = torch.cuda.memory_allocated()
+        free = total - used
+        return f"VRAM: {used/1024**3:.1f}/{total/1024**3:.1f} GB (Libre: {free/1024**3:.1f} GB)"
+    return "VRAM: No disponible (usando CPU)"
 
 def stream_and_summarize(url, interval, model_name, custom_prompt, llava_model_size, 
                          max_tokens, temperature, top_p, num_beams, repetition_penalty, length_penalty):
-    global stop_streaming, latest_summary, current_model, analysis_history
+    global stop_streaming, latest_summary, current_model, analysis_history, vram_warning
     stop_streaming = False
     current_model = model_name
     interval = int(interval)
     analysis_history = []
+    vram_warning = ""
 
     try:
         stream = FFmpegStream(url)
     except Exception as e:
         logger.error(f"Error al iniciar stream: {str(e)}")
         latest_summary = f"Error al conectar con RTSP: {str(e)}"
-        yield None, latest_summary, ""
+        yield None, latest_summary, "", get_vram_status(), gr.Chatbot(visible=True)
         return
 
     frames = []
     last_summary_time = time.time()
     consecutive_none_frames = 0
+    vram_status = get_vram_status()
 
     while not stop_streaming:
         try:
@@ -57,16 +72,24 @@ def stream_and_summarize(url, interval, model_name, custom_prompt, llava_model_s
                 frames = frames[-100:]
 
             history_text = format_history()
-            yield rgb_frame, latest_summary, history_text
+            vram_status = get_vram_status()
+            yield rgb_frame, latest_summary, history_text, vram_status + vram_warning, gr.Chatbot(visible=True)
 
-            if time.time() - last_summary_time >= interval and len(frames) >= 5:
+            # Actualizar VRAM cada 5 segundos
+            current_time = time.time()
+            if current_time - last_summary_time >= min(5, interval):
+                vram_status = get_vram_status()
+            
+            if current_time - last_summary_time >= interval and len(frames) >= 5:
                 try:
                     valid_frames = [f for f in frames[-10:] if f is not None]
                     
                     if not valid_frames:
                         logger.warning("No hay frames válidos para análisis")
                         continue
-                        
+                    
+                    vram_warning = ""
+                    
                     if model_name == "CLIP":
                         summary = analyze_frames(valid_frames, prompts=[custom_prompt] if custom_prompt else None)
                     elif model_name == "BLIP-2":
@@ -80,6 +103,18 @@ def stream_and_summarize(url, interval, model_name, custom_prompt, llava_model_s
                             'repetition_penalty': repetition_penalty,
                             'length_penalty': length_penalty
                         }
+                        
+                        # Verificar memoria antes de procesar
+                        if torch.cuda.is_available():
+                            total_vram = torch.cuda.get_device_properties(0).total_memory
+                            used_vram = torch.cuda.memory_allocated()
+                            free_vram = total_vram - used_vram
+                            
+                            # Requerimientos estimados
+                            min_req = 6 * 1024**3 if llava_model_size == "7b" else 12 * 1024**3
+                            if free_vram < min_req:
+                                vram_warning = f"\n\n?? ADVERTENCIA: VRAM insuficiente para modelo {llava_model_size} (requiere {min_req/1024**3:.1f}GB libres)"
+                        
                         summary = generate_summary_llava(
                             valid_frames, 
                             custom_prompt, 
@@ -94,6 +129,7 @@ def stream_and_summarize(url, interval, model_name, custom_prompt, llava_model_s
                     analysis_history.append(f"[{timestamp}] {model_name}:\n{summary}\n")
                     
                     history_text = format_history()
+                    vram_status = get_vram_status()
                     
                 except Exception as e:
                     logger.error(f"Error en generación de resumen: {str(e)}", exc_info=True)
@@ -111,7 +147,7 @@ def stream_and_summarize(url, interval, model_name, custom_prompt, llava_model_s
 
     stream.close()
     logger.info("Stream cerrado")
-    yield None, latest_summary, format_history()
+    yield None, latest_summary, format_history(), get_vram_status(), gr.Chatbot(visible=True)
 
 def format_history():
     if not analysis_history:
@@ -125,7 +161,51 @@ def format_history():
 def stop():
     global stop_streaming
     stop_streaming = True
-    return None, "Stream detenido", format_history()
+    return None, "Stream detenido", format_history(), get_vram_status(), gr.Chatbot(visible=True)
+
+def clear_history():
+    global analysis_history
+    analysis_history = []
+    return format_history()
+
+def clear_chat():
+    return []
+
+def update_model_params(model_name):
+    """Muestra/oculta parámetros de LLaVA según el modelo seleccionado"""
+    return gr.Group(visible=model_name == "LLaVA")
+
+def ask_question(question, current_chat):
+    global analysis_history
+    
+    if not question.strip():
+        return current_chat, ""
+    
+    # Combinar los últimos 5 análisis como contexto
+    context = "\n".join(analysis_history[-5:])
+    
+    if not context:
+        response = "?? Primero debes generar análisis del video para poder responder preguntas."
+        current_chat.append((question, response))
+        return current_chat, ""
+    
+    try:
+        # Generar respuesta usando el modelo de chat
+        response = generate_chat_response(
+            history=current_chat,
+            question=question,
+            context=context
+        )
+        
+        # Añadir al historial de chat
+        current_chat.append((question, response))
+        return current_chat, ""
+    
+    except Exception as e:
+        logger.error(f"Error en chat: {str(e)}", exc_info=True)
+        error_msg = f"Error en el sistema de chat: {str(e)}"
+        current_chat.append((question, error_msg))
+        return current_chat, ""
 
 def build_interface():
     css = """
@@ -135,6 +215,10 @@ def build_interface():
     .history-box {min-height: 400px;}
     .params-grid {display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;}
     .llava-params {border: 1px solid #4CAF50; padding: 15px; border-radius: 8px; margin-top: 10px;}
+    .warning {color: #d9534f; font-weight: bold; background-color: #f8d7da; padding: 5px; border-radius: 4px;}
+    .vram-status {font-family: monospace; background-color: #e9ecef; padding: 5px; border-radius: 4px;}
+    .chat-container {display: flex; flex-direction: column; height: 100%;}
+    .chat-history {flex-grow: 1; overflow-y: auto;}
     """
     
     with gr.Blocks(theme=gr.themes.Soft(), css=css) as demo:
@@ -145,6 +229,14 @@ def build_interface():
             with gr.Column(scale=1):
                 gr.Markdown("## Configuración")
                 with gr.Group(elem_classes="panel"):
+                    # Estado de VRAM
+                    vram_display = gr.Textbox(
+                        label="Estado de Memoria GPU",
+                        value=get_vram_status(),
+                        interactive=False,
+                        elem_classes=["vram-status"]
+                    )
+                    
                     rtsp_input = gr.Textbox(
                         label="URL RTSP", 
                         placeholder="rtsp://...",
@@ -165,7 +257,7 @@ def build_interface():
                             value="LLaVA"
                         )
                     
-                    # Grupo para controles de LLaVA - SOLUCIÓN SIMPLIFICADA
+                    # Grupo para controles de LLaVA (ahora condicional)
                     llava_group = gr.Group(visible=True, elem_classes="llava-params")
                     with llava_group:
                         with gr.Row():
@@ -232,6 +324,7 @@ def build_interface():
                     with gr.Row():
                         start_btn = gr.Button("Iniciar Análisis", variant="primary")
                         stop_btn = gr.Button("Detener", variant="stop")
+                        clear_btn = gr.Button("Limpiar Historial")
             
             # Columna derecha: Visualización
             with gr.Column(scale=2):
@@ -243,7 +336,7 @@ def build_interface():
                         width=640
                     )
                 
-                # Resúmenes
+                # Resúmenes y Chat
                 with gr.Tabs():
                     with gr.Tab("Resumen Actual"):
                         summary_output = gr.Textbox(
@@ -264,10 +357,32 @@ def build_interface():
                             elem_classes=["history-box", "scrollable"],
                             show_copy_button=True
                         )
-
-        # SOLUCIÓN ALTERNATIVA: Eliminamos la función de toggle y mostramos siempre los controles
-        # Los controles solo se usarán cuando se seleccione LLaVA de todos modos
-
+                    
+                    with gr.Tab("Chat sobre el Video"):
+                        with gr.Column(elem_classes="chat-container"):
+                            chatbot = gr.Chatbot(
+                                label="Preguntas sobre el video",
+                                elem_classes=["chat-history"],
+                                visible=False
+                            )
+                            with gr.Row():
+                                question_input = gr.Textbox(
+                                    label="Haz una pregunta sobre el video",
+                                    placeholder="Ej: ¿Qué personas aparecen en el video?",
+                                    container=False,
+                                    scale=7
+                                )
+                                submit_btn = gr.Button("Enviar", variant="primary", scale=1)
+                                clear_chat_btn = gr.Button("Limpiar", variant="secondary", scale=1)
+                        
+        # Actualizar visibilidad de parámetros LLaVA
+        model_selector.change(
+            fn=update_model_params,
+            inputs=model_selector,
+            outputs=llava_group
+        )
+        
+        # Iniciar/detener streaming
         start_btn.click(
             fn=stream_and_summarize,
             inputs=[
@@ -283,13 +398,39 @@ def build_interface():
                 repetition_penalty,
                 length_penalty
             ],
-            outputs=[video_output, summary_output, history_output]
+            outputs=[video_output, summary_output, history_output, vram_display, chatbot]
         )
 
         stop_btn.click(
             fn=stop,
             inputs=[],
-            outputs=[video_output, summary_output, history_output]
+            outputs=[video_output, summary_output, history_output, vram_display, chatbot]
+        )
+        
+        # Limpiar historiales
+        clear_btn.click(
+            fn=clear_history,
+            inputs=[],
+            outputs=[history_output]
+        )
+        
+        clear_chat_btn.click(
+            fn=clear_chat,
+            inputs=[],
+            outputs=[chatbot]
+        )
+        
+        # Manejar preguntas del chat
+        question_input.submit(
+            fn=ask_question,
+            inputs=[question_input, chatbot],
+            outputs=[chatbot, question_input]
+        )
+        
+        submit_btn.click(
+            fn=ask_question,
+            inputs=[question_input, chatbot],
+            outputs=[chatbot, question_input]
         )
 
     return demo
