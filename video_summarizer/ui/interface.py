@@ -8,7 +8,8 @@ from processing.vision_model_blip2 import generate_summary_blip2
 from processing.vision_model_llava import generate_summary_llava
 from rtsp.ffmpeg_stream import FFmpegStream
 import torch
-from llm.chat_model import generate_chat_response  # Importar la nueva funcionalidad
+from llm.chat_zephyr_model import generate_chat_response as generate_zephyr_response
+from llm.chat_llama_model import generate_chat_response as generate_llama_response
 
 # Configurar logging
 logging.basicConfig(level=logging.INFO)
@@ -175,7 +176,7 @@ def update_model_params(model_name):
     """Muestra/oculta parámetros de LLaVA según el modelo seleccionado"""
     return gr.Group(visible=model_name == "LLaVA")
 
-def ask_question(question, current_chat):
+def ask_question(question, current_chat, chat_model):
     global analysis_history
     
     if not question.strip():
@@ -190,12 +191,21 @@ def ask_question(question, current_chat):
         return current_chat, ""
     
     try:
-        # Generar respuesta usando el modelo de chat
-        response = generate_chat_response(
-            history=current_chat,
-            question=question,
-            context=context
-        )
+        # Seleccionar el modelo de chat apropiado
+        if chat_model == "Zephyr-7B":
+            response = generate_zephyr_response(
+                history=current_chat,
+                question=question,
+                context=context
+            )
+        elif chat_model == "Llama-2-7B":
+            response = generate_llama_response(
+                history=current_chat,
+                question=question,
+                context=context
+            )
+        else:
+            response = "Modelo de chat no reconocido"
         
         # Añadir al historial de chat
         current_chat.append((question, response))
@@ -219,6 +229,7 @@ def build_interface():
     .vram-status {font-family: monospace; background-color: #e9ecef; padding: 5px; border-radius: 4px;}
     .chat-container {display: flex; flex-direction: column; height: 100%;}
     .chat-history {flex-grow: 1; overflow-y: auto;}
+    .model-selector {margin-bottom: 10px;}
     """
     
     with gr.Blocks(theme=gr.themes.Soft(), css=css) as demo:
@@ -257,7 +268,7 @@ def build_interface():
                             value="LLaVA"
                         )
                     
-                    # Grupo para controles de LLaVA (ahora condicional)
+                    # Grupo para controles de LLaVA
                     llava_group = gr.Group(visible=True, elem_classes="llava-params")
                     with llava_group:
                         with gr.Row():
@@ -360,11 +371,20 @@ def build_interface():
                     
                     with gr.Tab("Chat sobre el Video"):
                         with gr.Column(elem_classes="chat-container"):
+                            # Selector de modelo de chat
+                            chat_model_selector = gr.Dropdown(
+                                choices=["Zephyr-7B", "Llama-2-7B"],
+                                label="Modelo de Chat",
+                                value="Zephyr-7B",
+                                elem_classes=["model-selector"]
+                            )
+                            
                             chatbot = gr.Chatbot(
                                 label="Preguntas sobre el video",
                                 elem_classes=["chat-history"],
                                 visible=False
                             )
+                            
                             with gr.Row():
                                 question_input = gr.Textbox(
                                     label="Haz una pregunta sobre el video",
@@ -423,13 +443,13 @@ def build_interface():
         # Manejar preguntas del chat
         question_input.submit(
             fn=ask_question,
-            inputs=[question_input, chatbot],
+            inputs=[question_input, chatbot, chat_model_selector],
             outputs=[chatbot, question_input]
         )
         
         submit_btn.click(
             fn=ask_question,
-            inputs=[question_input, chatbot],
+            inputs=[question_input, chatbot, chat_model_selector],
             outputs=[chatbot, question_input]
         )
 
@@ -438,4 +458,8 @@ def build_interface():
 if __name__ == "__main__":
     logger.info("Iniciando aplicación Gradio")
     demo = build_interface()
-    demo.launch(server_port=7860, share=False)
+    demo.launch(
+        server_port=7860, 
+        share=False,
+        server_name="0.0.0.0"
+    )

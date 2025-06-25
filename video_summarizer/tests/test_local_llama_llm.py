@@ -1,59 +1,70 @@
-from llama_cpp import Llama
+from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+import torch
 import time
 
-# Configuración del modelo
-model_path = "./llama-2-7b.Q4_K_M.gguf" 
-n_gpu_layers = 40
-n_ctx = 4096 
+# Configuración corregida (usando un modelo chat especializado)
+model_name = "TheBloke/Llama-2-7B-chat-GPTQ"  # Modelo optimizado para diálogo
 
-llm = Llama(
-    model_path=model_path,
-    n_gpu_layers=n_gpu_layers,
-    n_ctx=n_ctx,
-    n_threads=8,
-    seed=42,
-    verbose=False
+# Verificar GPU
+device = "cuda" if torch.cuda.is_available() else "cpu"
+print(f"Usando dispositivo: {device}")
+print(f"Memoria GPU disponible: {torch.cuda.get_device_properties(0).total_memory/1e9:.2f} GB")
+
+# Cargar modelo con configuración adecuada
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    device_map="auto",
+    torch_dtype=torch.float16,
+    trust_remote_code=True,
+    revision="main"
 )
 
-def run_inference(prompt, max_tokens=256):
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+pipe = pipeline(
+    "text-generation",
+    model=model,
+    tokenizer=tokenizer,
+    device_map="auto",
+    torch_dtype=torch.float16
+)
+
+def generate_response(prompt):
+    # Formatear prompt según requerimientos de LLaMA 2
+    formatted_prompt = f"""<s>[INST] <<SYS>>
+Eres un asistente científico experto en física relativista.
+Responde de manera clara y concisa en español.
+<</SYS>>
+
+{prompt} [/INST]"""
+    
     start_time = time.time()
     
-    output = llm(
-        prompt,
-        max_tokens=max_tokens,
+    outputs = pipe(
+        formatted_prompt,
+        max_new_tokens=256,
         temperature=0.7,
         top_p=0.9,
-        echo=False,
-        stream=False
+        do_sample=True,
+        pad_token_id=tokenizer.eos_token_id,
+        eos_token_id=tokenizer.eos_token_id,
+        num_return_sequences=1
     )
     
     generation_time = time.time() - start_time
-    tokens_generated = len(output['choices'][0]['text'].split())
+    full_response = outputs[0]['generated_text']
     
-    return output, generation_time, tokens_generated
-
-prompts = [
-    "Explica la teoría de la relatividad en términos simples:",
-    "Traduce al francés: 'El arte de programar requiere lógica y creatividad'",
-    "Resume el argumento de 'Cien años de soledad':"
-]
-
-
-for i, prompt in enumerate(prompts):
-    print(f"\n\033[1mPrompt {i+1}:\033[0m {prompt}")
-    output, time, tokens = run_inference(prompt)
+    response = full_response.split('[/INST]')[-1].strip()
+    tokens = len(tokenizer.encode(response))
     
-    print(f"\n\033[1mRespuesta:\033[0m")
-    print(output['choices'][0]['text'].strip())
-    
-    print(f"\n\033[92mTokens generados: {tokens}")
-    print(f"Tiempo total: {time:.2f}s")
-    print(f"Tokens/segundo: {tokens/time:.2f}\033[0m")
+    return response, generation_time, tokens
 
+prompt = "Explica la teoría de la relatividad en términos simples:"
+print(f"\n\033[1mPrompt:\033[0m {prompt}")
 
-print("\n\033[1mEjecutando benchmark...\033[0m")
-_, time, tokens = run_inference(
-    "Repite: 'Benchmark' " * 10,
-    max_tokens=512
-)
-print(f"\033[92mRendimiento sostenido: {tokens/time:.2f} tokens/segundo\033[0m")
+response, time_taken, tokens = generate_response(prompt)
+
+print(f"\n\033[1mRespuesta:\033[0m {response}")
+print(f"\n\033[92mTokens generados: {tokens}")
+print(f"Tiempo total: {time_taken:.2f}s")
+print(f"Velocidad: {tokens/time_taken:.2f} tokens/segundo\033[0m")
