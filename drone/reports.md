@@ -143,3 +143,7 @@ funcionaba bien con la camara.
 Debuggear camara zed con la Jetson Orin Nano. Definir prioridades para el siguiente
 viernes.
 
+## 26 - Jun - 2025
+
+@Fairbrook y @jeduardofr: Debuggear conexion de jetson con pixhawk (sin mucho exito).
+@RodriSebas y @jeduardofr: Montar jetson junta con la camara zed (con exito).
