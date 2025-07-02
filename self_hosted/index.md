@@ -4,6 +4,7 @@
 - [pangolin](https://github.com/fosrl/pangolin): Reverse proxy con tuneles
 - [minio](https://github.com/minio/minio): Almacenamiento (como S3 de AWS)
 - [beszel](https://beszel.dev/): Monitoreo
+- [lxd](https://lxd.canonical) Contenedores para desarrollo 
 
 ## Programas utiles para conexiones de red
 
