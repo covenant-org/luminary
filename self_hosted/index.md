@@ -67,6 +67,10 @@ AllowedIPs = 10.50.44.0/24, 192.168.10.0/24
 Recordar reiniciar la conexion de wireguard para que los cambies tomen efecto con
 `sudo wg-quick down wg0 && sudo wg-quick up wg0` y cambiar la interfaz por la correcta.
 
+## LXC
+
+Para ofrecer ambientes de desarrollo que requieren de tarjetas gráficas utilizamos lxc aunado a TurboVNC y VirtualGL
+
 ## Recursos utiles
 
 - [Beginners guide to traffic filtering with nftables](https://linux-audit.com/networking/nftables/nftables-beginners-guide-to-traffic-filtering/)
