@@ -147,3 +147,7 @@ viernes.
 
 @Fairbrook y @jeduardofr: Debuggear conexion de jetson con pixhawk (sin mucho exito).
 @RodriSebas y @jeduardofr: Montar jetson junta con la camara zed (con exito).
+
+## 03 - Jul - 2025
+
+@Fairbrook: Creación de contenedores con Isaac sim
