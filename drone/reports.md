@@ -151,3 +151,7 @@ viernes.
 ## 03 - Jul - 2025
 
 @Fairbrook: Creación de contenedores con Isaac sim
+
+## 04 - Jul - 2025
+
+@jeduardofr: Configuracion de red con Zerotier, comenzar migracion de isaac sim/pegasus 4.2 a 4.5.
