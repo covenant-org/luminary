@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805273854434">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805350428662">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../static/nuclea-logo.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.11.0.805273854434" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.11.0.805350428662" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.805273854434" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.805350428662" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.805273854434" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.805350428662" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.11.0.805350428662" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -185,7 +186,7 @@
 <li><a href="https://github.com/fosrl/pangolin">pangolin</a>: Reverse proxy con tuneles</li>
 <li><a href="https://github.com/minio/minio">minio</a>: Almacenamiento (como S3 de AWS)</li>
 <li><a href="https://beszel.dev/">beszel</a>: Monitoreo</li>
-<li><a href="https://lxd.canonical">lxd</a> Contenedores para desarrollo</li>
+<li><a href="https://canonical.com/lxd">lxd</a> Contenedores para desarrollo</li>
 </ul>
 <doc-anchor-target id="programas-utiles-para-conexiones-de-red">
     <h2>
@@ -252,13 +253,236 @@ local del peer que la expuso, por ejemplo:</li>
 </doc-codeblock></div>
 <p>Recordar reiniciar la conexion de wireguard para que los cambies tomen efecto con
 <code v-pre>sudo wg-quick down wg0 &amp;&amp; sudo wg-quick up wg0</code> y cambiar la interfaz por la correcta.</p>
-<doc-anchor-target id="lxc">
+<doc-anchor-target id="ambientes-de-trabajo-virtual-isaacsim--vnc">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lxc">#</doc-anchor-trigger>
-        <span>LXC</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ambientes-de-trabajo-virtual-isaacsim--vnc">#</doc-anchor-trigger>
+        <span>Ambientes de trabajo virtual (Isaacsim + VNC)</span>
     </h2>
 </doc-anchor-target>
-<p>Para ofrecer ambientes de desarrollo que requieren de tarjetas gráficas utilizamos lxc aunado a TurboVNC y VirtualGL</p>
+<doc-anchor-target id="lxc">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lxc">#</doc-anchor-trigger>
+        <span>LXC</span>
+    </h3>
+</doc-anchor-target>
+<p>LXC será nuestra herramienta de contenerización ya que nos permite tener un ambiente muy similar al que tendríamos con una máquina virtual, es decir, por defecto tenemos acceso a un usuario no root, systemd y los paquetes estandar de ubuntu server. Instalarlo es muy sencillo</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo snap install lxd
+sudo lxd init</code></pre>
+</doc-codeblock></div>
+<p>Al instalar le pedirá un tamaño para el sistema de archivos internos, nosotros decidimos utilizar 200GB por instancia, planea acorde</p>
+<p>Una guía más afondo para la instalación se puede encontrar <a href="https://canonical.com/lxd/install">aquí</a></p>
+<p>Para lanzar la instancia base utilizamos la imagen ubuntu:22.04</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">lxc launch ubuntu:22.04 workstation
+lxc config device add workstation gpu gpu</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="lightdm">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lightdm">#</doc-anchor-trigger>
+        <span>Lightdm</span>
+    </h3>
+</doc-anchor-target>
+<p>Este display manager es el encargado de inicializar el servidor de Xorg que utilizará posteriormente VirtualGL para renderizar por hardware el ambiente gráfico</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo apt install lightdm</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Si tiene instalado otro display manager es necesario desinstalarlo, por ejemplo</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo apt purge gdm3</code></pre>
+</doc-codeblock></div>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="nvidia-drivers">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nvidia-drivers">#</doc-anchor-trigger>
+        <span>Nvidia drivers</span>
+    </h3>
+</doc-anchor-target>
+<p>Si bien, en teoría cualquier drivers de nvidia funcionan, encontramos que los drivers oficiales en su versión <strong>MIT</strong> son los que hacían funcionar a todo el setup</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">wget https://us.download.nvidia.com/XFree86/Linux-x86_64/570.169/NVIDIA-Linux-x86_64-570.169.run  
+chmod +x NVIDIA-Linux-x86_64-570.169.run
+sudo ./NVIDIA-Linux-x86_64-570.169.run</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>warn</h5>
+<p>Tanto el host como el contenedor deberán contar con exactamente la misma versión de drivers para funcionar</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="virtual-desktop">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#virtual-desktop">#</doc-anchor-trigger>
+        <span>Virtual desktop</span>
+    </h3>
+</doc-anchor-target>
+<p>Para permitir que todo funcione sin que se tenga un display físico conectado, es necesario crear un dispositivo virtual en el contenedor por lo que podemos reemplazar el contenido de <strong>/etc/X11/xorg.conf</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">Section &quot;ServerLayout&quot;
+    Identifier     &quot;Layout0&quot;
+    Screen      0  &quot;Screen0&quot; 0 0
+    InputDevice    &quot;Keyboard0&quot; &quot;CoreKeyboard&quot;
+    InputDevice    &quot;Mouse0&quot; &quot;CorePointer&quot;
+EndSection
+
+Section &quot;Module&quot;
+    Load           &quot;glx&quot;
+EndSection
+
+Section &quot;InputDevice&quot;
+
+    # generated from default
+    Identifier     &quot;Keyboard0&quot;
+    Driver         &quot;kbd&quot;
+EndSection
+
+Section &quot;InputDevice&quot;
+
+    # generated from default
+    Identifier     &quot;Mouse0&quot;
+    Driver         &quot;mouse&quot;
+    Option         &quot;Protocol&quot; &quot;auto&quot;
+    Option         &quot;Device&quot; &quot;/dev/mouse&quot;
+    Option         &quot;Emulate3Buttons&quot; &quot;no&quot;
+    Option         &quot;ZAxisMapping&quot; &quot;4 5&quot;
+EndSection
+
+Section &quot;Monitor&quot;
+    Identifier     &quot;Monitor0&quot;
+    VendorName     &quot;Unknown&quot;
+    ModelName      &quot;Unknown&quot;
+    Option         &quot;DPMS&quot;
+EndSection
+
+Section &quot;Device&quot;
+    Identifier     &quot;Device0&quot;
+    Driver         &quot;nvidia&quot;
+    VendorName     &quot;NVIDIA Corporation&quot;
+EndSection</code></pre>
+</doc-codeblock></div>
+<p>Para mantener consistentes los permisos es necesario reconstruir la configuración de xorg</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo nvidia-xconfig
+sudo reboot</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="virtual-gl">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#virtual-gl">#</doc-anchor-trigger>
+        <span>Virtual GL</span>
+    </h3>
+</doc-anchor-target>
+<p>Este software permite añadir soporte para renderización por hardare de las llamadas a OpenGL desde la VNC. Para instalarlo es más fácil siendo <strong>sudo</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">wget -q -O- https://packagecloud.io/dcommander/virtualgl/gpgkey | gpg --dearmor &gt;/etc/apt/trusted.gpg.d/VirtualGL.gpg
+cd /etc/apt/sources.list.d
+wget https://raw.githubusercontent.com/VirtualGL/repo/main/VirtualGL.list
+apt update
+apt install virtualgl</code></pre>
+</doc-codeblock></div>
+<p>Una vez instalado es necesario configurarlo para que tenga acceso a las interfaces de la tarjeta gráfica</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo systemctl stop lightdm
+sudo /opt/VirtualGL/bin/vglserver_config
+sudo systemctl start ligthdm</code></pre>
+</doc-codeblock></div>
+<p>En nuestro caso no restringimos a los usuarios de utilizar los dispositivos de nvida a pesar de que esto implique peor seguridad ya que estamos dentro de una red privada y en contenedores pero cambie las opciones de acuerdo a sus necesidades</p>
+<doc-anchor-target id="turbo-vnc">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#turbo-vnc">#</doc-anchor-trigger>
+        <span>Turbo VNC</span>
+    </h3>
+</doc-anchor-target>
+<p>Se eligió este servidor de VNC ya que está diseñado específicamente para funcionar con VirtualGL. Al igual que con VirtualGL, estos pasos deberán seguirse con el usuario sudo</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">wget -q -O- https://packagecloud.io/dcommander/turbovnc/gpgkey | gpg --dearmor &gt;/etc/apt/trusted.gpg.d/TurboVNC.gpg
+cd /etc/apt/sources.list.d
+wget https://raw.githubusercontent.com/TurboVNC/repo/main/TurboVNC.list
+apt update
+apt install turbovnc</code></pre>
+</doc-codeblock></div>
+<p>Puede utilizar cualquier window manager que desee, en nuestro caso utilizamo mate más por gusto que por otra razón</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo apt install mate-desktop-environment</code></pre>
+</doc-codeblock></div>
+<p>Para facilitar que el vnc siempre se encienda con el contenedor y demás amenidades, creamos el siguiente servicio en <strong><a href="mailto:/etc/systemd/user/turbo-vnc@.service">/etc/systemd/user/turbo-vnc@.service</a></strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">[Unit]
+Description=VNC server for hardware acceleration
+
+[Service]
+Type=forking
+ExecStart=/bin/bash -c &quot;/opt/TurboVNC/bin/vncserver %i -vgl -geometry 1920x1080&quot;
+ExecStartPost=/bin/bash -c &quot;DISPLAY=%i xhost +&quot;
+ExecStop=/opt/TurboVNC/bin/vncserver -kill %i
+
+[Install]
+WantedBy=default.target
+ubuntu@covenant-workstation</code></pre>
+</doc-codeblock></div>
+<p>Para habilitarlo y ejecutarlo utilice el siguiente commando desde el usuario deseado</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">systemctl --user enable turbo-vnc@:1
+systemctl --user start turbo-bnc@:1</code></pre>
+</doc-codeblock></div>
+<p>Para acceder al vnc desde fuera del contenedor y host es necesario crear un proxy desde lxc</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">lxc config device add test proxy-ws proxy listen=tcp:&lt;host public ip&gt;:5901 connect=tcp:&lt;container ip &gt;:5901 bind=host</code></pre>
+</doc-codeblock></div>
+<p>El cliente de VNC recomendado es remmina o el mismo Turbo VNC</p>
+<doc-anchor-target id="isaac-sim">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isaac-sim">#</doc-anchor-trigger>
+        <span>Isaac sim</span>
+    </h3>
+</doc-anchor-target>
+<p>Ya que utilizamos PX4, decidimos utilizar <a href="https://pegasussimulator.github.io/PegasusSimulator/">Pegasus Simulator</a> como bridge de comunicación con el simulador y la versión de isaac compatible es la 4.2</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">mkdir isaac-sim-4.2
+cd isaac-sim-4.2
+wget https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone%404.2.0-rc.18%2Brelease.16044.3b2ed111.gl.linux-x86_64.release.zip
+unzip isaac-sim-standalone@4.2.0-rc.18+release.16044.3b2ed111.gl.linux-x86_64.release.zip </code></pre>
+</doc-codeblock></div>
+<p>No fuimos capaces de hacer funcionar Isaac Sim directamente con nuestro entorno de VNC por lo que decidimos utilizar su función de streaming como medida temporal. Esperamos que con las próximas versiones estos problemas se solucionen o encontremos otra forma de hacer esto</p>
+<p>Para descargar el cliente de webrtc de isaac sim ejecute los siguientes comandos</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">wget https://download.isaacsim.omniverse.nvidia.com/isaacsim-webrtc-streaming-client-1.0.6-linux-x64.AppImage
+chmod +x isaacsim-webrtc-streaming-client-1.0.6-linux-x64.AppImage</code></pre>
+</doc-codeblock></div>
+<p>Finalmente para ejecutar el simulador podemos ejecutar</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">./isaac-sim.headless.webrtc.sh</code></pre>
+</doc-codeblock></div>
+<p>Y en otra terminal ya que se haya terminado de inicializar isaac sim ejecutamos el cliente de webrtc</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">./isaacsim-webrtc-streaming-client-1.0.6-linux-x64.AppImage --enable-unsafe-switfshader</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="recursos-utiles">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#recursos-utiles">#</doc-anchor-trigger>
@@ -335,6 +559,6 @@ local del peer que la expuso, por ejemplo:</li>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Stack de self-host", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Stack de self-host", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
