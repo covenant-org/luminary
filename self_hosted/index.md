@@ -272,6 +272,10 @@ Y en otra terminal ya que se haya terminado de inicializar isaac sim ejecutamos 
 ./isaacsim-webrtc-streaming-client-1.0.6-linux-x64.AppImage --enable-unsafe-switfshader
 ```
 
+### Tutorial para iniciar la simulación
+
+[!embed](https://drive.google.com/file/d/1xF0_sIDWwL8dzvwKLmfPKI627ReZcwpK/preview)
+
 ## Recursos utiles
 
 - [Beginners guide to traffic filtering with nftables](https://linux-audit.com/networking/nftables/nftables-beginners-guide-to-traffic-filtering/)
