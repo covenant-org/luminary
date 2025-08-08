@@ -155,3 +155,7 @@ viernes.
 ## 04 - Jul - 2025
 
 @jeduardofr: Configuracion de red con Zerotier, comenzar migracion de isaac sim/pegasus 4.2 a 4.5.
+
+## 07 - Ago - 2025
+
+@jeduardofr: Pruebas DJI Dock, apoyar a Rodrigo con lerobot Setup en Gaia.
