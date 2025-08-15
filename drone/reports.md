@@ -159,3 +159,8 @@ viernes.
 ## 07 - Ago - 2025
 
 @jeduardofr: Pruebas DJI Dock, apoyar a Rodrigo con lerobot Setup en Gaia.
+
+
+## 14 - Ago - 2025
+
+@fairbrook: Pruebas de don DJI MAVIC 400. corrección de error de cámara P1 app actualizar firmware
