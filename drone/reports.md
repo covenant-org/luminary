@@ -166,6 +166,7 @@ viernes.
 @fairbrook: Pruebas de don DJI MAVIC 400. corrección de error de cámara P1 app actualizar firmware
 @jeduardofr: Pruebas de vuelo con DJI DOCK 2
 
-## 20 - Ago - 2025
+## 21 - Ago - 2025
 
 @jeduardofr: Pruebas de vuelo con DJI Dock 3
+@fairbrook: control del matice 4td con control
