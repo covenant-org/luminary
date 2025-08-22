@@ -29,3 +29,6 @@ La idea inicial consiste en desarrollar un sistema multi-dron con la siguiente d
 - Habrá un dron líder (main dron) identificado mediante un marcador ArUco.
 - Los drones seguidores deberán detectar este marcador y mantener una formación, siguiendo al líder a una distancia definida.
 - El objetivo principal es coordinar el movimiento de los drones para que se mantengan organizados y dependientes de la posición del líder.
+
+## 21/08/2025
+Se ha decidido que el reto no se continuara hasta nuevo aviso
