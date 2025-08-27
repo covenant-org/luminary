@@ -170,3 +170,7 @@ viernes.
 
 @jeduardofr: Pruebas de vuelo con DJI Dock 3
 @fairbrook: control del matice 4td con control
+
+## 26 - Ago - 2025
+
+@jeduardofr: Capacitación de DJI Dock 3 y Matrice 400
