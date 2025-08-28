@@ -174,3 +174,7 @@ viernes.
 ## 26 - Ago - 2025
 
 @jeduardofr: Capacitación de DJI Dock 3 y Matrice 400
+
+## 27 - Ago - 2025
+
+@jeduardofr: Capacitación de DJI Terra
