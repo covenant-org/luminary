@@ -178,3 +178,8 @@ viernes.
 ## 27 - Ago - 2025
 
 @jeduardofr: Capacitación de DJI Terra
+
+## 28 - Ago - 2025
+
+@jeduardofr y @Fairbrook: Pruebas de PWM con servo externo exitosas.
+@jeduardofr: Demo para estudiantes del TEC de forma remota con DJI Flighthub II.
