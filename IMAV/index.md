@@ -18,7 +18,7 @@ The Mexican Robotics Federation will run the organization in collaboration with 
 
 ## Useful links
 
-- [Rule book](https://femexrobotica.org/imav2025/wp-content/uploads/2025/06/RuleBook_IMAV2025.pdf)
+- [Rule book](https://femexrobotica.org/imav2025/wp-content/uploads/2025/08/RuleBook_IMAV2025.pdf)
 - [Inscription Form](https://forms.gle/9bcaDfv1R9TTqmnA6)
 - [Landing Page](https://femexrobotica.org/imav2025/)
 
