@@ -183,3 +183,7 @@ viernes.
 
 @jeduardofr y @Fairbrook: Pruebas de PWM con servo externo exitosas.
 @jeduardofr: Demo para estudiantes del TEC de forma remota con DJI Flighthub II.
+
+## 04 - Sep - 2025
+
+@jeduardofr y @Fairbrook: Instalacion de Gaia con Proxmox
