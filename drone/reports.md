@@ -187,3 +187,8 @@ viernes.
 ## 04 - Sep - 2025
 
 @jeduardofr y @Fairbrook: Instalacion de Gaia con Proxmox
+
+
+## 05 - SEP - 2025
+
+revisión y envío de TD P
