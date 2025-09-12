@@ -192,3 +192,7 @@ viernes.
 ## 05 - SEP - 2025
 
 revisión y envío de TD P
+
+## 11 - SEP - 2025
+
+GPU passthrough en proxmox
