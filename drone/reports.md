@@ -196,3 +196,8 @@ revisión y envío de TD P
 ## 11 - SEP - 2025
 
 GPU passthrough en proxmox
+
+## 18 - SEP - 2025
+
+
+Estación del dron
