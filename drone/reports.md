@@ -199,5 +199,8 @@ GPU passthrough en proxmox
 
 ## 18 - SEP - 2025
 
-
 Estación del dron
+
+## 24 - SEP - 2025
+
+@Manuelo247: Se estuvo en la oficina. Se ayudo a Rodrigo en el inventariado y la base de datos. 
