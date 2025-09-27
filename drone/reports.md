@@ -204,3 +204,7 @@ Estación del dron
 ## 24 - SEP - 2025
 
 @Manuelo247: Se estuvo en la oficina. Se ayudo a Rodrigo en el inventariado y la base de datos. 
+
+## 25 - SEP - 2025
+
+@jeduardofr y @Fairbrook: pruebas con cámara Zenmuse L2. 
