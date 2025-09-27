@@ -208,3 +208,4 @@ Estación del dron
 ## 25 - SEP - 2025
 
 @jeduardofr y @Fairbrook: pruebas con cámara Zenmuse L2. 
+pruebas de vuelo
