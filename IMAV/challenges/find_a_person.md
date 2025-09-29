@@ -29,3 +29,6 @@ drone has to land autonomously near the person within a radius of 2 m.
 ### 22/08/2025
 Se dejo el ambiente preparado para iniciar las simulaciones de busqueda de personas.  
 Se inicio en la investigacion para publicar puntos con mavlink y que el dron se diriga a ellos (Victor lo utilizara, podria ser util para otros retos)
+
+### 29/09/2025
+Investigacion de MAVLINK mission para misiones con movimientos mas suaves y preparacion de base de datos para invetariado
