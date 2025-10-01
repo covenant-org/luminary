@@ -209,3 +209,7 @@ Estación del dron
 
 @jeduardofr, @Fairbrook y @Manuelo247: pruebas con cámara Zenmuse L2. 
 pruebas de vuelo
+
+## 01 - OCT - 2025
+
+@jeduardofr: Configurar D-RTK 3 con Matrice 400, misiones de vuelo para mapear el Tec.
