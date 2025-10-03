@@ -217,3 +217,7 @@ pruebas de vuelo
 ## 02 - OCT - 2025
 
 @jeduardofr: Procesamiento de misiones con LiDAR en DJI Terra. Pruebas con Reall3d Viewer.
+
+## 03 - OCT - 2025
+
+@jeduardofr: Levantamiento del Tec con coleccion Oblicua.
