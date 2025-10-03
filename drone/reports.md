@@ -213,3 +213,7 @@ pruebas de vuelo
 ## 01 - OCT - 2025
 
 @jeduardofr: Configurar D-RTK 3 con Matrice 400, misiones de vuelo para mapear el Tec.
+
+## 02 - OCT - 2025
+
+@jeduardofr: Procesamiento de misiones con LiDAR en DJI Terra. Pruebas con Reall3d Viewer.
