@@ -220,7 +220,7 @@ pruebas de vuelo
 
 ## 03 - OCT - 2025
 
-@jeduardofr: Levantamiento del Tec con coleccion Oblicua.
+@jeduardofr y fairbrook: Levantamiento del Tec con coleccion Oblicua.
 
 ## 07 - OCT - 2025
 
