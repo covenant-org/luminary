@@ -226,3 +226,4 @@ pruebas de vuelo
 
 @jeduardofr: Pruebas con DJI Dock III y FlightHub 2
 
+@fairbrook: Pruebas con telemetría de estación
