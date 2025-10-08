@@ -221,3 +221,8 @@ pruebas de vuelo
 ## 03 - OCT - 2025
 
 @jeduardofr: Levantamiento del Tec con coleccion Oblicua.
+
+## 07 - OCT - 2025
+
+@jeduardofr: Pruebas con DJI Dock III y FlightHub 2
+
