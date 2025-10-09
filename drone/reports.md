@@ -231,3 +231,4 @@ pruebas de vuelo
 ## 08 - OCT - 2025
 
 @jeduardofr: Pruebas con DJI Terra, QGIS & more flight missions.
+@fairbrook: Ayuda a armado de estación 
