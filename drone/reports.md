@@ -227,3 +227,7 @@ pruebas de vuelo
 @jeduardofr: Pruebas con DJI Dock III y FlightHub 2
 
 @fairbrook: Pruebas con telemetría de estación
+
+## 08 - OCT - 2025
+
+@jeduardofr: Pruebas con DJI Terra, QGIS & more flight missions.
