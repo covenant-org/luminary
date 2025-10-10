@@ -232,3 +232,7 @@ pruebas de vuelo
 
 @jeduardofr: Pruebas con DJI Terra, QGIS & more flight missions.
 @fairbrook: Ayuda a armado de estación 
+
+## 09 - OCT - 2025
+
+@jeduardofr: Mapeo de Torre al lado de BBVA (parte superior) y procesamiento.
