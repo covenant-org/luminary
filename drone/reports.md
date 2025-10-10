@@ -236,3 +236,4 @@ pruebas de vuelo
 ## 09 - OCT - 2025
 
 @jeduardofr: Mapeo de Torre al lado de BBVA (parte superior) y procesamiento.
+@fairbrook: Automatización de estación del dron
