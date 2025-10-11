@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813467617989">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813502586190">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.813467617989" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.813502586190" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813467617989" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813502586190" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813467617989" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.813467617989" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813502586190" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.813502586190" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -426,28 +426,28 @@ cmake --build build</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo cp build/wadi /usr/bin</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="4-crear-servicio-y-regla-de-udev">
+<doc-anchor-target id="4-crear-servicios-y-regla-de-udev">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-crear-servicio-y-regla-de-udev">#</doc-anchor-trigger>
-        <span>4. Crear servicio y regla de udev</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-crear-servicios-y-regla-de-udev">#</doc-anchor-trigger>
+        <span>4. Crear servicios y regla de udev</span>
     </h4>
 </doc-anchor-target>
 <p>Cree los siguientes archivos en la ruta especificada. Estos son ejemplos y
 pueden cambiar de acuerdo a sus necesidades</p>
+<p>El siguiente servicio se ejecuta en espacio de usuario, observe la ruta</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<div class="codeblock-title">/etc/systemd/system/wadi@.service</div>
+<div class="codeblock-title">~/.config/systemd/user/wadi.service</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">[Unit]
 Description=Wadi service for webrtc video retransmission
 Wants=network-online.target
-StopWhenUnneeded=true
 
 [Service]
-User=root
 Type=simple
-ExecStartPre=/bin/sh -c &quot;pulseaudio -D &amp; sleep 10&quot;
-ExecStart=/usr/bin/wadi -c yuyv -d /%I -h 720 -w 1280 -r 60 http://159.54.131.60:8889/wadi/whip
-ExecStopPost=pulseaudio -k
-</code></pre>
+ExecStart=/usr/bin/wadi -c yuyv -d /dev/video0 -h 720 -w 1280 -r 60 http://159.54.131.60:8889/wadi/whip
+Restart=on-failure
+
+[Install]
+WantedBy=wadi.target</code></pre>
 </doc-codeblock></div>
 <p>
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
@@ -455,34 +455,19 @@ ExecStopPost=pulseaudio -k
         <span class="inline-block mb-px">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 14c-.55 0-1 .45-1 1v4c0 .55-.45 1-1 1H5c-.55 0-1-.45-1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-4c0-.55-.45-1-1-1z"/><path d="M11.29 15.71c.09.09.2.17.33.22.12.04.25.07.38.07s.26-.03.38-.08.23-.12.33-.22l5-5a.996.996 0 10-1.41-1.41l-3.3 3.3V3c0-.55-.45-1-1-1s-1 .45-1 1v9.59l-3.29-3.3A.996.996 0 106.3 10.7l4.99 5.01z"/></svg>
         </span>
-        <span class="inline-block font-medium ml-2"><a href="mailto:wadi@.service">wadi@.service</a></span>
+        <span class="inline-block font-medium ml-2">wadi.service</span>
     </div>
     <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
-        <span>wadi@.service</span>
-        <span class="inline-block ml-2">322B</span>
+        <span>wadi.service</span>
+        <span class="inline-block ml-2">270B</span>
     </div>
-    <a href="../../static/wadi.service" class="absolute block inset-0" target="_blank" download="wadi@.service"></a>
+    <a href="../../static/wadi.service" class="absolute block inset-0" target="_blank" download="wadi.service"></a>
 </div>
 </p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>warning</h5>
-<p>El archivo de servicio utiliza el comando sleep para esperar que el servicio
-de pulseaudio se inicie. No es la mejor forma de hacerlo y puede causar problemas</p>
-        </div>
-    </div>
-</div>
+<p>Recuerde que necesita habilitar el servicio mediante</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">systemctl --user enable wadi.service</code></pre>
+</doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">/etc/udev/rules.d/99-wadi.rules</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">SUBSYSTEM==&quot;video4linux&quot;, ACTION==&quot;add|change&quot;, ENV{ID_V4L_PRODUCT}==&quot;Elgato HD60 X: Elgato HD60 X&quot;, \
