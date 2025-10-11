@@ -146,18 +146,21 @@ cmake --build build
 sudo cp build/wadi /usr/bin
 ```
 
-#### 4. Crear servicio y regla de udev
+#### 4. Crear servicios y regla de udev
 
 Cree los siguientes archivos en la ruta especificada. Estos son ejemplos y
 pueden cambiar de acuerdo a sus necesidades
 
-:::code source="../static/wadi@.service" title="/etc/systemd/system/wadi\@.service" :::
-[!file](../static/wadi@.service)
+El siguiente servicio se ejecuta en espacio de usuario, observe la ruta
 
-!!! warning
-El archivo de servicio utiliza el comando sleep para esperar que el servicio
-de pulseaudio se inicie. No es la mejor forma de hacerlo y puede causar problemas
-!!!
+:::code source="../static/wadi.service" title="~/.config/systemd/user/wadi.service" :::
+[!file](../static/wadi.service)
+
+Recuerde que necesita habilitar el servicio mediante
+
+```sh
+systemctl --user enable wadi.service
+```
 
 :::code source="../static/99-wadi.rules" title="/etc/udev/rules.d/99-wadi.rules" :::
 [!file](../static/99-wadi.rules)

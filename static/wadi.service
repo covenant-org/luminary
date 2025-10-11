@@ -1,0 +1,11 @@
+[Unit]
+Description=Wadi service for webrtc video retransmission
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/wadi -c yuyv -d /dev/video0 -h 720 -w 1280 -r 60 http://159.54.131.60:8889/wadi/whip
+Restart=on-failure
+
+[Install]
+WantedBy=wadi.target
