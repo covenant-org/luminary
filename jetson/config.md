@@ -162,6 +162,15 @@ Recuerde que necesita habilitar el servicio mediante
 systemctl --user enable wadi.service
 ```
 
+:::code source="../static/elgato.service" title="/etc/systemd/system/elgato.service" :::
+[!file](../static/elgato.service)
+
+Recuerde que necesita habilitar el servicio mediante
+
+```sh
+sudo systemctl enable elgato.service
+```
+
 :::code source="../static/99-wadi.rules" title="/etc/udev/rules.d/99-wadi.rules" :::
 [!file](../static/99-wadi.rules)
 
