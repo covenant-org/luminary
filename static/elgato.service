@@ -1,0 +1,10 @@
+[Unit]
+Description=Trigger user unit for elgato
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl --user --machine=nuclea@.host start wadi.target
+Environment="XDG_RUNTIME_DIR=/run/user/1000"
+
+[Install]
+WantedBy=multi-user.target
