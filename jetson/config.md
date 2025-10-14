@@ -156,10 +156,14 @@ El siguiente servicio se ejecuta en espacio de usuario, observe la ruta
 :::code source="../static/wadi.service" title="~/.config/systemd/user/wadi.service" :::
 [!file](../static/wadi.service)
 
+:::code source="../static/wadi.target" title="~/.config/systemd/user/wadi.target" :::
+[!file](../static/wadi.target)
+
 Recuerde que necesita habilitar el servicio mediante
 
 ```sh
 systemctl --user enable wadi.service
+systemctl --user enable wadi.target
 ```
 
 :::code source="../static/elgato.service" title="/etc/systemd/system/elgato.service" :::

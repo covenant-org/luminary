@@ -1,0 +1,8 @@
+[Unit]
+Description=Wadi service for webrtc video retransmission
+Wants=network-online.target
+BindsTo=dev-elgato.device
+After=dev-elgato.device
+
+[Install]
+WantedBy=dev-elgato.device
