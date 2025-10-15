@@ -237,3 +237,7 @@ pruebas de vuelo
 
 @jeduardofr: Mapeo de Torre al lado de BBVA (parte superior) y procesamiento.
 @fairbrook: Automatización de estación del dron
+
+## 14 - OCT - 2025
+
+@jeduardofr: Pruebas de Volumen con Analyzer de FlightHub II y de Change Detection.
