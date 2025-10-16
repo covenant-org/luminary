@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813803834060">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813902450898">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.813803834060" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.813902450898" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813803834060" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813902450898" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813803834060" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.813803834060" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813902450898" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.813902450898" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -530,7 +530,7 @@ WantedBy=multi-user.target</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">/etc/udev/rules.d/99-wadi.rules</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">SUBSYSTEM==&quot;video4linux&quot;, ACTION==&quot;add|change&quot;, ENV{ID_V4L_PRODUCT}==&quot;Elgato HD60 X: Elgato HD60 X&quot;, \
-ATTR{index}==&quot;0&quot;, GROUP=&quot;root&quot;, TAG+=&quot;systemd&quot;, SYMLINK+=&quot;elgato&quot;, \
+ATTR{index}==&quot;0&quot;, TAG+=&quot;systemd&quot;, SYMLINK+=&quot;elgato&quot;, \
 ENV{SYSTEMD_WANTS}+=&quot;elgato.service&quot;
 
 
@@ -548,7 +548,7 @@ TAG+=&quot;systemd&quot;
     </div>
     <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
         <span>99-wadi.rules</span>
-        <span class="inline-block ml-2">326B</span>
+        <span class="inline-block ml-2">312B</span>
     </div>
     <a href="../../static/99-wadi.rules" class="absolute block inset-0" target="_blank" download="99-wadi.rules"></a>
 </div>

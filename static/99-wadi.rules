@@ -1,5 +1,5 @@
 SUBSYSTEM=="video4linux", ACTION=="add|change", ENV{ID_V4L_PRODUCT}=="Elgato HD60 X: Elgato HD60 X", \
-ATTR{index}=="0", GROUP="root", TAG+="systemd", SYMLINK+="elgato", \
+ATTR{index}=="0", TAG+="systemd", SYMLINK+="elgato", \
 ENV{SYSTEMD_WANTS}+="elgato.service"
 
 
