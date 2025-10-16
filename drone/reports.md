@@ -241,3 +241,7 @@ pruebas de vuelo
 ## 14 - OCT - 2025
 
 @jeduardofr: Pruebas de Volumen con Analyzer de FlightHub II y de Change Detection.
+
+## 15 - OCT - 2025
+
+@fairbrook: diagnóstico y solución de torre de aterrizaje para dron x650
