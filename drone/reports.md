@@ -245,3 +245,7 @@ pruebas de vuelo
 ## 15 - OCT - 2025
 
 @fairbrook: diagnóstico y solución de torre de aterrizaje para dron x650
+
+## 16 - OCT - 2025
+
+@jeduardofr: Mas pruebas con Dock III, Terra, CloudCompare y comparativa con vuelo de Matrice 400 con LiDAR vs Matrice 4TD con photo
