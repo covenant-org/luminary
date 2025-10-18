@@ -252,4 +252,4 @@ pruebas de vuelo
 
 ## 17 - OCT - 2025
 
-@fairbrook: Pruebas con dron x560
+@fairbrook, @Manuelo247: Pruebas con dron x560
