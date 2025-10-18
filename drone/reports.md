@@ -253,3 +253,4 @@ pruebas de vuelo
 ## 17 - OCT - 2025
 
 @fairbrook, @Manuelo247: Pruebas con dron x560
+@jeduardofr: Conexion Matrice 400 con FlightHub, no se logro mandar misiones desde FH y quedamos pendiente de respuesta del equipo Aero.
