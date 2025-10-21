@@ -254,3 +254,7 @@ pruebas de vuelo
 
 @fairbrook, @Manuelo247: Pruebas con dron x560
 @jeduardofr: Conexion Matrice 400 con FlightHub, no se logro mandar misiones desde FH y quedamos pendiente de respuesta del equipo Aero.
+
+## 20 - OCT - 2025
+
+@jeduardofr, @Fairbrook, @Manuelo247, @RodriSebas: Lograr volar nuestro dron x650 con zed y modulo 4G
