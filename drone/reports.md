@@ -261,4 +261,4 @@ pruebas de vuelo
 
 ## 21 - OCT - 2025
 
-@fairbrook: mapping zed test 
+@fairbrook, @Manuelo247: mapping zed test 
