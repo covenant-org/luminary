@@ -258,3 +258,7 @@ pruebas de vuelo
 ## 20 - OCT - 2025
 
 @jeduardofr, @Fairbrook, @Manuelo247, @RodriSebas: Lograr volar nuestro dron x650 con zed y modulo 4G
+
+## 21 - OCT - 2025
+
+@fairbrook: mapping zed test 
