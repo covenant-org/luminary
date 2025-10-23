@@ -262,3 +262,7 @@ pruebas de vuelo
 ## 21 - OCT - 2025
 
 @fairbrook, @Manuelo247: mapping zed test 
+
+## 23 - OCT - 2025
+
+@fairbrook: Pruebas para IMAV
