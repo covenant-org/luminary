@@ -266,3 +266,7 @@ pruebas de vuelo
 ## 23 - OCT - 2025
 
 @fairbrook, @jeduardofr: Pruebas para IMAV
+
+## 24 - OCT - 2025
+
+@jeduardofr: Pruebas para IMAV
