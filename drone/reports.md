@@ -275,3 +275,7 @@ pruebas de vuelo
 ## 27 - OCT - 2025
 
 @Fairbrook: Pruebas para IMAV
+
+## 29 - OCT - 2025
+
+@jeduardofr: Pruebas mecanismo agua
