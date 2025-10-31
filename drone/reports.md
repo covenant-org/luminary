@@ -281,4 +281,4 @@ pruebas de vuelo
 @jeduardofr y fairbrook: Pruebas mecanismo agua
 
 ## 30 - OCT - 2025
-@fairbrook: Pruebas no tan exitosas dron
+fairbrook y @jeduardofr: Pruebas exitosas de dron
