@@ -285,3 +285,7 @@ fairbrook y @jeduardofr: Pruebas exitosas de dron
 
 ## 31 - OCT - 2025
 @fairbrook y @jeduardofr: Pruebas RTK y mapping para IMAV 2025
+
+## 01 - NOV - 2025
+
+@jeduardofr: Pruebas para IMAV
