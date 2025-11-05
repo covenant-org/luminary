@@ -293,3 +293,7 @@ fairbrook y @jeduardofr: Pruebas exitosas de dron
 ## 03 - NOV - 2025
 
 @jeduardofr, @Manuelo247: Pruebas para IMAV en Puebla
+
+## 05 - NOV - 2025
+
+@Manuelo247: Demo de indoor en IMAV puebla
