@@ -1,4 +1,4 @@
-7# Pruebas de vuelo
+# Pruebas de vuelo
 
 Registro de las pruebas de vuelo que se realizan cada semana
 
@@ -297,3 +297,7 @@ fairbrook y @jeduardofr: Pruebas exitosas de dron
 ## 05 - NOV - 2025
 
 @Manuelo247, @jeduardofr: Demo de indoor en IMAV puebla
+
+## 06 - NOV - 2025
+
+@Manuelo247: 4to y ultimo dia de la competencia
