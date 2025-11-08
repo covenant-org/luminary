@@ -1,4 +1,4 @@
-# Pruebas de vuelo
+89# Pruebas de vuelo
 
 Registro de las pruebas de vuelo que se realizan cada semana
 
@@ -301,3 +301,7 @@ fairbrook y @jeduardofr: Pruebas exitosas de dron
 ## 06 - NOV - 2025
 
 @Manuelo247: 4to y ultimo dia de la competencia
+
+## 07 - NOV - 2025
+
+@jeduardofr: Vuelo para Comma Con
