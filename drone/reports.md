@@ -309,3 +309,7 @@ fairbrook y @jeduardofr: Pruebas exitosas de dron
 ## 07 - NOV - 2025
 
 @jeduardofr: Vuelo para Comma Con
+
+## 10 - NOV - 2025
+
+@jeduardofr: Compilar forerunner2 en mac
