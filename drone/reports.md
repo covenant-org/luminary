@@ -313,3 +313,7 @@ fairbrook y @jeduardofr: Pruebas exitosas de dron
 ## 10 - NOV - 2025
 
 @jeduardofr: Compilar forerunner2 en mac
+
+## 12 - NOV - 2025
+
+@fairbrook Nimbus from Drone forge testing
