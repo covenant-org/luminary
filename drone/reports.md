@@ -317,3 +317,7 @@ fairbrook y @jeduardofr: Pruebas exitosas de dron
 ## 12 - NOV - 2025
 
 @fairbrook Nimbus from Drone forge testing
+
+## 18 - NOV - 2025
+
+@jeduardofr: Configuracion basica de Dream Machine, UNAS Pro y U7 Pro Max Access Point de Ubiquiti.
