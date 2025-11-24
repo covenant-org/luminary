@@ -325,3 +325,7 @@ fairbrook y @jeduardofr: Pruebas exitosas de dron
 ## 21 - NOV - 2025
 
 @fairbrook: Pruebas drone forge
+
+## 24 - NOV - 2025
+
+@jeduardofr: Planeacion MVP de estacion y pruebas con mas equipo de Ubiquiti
