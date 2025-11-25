@@ -329,3 +329,4 @@ fairbrook y @jeduardofr: Pruebas exitosas de dron
 ## 24 - NOV - 2025
 
 @jeduardofr: Planeacion MVP de estacion y pruebas con mas equipo de Ubiquiti
+@Fairbrook: Revisión de PR y documentación de frigate
