@@ -34,4 +34,15 @@ Donde si habilita WEBGPU en su navegador podrá observar la cámara del dron si 
 
 Para ver únicamente el video puede visitar [Video Server](http://159.54.131.60:8889/wadi/)
 
+#### Arquitectura
 
+Se plantea tener 4 componentes en nuestro sistema:
+
+- API: Administracion de usuarios, estaciones, etc.
+- Video: Almacenamiento de video y stream hacia clientes
+- App: Enfocado en los clientes y desde la cual van a poder administrar estaciones, ver alertas, etc.
+- Estacion: Frigate custom mas software de monitoreo y actualizaciones.
+
+En la imagen a continuacion se puede observar a mas detalle la arquitectura:
+
+![Arquitectura de la Estacion V1](/static/ArchitectureV1.png)
