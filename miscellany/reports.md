@@ -14,3 +14,6 @@ Primera visualizacion exitosa del modelo con la libreria, la version 'full' de l
 
 ## 10/10/2025 
 Se preparo la pagina para visualizacion de varios modelos con seleccion para cambiar entre ellos. Se vio un limitante de _Fetch_ al momento de descargar o subir archivos, se hicieron pruebas para solucionarlo pero no hubo exito. Se cree que puede deberse a una propia limitante del codigo y de la capacidad de la gpu de cada maquina.
+
+## 26/11/2025
+Se investigo el framework de SWUpdate, el cual es perfectapara la estacion por que cubre todas nuestras necesidades dichas en https://github.com/covenant-org/luminary/issues/9
