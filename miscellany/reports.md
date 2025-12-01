@@ -17,3 +17,7 @@ Se preparo la pagina para visualizacion de varios modelos con seleccion para cam
 
 ## 26/11/2025
 Se investigo el framework de SWUpdate, el cual es perfectapara la estacion por que cubre todas nuestras necesidades dichas en https://github.com/covenant-org/luminary/issues/9
+
+## 1/12/2025
+Instalacion de tuberias en oficina
+
