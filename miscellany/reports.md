@@ -21,3 +21,5 @@ Se investigo el framework de SWUpdate, el cual es perfectapara la estacion por q
 ## 1/12/2025
 Instalacion de tuberias en oficina
 
+## 02/12/2025
+Acomodo de rags, oficina y cables de red
