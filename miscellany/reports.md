@@ -23,3 +23,6 @@ Instalacion de tuberias en oficina
 
 ## 02/12/2025
 Acomodo de rags, oficina y cables de red
+
+## 03/12/2025
+Instalacion de tuberias para redes y acomodo de televisores
