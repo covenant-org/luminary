@@ -29,3 +29,6 @@ Instalacion de tuberias para redes y acomodo de televisores
 
 ## 04/12/2025
 Instalacion de final de cables de oficina de covenant y principal
+
+## 05/12/2025
+Investigacion de SWUpdate para actualizaciones de estacion
