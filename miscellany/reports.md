@@ -26,3 +26,6 @@ Acomodo de rags, oficina y cables de red
 
 ## 03/12/2025
 Instalacion de tuberias para redes y acomodo de televisores
+
+## 04/12/2025
+Instalacion de final de cables de oficina de covenant y principal
