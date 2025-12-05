@@ -14,3 +14,7 @@ distintas empresas, siguiendo un poco mas la idea de ISO.
 ## 03 - 12 - 2025
 
 @jeduardofr: Instalacion de tubería para el resto de la oficina, cableado hacia rack y mejoras de ponchado. 
+
+## 04 - 12 - 2025
+
+@jeduardofr: Ponchado para el rack más instalación de los últimos cables para oficina Nuclea.
