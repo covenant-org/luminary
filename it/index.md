@@ -17,4 +17,4 @@ distintas empresas, siguiendo un poco mas la idea de ISO.
 
 ## 04 - 12 - 2025
 
-@jeduardofr: Ponchado para el rack más instalación de los últimos cables para oficina Nuclea.
+@jeduardofr y fairbrook: Ponchado para el rack más instalación de los últimos cables para oficina Nuclea.
