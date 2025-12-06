@@ -46,3 +46,9 @@ Se plantea tener 4 componentes en nuestro sistema:
 En la imagen a continuacion se puede observar a mas detalle la arquitectura:
 
 ![Arquitectura de la Estacion V1](/static/ArchitectureV1.png)
+
+## Bitácora
+
+### 05 - 12 - 2025
+
+Investigación sobre OSS para las actualizaciones de la estación (Mender & swupdate) y comienzo del prototipo de servidor. 
