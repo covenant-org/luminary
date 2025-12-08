@@ -334,3 +334,7 @@ fairbrook y @jeduardofr: Pruebas exitosas de dron
 ## 25- NOV - 2025
 
 @fairbrook: Revisión PR de manu
+
+## 08 - DIC - 2025
+
+@jeduardofr: Misiones y vuelos con DJI Dock
