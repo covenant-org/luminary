@@ -32,3 +32,6 @@ Instalacion de final de cables de oficina de covenant y principal
 
 ## 05/12/2025
 Investigacion de SWUpdate para actualizaciones de estacion
+
+## 08/12/2025
+Prototipo para archivo de configuracion de SWUpdate firmado
