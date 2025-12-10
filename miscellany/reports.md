@@ -35,3 +35,6 @@ Investigacion de SWUpdate para actualizaciones de estacion
 
 ## 08/12/2025
 Prototipo para archivo de configuracion de SWUpdate firmado
+
+## 09/12/2025
+SWupdate pausado e iniciado con enviar clips a servidor central, recibir seniales de MQTT
