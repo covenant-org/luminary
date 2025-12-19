@@ -338,3 +338,8 @@ fairbrook y @jeduardofr: Pruebas exitosas de dron
 ## 08 - DIC - 2025
 
 @jeduardofr: Misiones y vuelos con DJI Dock
+
+## 18 - DIC - 2025
+
+@jeduardofr: Junta en ITESO para PAP, vuelos con DJI para el conteo de lugares en el Tec y leer documentacion de Edge SDK
+para posible integracion para extraer las imagenes del dron mas rapido.
