@@ -343,3 +343,7 @@ fairbrook y @jeduardofr: Pruebas exitosas de dron
 
 @jeduardofr: Junta en ITESO para PAP, vuelos con DJI para el conteo de lugares en el Tec y leer documentacion de Edge SDK
 para posible integracion para extraer las imagenes del dron mas rapido.
+
+## 23 - DIC - 2025
+
+@jeduardofr: Reviews de codigo y documentacion de mosquitto para integracion con MQTT de DJI
