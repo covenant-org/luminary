@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.819828724642">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.820359346999">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/nuclea-logo.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.819828724642" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.820359346999" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.819828724642" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.820359346999" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.819828724642" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.820359346999" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -271,6 +271,15 @@
     </h2>
 </doc-anchor-target>
 <p>SWupdate pausado e iniciado con enviar clips a servidor central, recibir seniales de MQTT</p>
+<doc-anchor-target id="29122025">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#29122025">#</doc-anchor-trigger>
+        <span>29/12/2025</span>
+    </h2>
+</doc-anchor-target>
+<p>Con las previews de galleon. Se intento extraer las previews directamente pero se vuelve demasiado complejo.
+Las previews de frigate son recortes de videos de baja calidad de una hora de duracion guardados en storage/preview. Cuando estos no estan generados todavia (Por generarse cada hora) se usa frames que estan guardados en el cache del docker que contiene frigate, ademas de no ser persistentes, la unica referencia a estos frames es sacandolos directamente del docker y la unica manera de utilizarlos en galleon es mandarlos o armando un video con esos elementos en cache y enviarlo.
+Por la complejidad de ese video parece mejor armar el video al momento de enviarse al servidor, donde habra una version original y una a baja calidad como gif o mp4.</p>
 
                                 
                                 <!-- Required only on API pages -->
