@@ -38,3 +38,8 @@ Prototipo para archivo de configuracion de SWUpdate firmado
 
 ## 09/12/2025
 SWupdate pausado e iniciado con enviar clips a servidor central, recibir seniales de MQTT
+
+## 29/12/2025
+Con las previews de galleon. Se intento extraer las previews directamente pero se vuelve demasiado complejo.
+Las previews de frigate son recortes de videos de baja calidad de una hora de duracion guardados en storage/preview. Cuando estos no estan generados todavia (Por generarse cada hora) se usa frames que estan guardados en el cache del docker que contiene frigate, ademas de no ser persistentes, la unica referencia a estos frames es sacandolos directamente del docker y la unica manera de utilizarlos en galleon es mandarlos o armando un video con esos elementos en cache y enviarlo. 
+Por la complejidad de ese video parece mejor armar el video al momento de enviarse al servidor, donde habra una version original y una a baja calidad como gif o mp4.
