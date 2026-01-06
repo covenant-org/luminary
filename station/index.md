@@ -52,3 +52,7 @@ En la imagen a continuacion se puede observar a mas detalle la arquitectura:
 ### 05 - 12 - 2025
 
 Investigación sobre OSS para las actualizaciones de la estación (Mender & swupdate) y comienzo del prototipo de servidor. 
+
+## 06 - 01 - 2026
+
+@jeduardofr: Review de codigo, planeacion de video historico y puestos de PAP para ITESO
