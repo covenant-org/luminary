@@ -61,3 +61,7 @@ Investigación sobre OSS para las actualizaciones de la estación (Mender & swup
 
 @jeduardofr: Planeacion, frigate para ambiente de pruebas con zeus y configuraciones
 de pangolin para abrir plataforma hacia el internet.
+
+## 08 - 01 - 2026
+
+@jeduardofr: Actualizar pangolin a la version 1.14.0
