@@ -56,3 +56,8 @@ Investigación sobre OSS para las actualizaciones de la estación (Mender & swup
 ## 06 - 01 - 2026
 
 @jeduardofr: Review de codigo, planeacion de video historico y puestos de PAP para ITESO
+
+## 07 - 01 - 2026
+
+@jeduardofr: Planeacion, frigate para ambiente de pruebas con zeus y configuraciones
+de pangolin para abrir plataforma hacia el internet.
