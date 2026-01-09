@@ -65,3 +65,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 08 - 01 - 2026
 
 @jeduardofr: Actualizar pangolin a la version 1.14.0
+
+## 09 - 01 - 2026
+
+@jeduardofr: Review de codigo, configuracion de mqtt para telemetria de DJI
