@@ -347,3 +347,7 @@ para posible integracion para extraer las imagenes del dron mas rapido.
 ## 23 - DIC - 2025
 
 @jeduardofr: Reviews de codigo y documentacion de mosquitto para integracion con MQTT de DJI
+
+## 15 - ENE - 2026
+
+@jeduardofr: Pruebas de vuelo con DJI para estacionamiento del tec en tiempo real
