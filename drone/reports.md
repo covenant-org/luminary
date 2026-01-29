@@ -351,3 +351,6 @@ para posible integracion para extraer las imagenes del dron mas rapido.
 ## 15 - ENE - 2026
 
 @jeduardofr: Pruebas de vuelo con DJI para estacionamiento del tec en tiempo real
+
+## 28 - ENE - 2025
+@fairbrook: Pruebas optitrack y nimbus 
