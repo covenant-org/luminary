@@ -69,3 +69,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 09 - 01 - 2026
 
 @jeduardofr: Review de codigo, configuracion de mqtt para telemetria de DJI
+
+## 04 - 02 - 2026
+
+@jeduardofr: Reviews de codigo
