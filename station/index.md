@@ -73,3 +73,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 04 - 02 - 2026
 
 @jeduardofr: Reviews de codigo
+
+## 05 - 02 - 2026
+
+@jeduardofr: Reviews de Código 
