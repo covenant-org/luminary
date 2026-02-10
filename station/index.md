@@ -77,3 +77,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 05 - 02 - 2026
 
 @jeduardofr: Reviews de Código 
+
+## 09 - 02 - 2026
+
+@jeduardofr: Pruebas de hardware con la estacion
