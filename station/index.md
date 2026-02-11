@@ -81,3 +81,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 09 - 02 - 2026
 
 @jeduardofr: Pruebas de hardware con la estacion
+
+## 10 - 02 - 2026
+
+@jeduardofr: Pruebas de hardware con la estacion y Reviews de Codigo
