@@ -85,3 +85,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 10 - 02 - 2026
 
 @jeduardofr: Pruebas de hardware con la estacion y Reviews de Codigo
+
+## 11 - 02 - 2026
+
+@jeduardofr: Misiones con dron DJI, mapeo de El Cajon, reviews de codigo y documentacion de PDAL para procesamiento de nube de puntos.
