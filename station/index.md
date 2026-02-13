@@ -89,3 +89,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 11 - 02 - 2026
 
 @jeduardofr: Misiones con dron DJI, mapeo de El Cajon, reviews de codigo y documentacion de PDAL para procesamiento de nube de puntos.
+
+## 13 - 02 - 2026
+
+@jeduardofr: Reviews, pruebas con PDAL para nubes de puntos
