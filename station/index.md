@@ -93,3 +93,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 13 - 02 - 2026
 
 @jeduardofr: Reviews, pruebas con PDAL para nubes de puntos
+
+## 16 - 02 - 2026
+
+@jeduardofr: Definicion de area para mapeos de El Cajon usando QGIS, Google Earth Pro y CloudCompare para limpieza y generacion. Reviews de covenant
