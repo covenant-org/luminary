@@ -97,3 +97,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 16 - 02 - 2026
 
 @jeduardofr: Definicion de area para mapeos de El Cajon usando QGIS, Google Earth Pro y CloudCompare para limpieza y generacion. Reviews de covenant
+
+## 18 - 02 - 2026
+
+@jeduardofr: Pruebas de NTRIP con Matrice 400, presentacion para la charla en el TEC del 19/02/26
