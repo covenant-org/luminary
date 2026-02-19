@@ -101,3 +101,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 18 - 02 - 2026
 
 @jeduardofr: Pruebas de NTRIP con Matrice 400, presentacion para la charla en el TEC del 19/02/26
+
+## 19 - 02 - 2026
+
+@jeduardofr: Reviews, QGIS para mision del Cajon, ambientes para estacion, presentacion del TEC.
