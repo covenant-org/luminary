@@ -105,3 +105,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 19 - 02 - 2026
 
 @jeduardofr: Reviews, QGIS para mision del Cajon, ambientes para estacion, presentacion del TEC.
+
+## 20 - 02 - 2026
+
+@jeduardofr: Procesamiento de misiones de El Cajon por cuadrantes para evitar que Terra se queda estancado, hasta el momento ha funcionado bien.
