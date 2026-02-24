@@ -4,7 +4,7 @@ This is a reference roadmap for the inclusion of onvif functionality into the ar
 
 ## General roadmap
 
-[!roadmap](https://github.com/covenant-org/preview.webp)
+![roadmap](https://covenant-org.github.io/luminary/static/preview.webp)
 
 
 ### Step 1
@@ -21,7 +21,7 @@ Options:
  - https://github.com/As772309423/onvif-server-with-rtsp
  - https://github.com/Quedale/OnvifRtspLauncher
 
-This options center around [Profile S]() and since the official testing tools are behind a pay wall this tools
+This options center around [Profile S](https://covenant-org.github.io/luminary/onvif/#profiles) and since the official testing tools are behind a pay wall this tools
 could be use to test the implementation
 
  - https://github.com/Quedale/OnvifDeviceManager
@@ -31,8 +31,8 @@ could be use to test the implementation
 
 After a short analysis and lack of experience with the onvif protocol I believe that the route for long term
 support and custom features is to implement our own onvif server. For doing so, the first step is to create an
-implementation for [Profile S] and then add the discovery ([Reference implementation](https://github.com/KoynovStas/wsdd))
-functionality. And finally the part with the least number of examples, the VOD or Replay features, [Profile G]()
+implementation for [Profile S](https://covenant-org.github.io/luminary/onvif/#profiles) and then add the discovery ([Reference implementation](https://github.com/KoynovStas/wsdd))
+functionality. And finally the part with the least number of examples, the VOD or Replay features, [Profile G](https://covenant-org.github.io/luminary/onvif/#profiles)
 
 
 ### Step 3
