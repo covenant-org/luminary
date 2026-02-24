@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.825212996726">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.825213182083">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -21,21 +21,23 @@
     <meta property="og:url" content="/onvif/">
     <meta property="og:title" content="Onvif">
     <meta property="og:description" content="This is a reference roadmap for the inclusion of onvif functionality into the argus station proyect">
+    <meta property="og:image" content="https://covenant-org.github.io/luminary/static/preview.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/onvif/">
     <meta property="twitter:title" content="Onvif">
     <meta property="twitter:description" content="This is a reference roadmap for the inclusion of onvif functionality into the argus station proyect">
+    <meta property="twitter:image" content="https://covenant-org.github.io/luminary/static/preview.webp">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../static/nuclea-logo.png" />
-    <link href="../resources/css/retype.css?v=3.12.0.825212996726" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.12.0.825213182083" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.12.0.825212996726" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.12.0.825213182083" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.12.0.825212996726" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.12.0.825213182083" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -162,7 +164,11 @@
         <span>General roadmap</span>
     </h2>
 </doc-anchor-target>
-<p><a href="https://github.com/covenant-org/preview.webp">!roadmap</a></p>
+<p><figure class="content-center">
+    <img src="https://covenant-org.github.io/luminary/static/preview.webp" alt="roadmap" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">roadmap</figcaption>
+</figure>
+</p>
 <doc-anchor-target id="step-1">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#step-1">#</doc-anchor-trigger>
@@ -182,7 +188,7 @@ Options:</p>
 <li><a href="https://github.com/As772309423/onvif-server-with-rtsp">https://github.com/As772309423/onvif-server-with-rtsp</a></li>
 <li><a href="https://github.com/Quedale/OnvifRtspLauncher">https://github.com/Quedale/OnvifRtspLauncher</a></li>
 </ul>
-<p>This options center around <a href="">Profile S</a> and since the official testing tools are behind a pay wall this tools
+<p>This options center around <a href="https://covenant-org.github.io/luminary/onvif/#profiles">Profile S</a> and since the official testing tools are behind a pay wall this tools
 could be use to test the implementation</p>
 <ul>
 <li><a href="https://github.com/Quedale/OnvifDeviceManager">https://github.com/Quedale/OnvifDeviceManager</a></li>
@@ -196,8 +202,8 @@ could be use to test the implementation</p>
 </doc-anchor-target>
 <p>After a short analysis and lack of experience with the onvif protocol I believe that the route for long term
 support and custom features is to implement our own onvif server. For doing so, the first step is to create an
-implementation for [Profile S] and then add the discovery (<a href="https://github.com/KoynovStas/wsdd">Reference implementation</a>)
-functionality. And finally the part with the least number of examples, the VOD or Replay features, <a href="">Profile G</a></p>
+implementation for <a href="https://covenant-org.github.io/luminary/onvif/#profiles">Profile S</a> and then add the discovery (<a href="https://github.com/KoynovStas/wsdd">Reference implementation</a>)
+functionality. And finally the part with the least number of examples, the VOD or Replay features, <a href="https://covenant-org.github.io/luminary/onvif/#profiles">Profile G</a></p>
 <doc-anchor-target id="step-3">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#step-3">#</doc-anchor-trigger>
