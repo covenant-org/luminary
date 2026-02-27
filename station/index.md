@@ -113,3 +113,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 22 - 02 - 2026
 
 @jeduardofr: Procesamiento de misiones mas investigacion sobre los crashes de Cronos al procesar los vuelos, todo indica a que la temperatura de la oficina sin aire acondicionado esta siendo un problema.
+
+## 27 - 02 - 2026
+
+@jeduardofr: Pruebas con QGIS para la clasificacion de la nube de puntos
