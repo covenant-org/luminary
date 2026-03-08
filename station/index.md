@@ -117,3 +117,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 27 - 02 - 2026
 
 @jeduardofr: Pruebas con QGIS para la clasificacion de la nube de puntos
+
+## 08 - 03 - 2026
+
+@jeduardofr: Preparando entregables para El Cajon.
