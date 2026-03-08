@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.0.1.825540526290">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.1.0.826317762927">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.0.1">
+    <meta name="generator" content="Retype 4.1.0">
 
     <!-- Primary Meta Tags -->
     <title>02/05/2025</title>
@@ -32,11 +32,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/nuclea-logo.png" />
-    <link href="../../resources/css/retype.css?v=4.0.1.825540526290" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.1.0.826317762927" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.0.1.825540526290" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.0.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.0.1.825540526290" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.1.0.826317762927" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.1.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.1.0.826317762927" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -234,7 +234,7 @@
 <li>When tried to run code got following error:</li>
 </ul>
 <p>ALSA lib pulse.c:242:(pulse_connect) PulseAudio: Unable to connect: Connection refused</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="05052025-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">Traceback (most recent call last):
   File &quot;/home/zeus/Documents/Nuclea_Projects/server-surveillance/main.py&quot;, line 14, in &lt;module&gt;
     pygame.mixer.init()
@@ -276,7 +276,7 @@ pygame.error: ALSA: Couldn't open audio device: Connection refused</code></pre>
 <li>pulseaudio is a general purpose sound server to communicate the software and the hardware, and it&#x27;s not intalled</li>
 <li>Got following error while trying to install it:</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="06052025-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">sudo apt-get install pulseaudio
 [sudo] password for zeus: 
 Reading package lists... Done
@@ -299,14 +299,14 @@ E: Error, pkgProblemResolver::Resolve generated breaks, this may be caused by he
 <li>Also check if there&#x27;s an actuall sound device or sound card in the server computer</li>
 <li>Also got following video error while ignoring the audio lines in the script:</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="06052025-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">warnings.warn( [ WARN:0@0.292] global cap_v4l.cpp:999 open VIDEOIO(V4L2:/dev/video0): can't open camera by index [ERROR:0@0.292] global obsensor_uvc_stream_channel.cpp:158 getStreamChannelGroup Camera index out of range</code></pre>
 </doc-codeblock></div>
 <ul>
 <li>This error occurs when the index in <code translate="no" v-pre>cv2.VideoCapture(index) </code> surpases the number of available cameras in the device</li>
 <li>Tried to access the camera via VCL -&gt; Media -&gt; Open capture device, on both video0 and video1</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="06052025-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">Your input can't be opened:
 VLC is unable to open the MRL 'v4l2:///dev/video0'. Check the log for details.
 Your input can't be opened:
@@ -432,7 +432,7 @@ VLC is unable to open the MRL 'v4l2:///dev/video1'. Check the log for details.</
 <li>The webcam is working again</li>
 <li>Continued investigation of error while trying to initialize pygame audio mixer</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="12052025-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">Traceback (most recent call last):
   File &quot;/home/zeus/Documents/Nuclea_Projects/server-surveillance/main.py&quot;, line 14, in &lt;module&gt;
     pygame.mixer.init()
@@ -442,14 +442,14 @@ pygame.error: ALSA: Couldn't open audio device: Connection refused</code></pre>
 <li>Couldn&#x27;t yet find pages where the specific error was being solved</li>
 <li>Added code to select <em>pulseaudio</em> specifically as the audio driver</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="12052025-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">import os
 os.environ['SDL_AUDIODRIVER'] = 'pulseaudio'</code></pre>
 </doc-codeblock></div>
 <ul>
 <li>And the error is different</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="12052025-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">Traceback (most recent call last):
   File &quot;/home/zeus/Documents/Nuclea_Projects/server-surveillance/main.py&quot;, line 20, in &lt;module&gt;
     pygame.mixer.init()
@@ -527,13 +527,13 @@ pygame.error: Could not setup connection to PulseAudio</code></pre>
 <li>Setup of virtual environment to have better control of library&#x27;s version</li>
 <li>Got past errors:</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="15052025-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">UserWarning: 
 NVIDIA GeForce RTX 5070 Ti with CUDA capability sm_120 is not compatible with the current PyTorch installation.
 The current PyTorch install supports CUDA capabilities sm_50 sm_60 sm_70 sm_75 sm_80 sm_86 sm_90.
 If you want to use the NVIDIA GeForce RTX 5070 Ti GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/</code></pre>
 </doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="15052025-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">RuntimeError: CUDA error: no kernel image is available for execution on the device
 CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
 For debugging consider passing CUDA_LAUNCH_BLOCKING=1
@@ -542,7 +542,7 @@ Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.</code></pre>
 <ul>
 <li>Fixed with the already found solution</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="15052025-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">pip uninstall torch
 pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cu128</code></pre>
 </doc-codeblock></div>
@@ -557,7 +557,7 @@ pip install --pre torch torchvision --index-url https://download.pytorch.org/whl
 <li>Implement robust error handling</li>
 <li>Check what causes error message and if it affects:</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="todo-1-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">Qt: Session management error: None of the authentication protocols specified are supported</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="activity-report---16052025">

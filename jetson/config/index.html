@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.0.1.825540526290">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.1.0.826317762927">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.0.1">
+    <meta name="generator" content="Retype 4.1.0">
 
     <!-- Primary Meta Tags -->
     <title>Configuraciones y herramientas</title>
@@ -28,12 +28,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/nuclea-logo.png" />
-    <link href="../../resources/css/retype.css?v=4.0.1.825540526290" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.1.0.826317762927" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.0.1.825540526290" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.0.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.0.1.825540526290" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.0.1.825540526290" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.1.0.826317762927" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.1.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.1.0.826317762927" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.1.0.826317762927" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -172,7 +172,7 @@ procedimiento:</p>
         <span>1. Actualizar los repositorios</span>
     </h4>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="1-actualizar-los-repositorios-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo apt-get update
 sudo apt install python3-pip -y
 pip install -U pip</code></pre>
@@ -183,7 +183,7 @@ pip install -U pip</code></pre>
         <span>4. Crear un entorno virtual (opcional)</span>
     </h4>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="4-crear-un-entorno-virtual-opcional-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo apt-get install python3-venv -y
 python3 -m venv venv
 source venv/bin/activate</code></pre>
@@ -194,7 +194,7 @@ source venv/bin/activate</code></pre>
         <span>3. Instalar la libreria de ultralytics</span>
     </h4>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="3-instalar-la-libreria-de-ultralytics-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">pip install ultralytics[export]</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
@@ -242,7 +242,7 @@ Por lo que se recomienda agregar</p>
         <span>4. Instalar cusParselt</span>
     </h4>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="4-instalar-cusparselt-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/arm64/cuda-keyring_1.1-1_all.deb
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt-get update
@@ -273,7 +273,7 @@ en la jetson. Para posibles actualizaciones visitar el <a href="https://develope
         <span>5. Instalar PyTorch y Torchvision</span>
     </h4>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="5-instalar-pytorch-y-torchvision-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">pip install https://developer.download.nvidia.cn/compute/redist/jp/v61/pytorch/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl
 pip install https://github.com/ultralytics/assets/releases/download/v0.0.0/torchvision-0.20.0a0+afc54f7-cp310-cp310-linux_aarch64.whl</code></pre>
 </doc-codeblock></div>
@@ -303,7 +303,7 @@ o la guía de <a href="https://docs.ultralytics.com/guides/nvidia-jetson/#instal
         <span>6. Instalar onnxruntime</span>
     </h4>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="6-instalar-onnxruntime-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">pip install https://github.com/ultralytics/assets/releases/download/v0.0.0/onnxruntime_gpu-1.20.0-cp310-cp310-linux_aarch64.whl</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
@@ -338,7 +338,7 @@ unidades de procecsamiento graficas.TensorRT toma una red entrenada, compuesta
 por una definición y un grupo de pesas y produce un motor de inferencia optimizado</p>
 <p>Existen múltiples formas de instalar tensorrt en Jetson. Pero con la que se tuvo
 éxito fue la siguiente:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="tensorrt-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.7.0/tars/TensorRT-10.7.0.23.l4t.aarch64-gnu.cuda-12.6.tar.gz
 tar -xvzf TensorRT-10.7.0.23.l4t.aarch64-gnu.cuda-12.6.tar.gz
 version=10.7.0.23
@@ -354,7 +354,7 @@ pip install tensorrt-*-cp310-none-linux_aarch64.whl</code></pre>
 </doc-anchor-target>
 <p>Programa que muestra estadisticas de la Jetson en tiempo real, como el uso
 de GPU y que cuenta con interfaz programática en python</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="jtop-jetson-stats-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo pip3 install -U jetson-stats</code></pre>
 </doc-codeblock></div>
 <blockquote>
@@ -375,7 +375,7 @@ la cámara FPV a un servidor para su consumo remoto</p>
         <span>1. Clonar el repositorio <a href="https://github.com/covenant-org/wadi"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M10.303 16.652c-2.837-.344-4.835-2.385-4.835-5.028 0-1.074.387-2.235 1.031-3.008-.279-.709-.236-2.214.086-2.837.86-.107 2.02.344 2.708.967.816-.258 1.676-.386 2.728-.386 1.053 0 1.913.128 2.686.365.666-.602 1.848-1.053 2.708-.946.3.581.344 2.085.064 2.815.688.817 1.053 1.913 1.053 3.03 0 2.643-1.998 4.641-4.877 5.006.73.473 1.224 1.504 1.224 2.686v2.235c0 .644.537 1.01 1.182.752 3.889-1.483 6.94-5.372 6.94-10.185 0-6.081-4.942-11.044-11.022-11.044-6.081 0-10.98 4.963-10.98 11.044a10.84 10.84 0 0 0 7.112 10.206c.58.215 1.139-.172 1.139-.752v-1.719a2.768 2.768 0 0 1-1.032.215c-1.418 0-2.256-.773-2.857-2.213-.237-.58-.495-.924-.989-.988-.258-.022-.344-.129-.344-.258 0-.258.43-.451.86-.451.623 0 1.16.386 1.719 1.181.43.623.881.903 1.418.903.537 0 .881-.194 1.375-.688.365-.365.645-.687.903-.902Z"/></g></g></svg> Wadi</a></span>
     </h4>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="1-clonar-el-repositorio--wadi-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/covenant-org/wadi.git</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="2-compilar-el-proyecto">
@@ -384,7 +384,7 @@ la cámara FPV a un servidor para su consumo remoto</p>
         <span>2. Compilar el proyecto</span>
     </h4>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="2-compilar-el-proyecto-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">cd wadi
 cmake -B build -H. -DCMAKE_BUILD_TYPE=Release
 cmake --build build</code></pre>
@@ -395,7 +395,7 @@ cmake --build build</code></pre>
         <span>3. Copiar el ejectuable a la carpeta de binarios</span>
     </h4>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="3-copiar-el-ejectuable-a-la-carpeta-de-binarios-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo cp build/wadi /usr/bin</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="4-crear-servicios-y-regla-de-udev">
@@ -407,7 +407,7 @@ cmake --build build</code></pre>
 <p>Cree los siguientes archivos en la ruta especificada. Estos son ejemplos y
 pueden cambiar de acuerdo a sus necesidades</p>
 <p>El siguiente servicio se ejecuta en espacio de usuario, observe la ruta</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="4-crear-servicios-y-regla-de-udev-configsystemduserwadiservice" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">~/.config/systemd/user/wadi.service</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">[Unit]
 Description=Wadi service for webrtc video retransmission
@@ -436,7 +436,7 @@ WantedBy=wadi.target</code></pre>
     <a href="../../static/wadi.service" class="absolute block inset-0" target="_blank" download="wadi.service"></a>
 </div>
 </p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="4-crear-servicios-y-regla-de-udev-configsystemduserwaditarget" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">~/.config/systemd/user/wadi.target</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">[Unit]
 Description=Wadi service for webrtc video retransmission
@@ -463,11 +463,11 @@ WantedBy=dev-elgato.device</code></pre>
 </div>
 </p>
 <p>Recuerde que necesita habilitar el servicio mediante</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="4-crear-servicios-y-regla-de-udev-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">systemctl --user enable wadi.service
 systemctl --user enable wadi.target</code></pre>
 </doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="4-crear-servicios-y-regla-de-udev-etcsystemdsystemelgatoservice" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">/etc/systemd/system/elgato.service</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">[Unit]
 Description=Trigger user unit for elgato
@@ -496,10 +496,10 @@ WantedBy=multi-user.target</code></pre>
 </div>
 </p>
 <p>Recuerde que necesita habilitar el servicio mediante</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="4-crear-servicios-y-regla-de-udev-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo systemctl enable elgato.service</code></pre>
 </doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="4-crear-servicios-y-regla-de-udev-etcudevrulesd99-wadirules" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">/etc/udev/rules.d/99-wadi.rules</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">SUBSYSTEM==&quot;video4linux&quot;, ACTION==&quot;add|change&quot;, ENV{ID_V4L_PRODUCT}==&quot;Elgato HD60 X: Elgato HD60 X&quot;, \
 ATTR{index}==&quot;0&quot;, TAG+=&quot;systemd&quot;, SYMLINK+=&quot;elgato&quot;, \
@@ -558,7 +558,7 @@ la información visual de la cámara ZED.</p>
         </div>
     </div>
 </div>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="1-instalar-el-sdk-de-zed-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">chmod +x ZED_SDK_Tegra_L4T_38.0.101.76.run # Reemplazar con la version correcta
 ./ZED_SDK_Tegra_L4T_38.0.101.76.run</code></pre>
 </doc-codeblock></div>
@@ -586,7 +586,7 @@ la información visual de la cámara ZED.</p>
         <span>2. Instalar el controlador de monolink</span>
     </h4>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="2-instalar-el-controlador-de-monolink-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">wget https://stereolabs.sfo2.cdn.digitaloceanspaces.com/utils/drivers/ZEDX/1.3.0/R36.4/stereolabs-zedlink-mono_1.3.0-SL-MAX9296-all-L4T36.4.0_arm64.deb
 sudo dpkg -i stereolabs-zedlink-mono_1.3.0-SL-MAX9296-all-L4T36.4.0_arm64.deb</code></pre>
 </doc-codeblock></div>
@@ -629,7 +629,7 @@ sudo dpkg -i stereolabs-zedlink-mono_1.3.0-SL-MAX9296-all-L4T36.4.0_arm64.deb</c
 <p>Due to compatibility reasons, the version distributed by default of <code translate="no" v-pre>wireguard</code> doesn&#x27;t work
 when trying to up the interface defined by our conf file. To fix this we can use the following
 clone which works on:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="wireguard-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">nuclea@ubuntu:~$ lsb_release -a
 No LSB modules are available.
 Distributor ID:	Ubuntu
@@ -658,7 +658,7 @@ dichos drivers se detalla a continuación</p>
 </doc-anchor-target>
 <p>Se requiere un compilador de c como gc y make. Ambos se encuentran en la
 paqueteria <code translate="no" v-pre>build-essential</code></p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="1-verificar-que-se-tengan-las-herramientas-de-compilación-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo apt update
 sudo apt install build-essential</code></pre>
 </doc-codeblock></div>
@@ -680,7 +680,7 @@ y por lo general se encuentran en la instalación por defecto</p>
 <a href="https://source.sierrawireless.com/resources/airprime/software/mbpl/mbpl-software-latest/">aqui</a>
 con la única desventaja que en Tegra parece faltar un par de módulos (cdc-wdm,cdc_mbim)
 por lo que se deben agregar a los módulos a compilar. El paquete con los módulos faltantesel siguiente comando en la carpeta donde se encuentran los archivos &quot;usb&quot;</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="3-descargar-los-drivers-de-sierra-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">make
 sudo make install</code></pre>
 </doc-codeblock></div>
@@ -695,7 +695,7 @@ proveedor del chip, sin embargo en pruebas esto no ocurría por lo que se debe
 configurar de manera manual mediante Network Manager.</p>
 <p>A continuación se detallan los comandos para configurar el módulo con el
 proveedor telcel. Se deberá reconfigurar si se cambia de proveedor</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="5-configurar-el-módulo-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo nmcli c add con-name &quot;wwan&quot; type gsm ifname &quot;*&quot; apn &quot;internet.itelcel.com&quot;
 sudo nmcli c mod wwan connection.autoconnect yes
 sudo nmcli c mod mycon gsm.username &quot;webgpr&quot;
@@ -711,7 +711,7 @@ sudo nmcli c up mycon</code></pre>
         <span>6. Visualizar el estado del módulo</span>
     </h4>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="6-visualizar-el-estado-del-módulo-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">mmcli -m 0</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="comandos-útiles">
@@ -720,7 +720,7 @@ sudo nmcli c up mycon</code></pre>
         <span>Comandos útiles</span>
     </h4>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="comandos-útiles-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash"># Listar los módulos
 mmcli -L
 # Listar la información de conexión

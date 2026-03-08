@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.0.1.825540526290">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.1.0.826317762927">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.0.1">
+    <meta name="generator" content="Retype 4.1.0">
 
     <!-- Primary Meta Tags -->
     <title>14/03/2025</title>
@@ -28,11 +28,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/nuclea-logo.png" />
-    <link href="../../resources/css/retype.css?v=4.0.1.825540526290" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.1.0.826317762927" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.0.1.825540526290" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.0.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.0.1.825540526290" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.1.0.826317762927" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.1.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.1.0.826317762927" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -187,7 +187,7 @@
 <li>Solved library errors by modifing the requirements file</li>
 <li>Current Error</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="18032025-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">[ERROR] Runtime.ImportModuleError: Unable to import module 'lambda_function': No module named 'onnxruntime.capi.onnxruntime_pybind11_state'</code></pre>
 </doc-codeblock></div>
 <ul>
@@ -219,7 +219,7 @@
 <li>Forked repo to develop custom code for the application</li>
 <li>Current error:</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="19032025-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">Traceback (most recent call last):  File &quot;/var/runtime/bootstrap.py&quot;, line 60, in &lt;module&gt;
 main()
 File &quot;/var/runtime/bootstrap.py&quot;, line 57, in main
@@ -254,11 +254,11 @@ Traceback (most recent call last):
 <ul>
 <li>Analysis and possible solution from AmazonQ</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="19032025-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">Analysis
 The error message indicates that the Lambda function is unable to find the 'body' key in the event object passed to the function. This suggests that the input data being passed to the function does not have the expected structure or format.</code></pre>
 </doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="19032025-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">1. Review the Lambda function code:
    - Open the Lambda function 'people-counting-YOLOV8Function-ELz4sr3ve5ZU' in the AWS Lambda console
    - Navigate to the 'Code' tab
@@ -370,10 +370,10 @@ The error message indicates that the Lambda function is unable to find the 'body
 <ul>
 <li>Correrct following errors:</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="todo-4-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">  [ERROR]	2025-03-22T05:34:57.537Z	62797663-ce1f-49ee-ab49-98ee2587ee11	Error: An error occurred (AccessDenied) when calling the GetObject operation: User: arn:aws:sts::615299755417:assumed-role/people-counting-YOLOV8FunctionRole-Kg1AxRQDEJIx/people-counting-YOLOV8Function-ELz4sr3ve5ZU is not authorized to perform: s3:GetObject on resource: &quot;arn:aws:s3:::vicmangt-bucket/videos/frames/manufacturing-plant-leadership.png&quot; because no identity-based policy allows the s3:GetObject action</code></pre>
 </doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="todo-4-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">[ERROR] ClientError: An error occurred (AccessDenied) when calling the GetObject operation: User: arn:aws:sts::615299755417:assumed-role/people-counting-YOLOV8FunctionRole-Kg1AxRQDEJIx/people-counting-YOLOV8Function-ELz4sr3ve5ZU is not authorized to perform: s3:GetObject on resource: &quot;arn:aws:s3:::vicmangt-bucket/videos/frames/manufacturing-plant-leadership.png&quot; because no identity-based policy allows the s3:GetObject action
 Traceback (most recent call last):
   File &quot;/var/task/app.py&quot;, line 59, in main
@@ -421,7 +421,7 @@ Traceback (most recent call last):
 <li>Added code to uplaod the predictions in a json file to a determined s3 bucket</li>
 <li>Error log:</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="26032025-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">[ERROR]	2025-03-27T03:15:11.630Z	b617b236-268f-4630-a3e4-8ac64305213e	Error: [Errno 30] Read-only file system: '20250327_031511.json'</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="todo-6">

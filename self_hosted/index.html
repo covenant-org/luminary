@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.0.1.825540526290">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.1.0.826317762927">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.0.1">
+    <meta name="generator" content="Retype 4.1.0">
 
     <!-- Primary Meta Tags -->
     <title>Stack de self-host</title>
@@ -28,12 +28,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../static/nuclea-logo.png" />
-    <link href="../resources/css/retype.css?v=4.0.1.825540526290" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=4.1.0.826317762927" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=4.0.1.825540526290" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=4.0.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.0.1.825540526290" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=4.0.1.825540526290" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=4.1.0.826317762927" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=4.1.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.1.0.826317762927" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=4.1.0.826317762927" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -180,15 +180,15 @@
 <p>Permitir trafico hacia <code translate="no" v-pre>puerto</code>, proveniente  de <code translate="no" v-pre>ip</code>, con protocolo <code translate="no" v-pre>p</code> (tcp, udp, etc.)</p>
 <p><strong>Nota</strong>: Este comando pondra la regla hasta arriba del listado, lo que significa que se procesara antes
 que el resto de reglas que se tengan definidas.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="ejemplos-de-comandos-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">sudo iptables -I INPUT -m $p -p $p -s $ip --dport $puerto -j ACCEPT</code></pre>
 </doc-codeblock></div>
 <p>Hacer una conexion hacia host con <code translate="no" v-pre>ip</code> y <code translate="no" v-pre>puerto</code></p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="ejemplos-de-comandos-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">nc -zv $ip $puerto</code></pre>
 </doc-codeblock></div>
 <p>Escuchar por trafico en cierta <code translate="no" v-pre>interfaz</code> de red hacia cierto <code translate="no" v-pre>puerto</code></p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="ejemplos-de-comandos-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">sudo tcpdump -ni $interfaz port $puerto</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="compartir-red-local-a-traves-de-wireguard-distinta-a-la-red-del-wireguard">
@@ -201,7 +201,7 @@ que el resto de reglas que se tengan definidas.</p>
 <li>Modificar configuracion de algunos de los peer que tiene acceso a la red que nos interesa compartir
 y agregar las siguientes lineas en el apartado de <code translate="no" v-pre>Interface</code>:</li>
 </ol>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="compartir-red-local-a-traves-de-wireguard-distinta-a-la-red-del-wireguard-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">PostUp = iptables -A FORWARD -i interfaz-de-wireguard -j ACCEPT; iptables -t nat -A POSTROUTING -o interfaz-a-compartir -j MASQUERADE
 PostDown = iptables -D FORWARD -i interfaz-de-wireguard -j ACCEPT; iptables -t nat -D POSTROUTING -o interfaz-a-compartir -j MASQUERADE</code></pre>
 </doc-codeblock></div>
@@ -211,7 +211,7 @@ PostDown = iptables -D FORWARD -i interfaz-de-wireguard -j ACCEPT; iptables -t n
 es agregar la red local al peer o la ip del equipo (para mayor control, sobre lo que se comparte) en
 <code translate="no" v-pre>AllowedIPs</code> seperado por comas, por ejemplo se podria ver:</li>
 </ol>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="compartir-red-local-a-traves-de-wireguard-distinta-a-la-red-del-wireguard-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">AllowedIPs = 10.50.44.2/32, 192.168.10.90/24</code></pre>
 </doc-codeblock></div>
 <p>Recordar reiniciar el servicio con <code translate="no" v-pre>sudo systemctl restart wg-quick@wg0</code>, modificar el wg0 con la interfaz
@@ -220,7 +220,7 @@ correcta.</p>
 <li>Modificar archivo del peer que quiere tener acceso a esta red y al igual solo agregar la direccion
 local del peer que la expuso, por ejemplo:</li>
 </ol>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="compartir-red-local-a-traves-de-wireguard-distinta-a-la-red-del-wireguard-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">AllowedIPs = 10.50.44.0/24, 192.168.10.0/24</code></pre>
 </doc-codeblock></div>
 <p>Recordar reiniciar la conexion de wireguard para que los cambies tomen efecto con
@@ -238,14 +238,14 @@ local del peer que la expuso, por ejemplo:</li>
     </h3>
 </doc-anchor-target>
 <p>LXC será nuestra herramienta de contenerización ya que nos permite tener un ambiente muy similar al que tendríamos con una máquina virtual, es decir, por defecto tenemos acceso a un usuario no root, systemd y los paquetes estandar de ubuntu server. Instalarlo es muy sencillo</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="lxc-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo snap install lxd
 sudo lxd init</code></pre>
 </doc-codeblock></div>
 <p>Al instalar le pedirá un tamaño para el sistema de archivos internos, nosotros decidimos utilizar 200GB por instancia, planea acorde</p>
 <p>Una guía más afondo para la instalación se puede encontrar <a href="https://canonical.com/lxd/install">aquí</a></p>
 <p>Para lanzar la instancia base utilizamos la imagen ubuntu:22.04</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="lxc-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">lxc launch ubuntu:22.04 workstation
 lxc config device add workstation gpu gpu</code></pre>
 </doc-codeblock></div>
@@ -256,7 +256,7 @@ lxc config device add workstation gpu gpu</code></pre>
     </h3>
 </doc-anchor-target>
 <p>Este display manager es el encargado de inicializar el servidor de Xorg que utilizará posteriormente VirtualGL para renderizar por hardware el ambiente gráfico</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="lightdm-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo apt install lightdm</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
@@ -286,7 +286,7 @@ lxc config device add workstation gpu gpu</code></pre>
     </h3>
 </doc-anchor-target>
 <p>Si bien, en teoría cualquier drivers de nvidia funcionan, encontramos que los drivers oficiales en su versión <strong>MIT</strong> son los que hacían funcionar a todo el setup</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="nvidia-drivers-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">wget https://us.download.nvidia.com/XFree86/Linux-x86_64/570.169/NVIDIA-Linux-x86_64-570.169.run  
 chmod +x NVIDIA-Linux-x86_64-570.169.run
 sudo ./NVIDIA-Linux-x86_64-570.169.run</code></pre>
@@ -316,7 +316,7 @@ sudo ./NVIDIA-Linux-x86_64-570.169.run</code></pre>
     </h3>
 </doc-anchor-target>
 <p>Para permitir que todo funcione sin que se tenga un display físico conectado, es necesario crear un dispositivo virtual en el contenedor por lo que podemos reemplazar el contenido de <strong>/etc/X11/xorg.conf</strong></p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="virtual-desktop-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">Section &quot;ServerLayout&quot;
     Identifier     &quot;Layout0&quot;
     Screen      0  &quot;Screen0&quot; 0 0
@@ -360,7 +360,7 @@ Section &quot;Device&quot;
 EndSection</code></pre>
 </doc-codeblock></div>
 <p>Para mantener consistentes los permisos es necesario reconstruir la configuración de xorg</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="virtual-desktop-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo nvidia-xconfig
 sudo reboot</code></pre>
 </doc-codeblock></div>
@@ -371,7 +371,7 @@ sudo reboot</code></pre>
     </h3>
 </doc-anchor-target>
 <p>Este software permite añadir soporte para renderización por hardare de las llamadas a OpenGL desde la VNC. Para instalarlo es más fácil siendo <strong>sudo</strong></p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="virtual-gl-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">wget -q -O- https://packagecloud.io/dcommander/virtualgl/gpgkey | gpg --dearmor &gt;/etc/apt/trusted.gpg.d/VirtualGL.gpg
 cd /etc/apt/sources.list.d
 wget https://raw.githubusercontent.com/VirtualGL/repo/main/VirtualGL.list
@@ -379,7 +379,7 @@ apt update
 apt install virtualgl</code></pre>
 </doc-codeblock></div>
 <p>Una vez instalado es necesario configurarlo para que tenga acceso a las interfaces de la tarjeta gráfica</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="virtual-gl-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo systemctl stop lightdm
 sudo /opt/VirtualGL/bin/vglserver_config
 sudo systemctl start ligthdm</code></pre>
@@ -392,7 +392,7 @@ sudo systemctl start ligthdm</code></pre>
     </h3>
 </doc-anchor-target>
 <p>Se eligió este servidor de VNC ya que está diseñado específicamente para funcionar con VirtualGL. Al igual que con VirtualGL, estos pasos deberán seguirse con el usuario sudo</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="turbo-vnc-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">wget -q -O- https://packagecloud.io/dcommander/turbovnc/gpgkey | gpg --dearmor &gt;/etc/apt/trusted.gpg.d/TurboVNC.gpg
 cd /etc/apt/sources.list.d
 wget https://raw.githubusercontent.com/TurboVNC/repo/main/TurboVNC.list
@@ -400,11 +400,11 @@ apt update
 apt install turbovnc</code></pre>
 </doc-codeblock></div>
 <p>Puede utilizar cualquier window manager que desee, en nuestro caso utilizamo mate más por gusto que por otra razón</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="turbo-vnc-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo apt install mate-desktop-environment</code></pre>
 </doc-codeblock></div>
 <p>Para facilitar que el vnc siempre se encienda con el contenedor y demás amenidades, creamos el siguiente servicio en <strong><a href="mailto:/etc/systemd/user/turbo-vnc@.service">/etc/systemd/user/turbo-vnc@.service</a></strong></p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="turbo-vnc-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">[Unit]
 Description=VNC server for hardware acceleration
 
@@ -419,12 +419,12 @@ WantedBy=default.target
 ubuntu@covenant-workstation</code></pre>
 </doc-codeblock></div>
 <p>Para habilitarlo y ejecutarlo utilice el siguiente commando desde el usuario deseado</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="turbo-vnc-code-4" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">systemctl --user enable turbo-vnc@:1
 systemctl --user start turbo-bnc@:1</code></pre>
 </doc-codeblock></div>
 <p>Para acceder al vnc desde fuera del contenedor y host es necesario crear un proxy desde lxc</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="turbo-vnc-code-5" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">lxc config device add test proxy-ws proxy listen=tcp:&lt;host public ip&gt;:5901 connect=tcp:&lt;container ip &gt;:5901 bind=host</code></pre>
 </doc-codeblock></div>
 <p>El cliente de VNC recomendado es remmina o el mismo Turbo VNC</p>
@@ -435,7 +435,7 @@ systemctl --user start turbo-bnc@:1</code></pre>
     </h3>
 </doc-anchor-target>
 <p>Ya que utilizamos PX4, decidimos utilizar <a href="https://pegasussimulator.github.io/PegasusSimulator/">Pegasus Simulator</a> como bridge de comunicación con el simulador y la versión de isaac compatible es la 4.2</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="isaac-sim-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">mkdir isaac-sim-4.2
 cd isaac-sim-4.2
 wget https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone%404.2.0-rc.18%2Brelease.16044.3b2ed111.gl.linux-x86_64.release.zip
@@ -443,16 +443,16 @@ unzip isaac-sim-standalone@4.2.0-rc.18+release.16044.3b2ed111.gl.linux-x86_64.re
 </doc-codeblock></div>
 <p>No fuimos capaces de hacer funcionar Isaac Sim directamente con nuestro entorno de VNC por lo que decidimos utilizar su función de streaming como medida temporal. Esperamos que con las próximas versiones estos problemas se solucionen o encontremos otra forma de hacer esto</p>
 <p>Para descargar el cliente de webrtc de isaac sim ejecute los siguientes comandos</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="isaac-sim-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">wget https://download.isaacsim.omniverse.nvidia.com/isaacsim-webrtc-streaming-client-1.0.6-linux-x64.AppImage
 chmod +x isaacsim-webrtc-streaming-client-1.0.6-linux-x64.AppImage</code></pre>
 </doc-codeblock></div>
 <p>Finalmente para ejecutar el simulador podemos ejecutar</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="isaac-sim-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">./isaac-sim.headless.webrtc.sh</code></pre>
 </doc-codeblock></div>
 <p>Y en otra terminal ya que se haya terminado de inicializar isaac sim ejecutamos el cliente de webrtc</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="isaac-sim-code-4" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">./isaacsim-webrtc-streaming-client-1.0.6-linux-x64.AppImage --enable-unsafe-switfshader</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="tutorial-para-iniciar-la-simulación">
