@@ -121,3 +121,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 08 - 03 - 2026
 
 @jeduardofr: Preparando entregables para El Cajon.
+
+## 09 - 03 - 2026
+
+@jeduardofr: Pruebas con QGIS para curvas de nivel, dejar audio jalando con zeus, review de codigo, junta con posible candidato, contrato de ONVIF.
