@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.1.0.826409113855">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826640166316">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.1.0">
+    <meta name="generator" content="Retype 4.2.0">
 
     <!-- Primary Meta Tags -->
     <title>02/05/2025</title>
@@ -32,11 +32,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/nuclea-logo.png" />
-    <link href="../../resources/css/retype.css?v=4.1.0.826409113855" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.2.0.826640166316" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.1.0.826409113855" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.1.0.826409113855" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826640166316" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826640166316" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -189,11 +189,11 @@
 </doc-anchor-target>
 <ul>
 <li>An RTSP service was configured so that the webcam from Nuclea&#x27;s office could be accessed via RTSP streaming.
-<img src="https://github.com/user-attachments/assets/b61ce0a9-2fab-4214-b8f6-0b5952fc7410" alt="image" /></li>
+<img src="https://github.com/user-attachments/assets/b61ce0a9-2fab-4214-b8f6-0b5952fc7410" alt="image" class="max-w-full h-auto" /></li>
 <li>A separate Docker container was used and configured to manage the VST more effectively.</li>
 <li>The streaming from 4 Fimex cameras was successfully added directly to the VST UI for further analysis.
-<img src="https://github.com/user-attachments/assets/ecb63238-7012-470d-85f0-bb0adc70357e" alt="image" />
-<img src="https://github.com/user-attachments/assets/dc4d4c34-1403-49ae-a588-eb566a55e01b" alt="image" /></li>
+<img src="https://github.com/user-attachments/assets/ecb63238-7012-470d-85f0-bb0adc70357e" alt="image" class="max-w-full h-auto" />
+<img src="https://github.com/user-attachments/assets/dc4d4c34-1403-49ae-a588-eb566a55e01b" alt="image" class="max-w-full h-auto" /></li>
 <li>Investigate why the RTSP stream from the webcam did not work within the VST.</li>
 <li>Check why I haven&#x27;t been able to draw ROI zones and Tripwires on the Fimex streams that appear.</li>
 </ul>
@@ -215,7 +215,7 @@
 <li>Some modifications were made to the existing script to enable local recording of the video streams from the Fimex cameras. The purpose of this change was to improve the recording quality and minimize frame loss, which had been an issue in previous versions of the setup.</li>
 <li>An attempt was made to add ROI (Region of Interest) and tripwire tracking to all camera streams using NVIDIA&#x27;s VST container. However, during testing it was discovered that errors persist in the ROI and tripwire processing logic, preventing the system from correctly handling and analyzing the drawn areas. Further investigation and debugging are required to resolve these issues and ensure accurate event detection.</li>
 <li>A new VNC service was created so that we now have two different accesses to the UI of the Zeus computer, with the objective that Victor and I can work on different desktops, so to speak, and avoid conflicts from working at the same time or moving or closing each other&#x27;s things.
-<img src="https://github.com/user-attachments/assets/125e015f-c551-4516-8417-7bdf34c7da2e" alt="image" /></li>
+<img src="https://github.com/user-attachments/assets/125e015f-c551-4516-8417-7bdf34c7da2e" alt="image" class="max-w-full h-auto" /></li>
 </ul>
 <doc-anchor-target id="05052025">
     <h1>
@@ -259,8 +259,8 @@ pygame.error: ALSA: Couldn't open audio device: Connection refused</code></pre>
 <ul>
 <li>A tunnel was successfully created using RTSP and Ngrok to add the office webcam to the VST. It was configured correctly, although for some unknown reason, the webcam image hasn&#x27;t been successfully displayed within Nvidia&#x27;s VST.</li>
 <li>Tests were conducted with the Video Wall and Recorded Streams modules to record certain portions of the stream at a specific, configured schedule.
-<img src="https://github.com/user-attachments/assets/b94d2d02-5593-4c79-8494-13076f8bdb1c" alt="image" />
-<img src="https://github.com/user-attachments/assets/d9771467-008e-4401-8588-bc900a65ca02" alt="image" /></li>
+<img src="https://github.com/user-attachments/assets/b94d2d02-5593-4c79-8494-13076f8bdb1c" alt="image" class="max-w-full h-auto" />
+<img src="https://github.com/user-attachments/assets/d9771467-008e-4401-8588-bc900a65ca02" alt="image" class="max-w-full h-auto" /></li>
 <li>There are plans to use the Wowza platform to access public RTSP services with higher quality and test them in the VST for ROI tracking and tripwire analysis.</li>
 <li>There is suspicion that the poor quality of the streams from Fimex&#x27;s cameras may be due to the VPN server having very low hardware specs. I contacted Fernando (head of IT at Fimex) to look for a solution to this problem directly from their side.tection.</li>
 </ul>
@@ -366,7 +366,7 @@ VLC is unable to open the MRL 'v4l2:///dev/video1'. Check the log for details.</
 <ul>
 <li>To begin ruling out possible errors explaining why the camera streamings at Fimex appear poor when played via RTSP, a Python script was created that launches a local RTSP server using the Mediamtx software. A local 4K video downloaded from YouTube was used and streamed at different resolutions—from 144p up to 4K—to visually assess the smoothness and quality.</li>
 <li>The script was also modified so that, in addition to streaming the videos at different qualities, it saves them locally in a folder organized by resolution.
-<img src="https://github.com/user-attachments/assets/a312dc90-37b7-4970-9988-fcad074b9074" alt="image" /></li>
+<img src="https://github.com/user-attachments/assets/a312dc90-37b7-4970-9988-fcad074b9074" alt="image" class="max-w-full h-auto" /></li>
 <li>The videos were analyzed, and it was observed that lower-quality videos play more smoothly than higher-quality ones. This is likely due to the frame transmission: fewer frames result in faster transmission, while more frames slow it down slightly—but the differences are minimal.</li>
 <li>An attempt will be made to adjust the Fimex streaming configurations to see if lowering the video quality improves streaming smoothness.</li>
 </ul>
@@ -647,7 +647,7 @@ pip install --pre torch torchvision --index-url https://download.pytorch.org/whl
 <li>The VNC UI was changed to the Mate UI on the ZEUS computer, as it had recently been replaced with a more basic one.</li>
 <li>A test was performed with the office camera to connect it via RTSP to NVIDIA&#x27;s VS; the video could be viewed, but unfortunately, the ROI and tripwire drawing have not yet been achieved.</li>
 <li>Initial configurations and implementations of NVIDIA’s Video Search and Summarization Agent were carried out. The web UI was successfully launched and one of the videos was selected for analysis, although the database still needs to be configured due to some errors.
-<img src="https://github.com/user-attachments/assets/b7cbf7cf-5d70-47ce-be0e-6583c3f841b2" alt="image" /></li>
+<img src="https://github.com/user-attachments/assets/b7cbf7cf-5d70-47ce-be0e-6583c3f841b2" alt="image" class="max-w-full h-auto" /></li>
 <li>Final modifications and bug fixes were made on Fidestech.</li>
 </ul>
 <doc-anchor-target id="activity-report---30052025">
@@ -704,7 +704,7 @@ pip install --pre torch torchvision --index-url https://download.pytorch.org/whl
 <li>VNC was installed and configured on Nuclea&#x27;s Jetson to remotely view the Mate UI from my local computer.</li>
 <li>There were some issues getting browsers like Firefox or Chromium to work, but it was resolved by installing some missing Snap dependencies and configuring VNC to successfully run the Chromium browser on the Jetson.</li>
 <li>The NVIDIA VST UI was successfully launched, and the initial configurations were completed from the Jetson.
-<img src="https://github.com/user-attachments/assets/4fbf70aa-1127-4e86-84a8-53f60a7da86b" alt="image" /></li>
+<img src="https://github.com/user-attachments/assets/4fbf70aa-1127-4e86-84a8-53f60a7da86b" alt="image" class="max-w-full h-auto" /></li>
 <li>There were problems when trying to ping or view the office camera stream from the Jetson, as it is on a different network. An attempt was made to configure WireGuard to remotely connect to the camera&#x27;s IP, but unfortunately, it was unsuccessful. Further tests will be attempted tomorrow or assistance will be requested during the meeting.</li>
 </ul>
 <doc-anchor-target id="activity-report---04062025">
@@ -725,7 +725,7 @@ pip install --pre torch torchvision --index-url https://download.pytorch.org/whl
 <li>The necessary configurations were made to successfully launch the VST from the Jetson.</li>
 <li>The office camera at Nuclea was successfully connected to the Jetson through VPN configurations applied in the WireGuard config file, allowing access to the camera&#x27;s IP addresses.</li>
 <li>The camera was successfully added to NVIDIA&#x27;s VST, but when drawing the ROI and tripwire lines, the same rendering error appeared. An investigation will be conducted to determine which Jetson library is missing in order to fix this issue.
-<img src="https://github.com/user-attachments/assets/1ad0c1e8-e17a-4ee3-a05e-01e0ed017f55" alt="image" /></li>
+<img src="https://github.com/user-attachments/assets/1ad0c1e8-e17a-4ee3-a05e-01e0ed017f55" alt="image" class="max-w-full h-auto" /></li>
 </ul>
 <doc-anchor-target id="activity-report---10062025">
     <h1>
@@ -746,7 +746,7 @@ pip install --pre torch torchvision --index-url https://download.pytorch.org/whl
 Detected NVIDIA GeForce RTX 5070 Ti GPU, which is not yet supported in this version of the container ERROR: No supported GPU(s) detected to run this container
 It was specified that the compatible GPUs range from H200 up to A100.</li>
 <li>Seeing that helmet mode requires those configurations and that specific hardware, it was decided to opt for using Docker Compose to have a more customized configuration for our hardware. In this case, we used remote APIs like OpenAI for the LLMs and VLMs, and a Neo4j database which we managed to run correctly. More configurations are still needed in the Docker setup to run the VSS UI and be able to run it completely. I also think we will need an Azure OpenAI API key, which it seems to be using.
-<img src="https://github.com/user-attachments/assets/afe2abea-4e7e-4721-af06-316cf217efc6" alt="image" /></li>
+<img src="https://github.com/user-attachments/assets/afe2abea-4e7e-4721-af06-316cf217efc6" alt="image" class="max-w-full h-auto" /></li>
 </ul>
 <doc-anchor-target id="activity-report---11062025">
     <h1>
@@ -781,7 +781,7 @@ It was specified that the compatible GPUs range from H200 up to A100.</li>
 <ul>
 <li>With the corresponding API keys to use the LLM and VLM models from OpenAI, and after updating libraries, drivers, and repositories for the graphics card of the computer Zeus, we were able to successfully run the UI of NVIDIA&#x27;s Video Search and Summarization technology. Within it, we managed to link some of our pre-recorded videos from Fimex&#x27;s cameras for analysis and subsequently generate a summary from them.</li>
 <li>Unfortunately, even though the UI displays correctly and the backend is running properly, when making a query or asking something about the video, it gets stuck loading indefinitely and does not return any result, even though the console does not show any specific error.
-<img src="https://github.com/user-attachments/assets/ec018b20-d5c0-4ee2-88dc-9f0fbbb6f4cf" alt="image" /></li>
+<img src="https://github.com/user-attachments/assets/ec018b20-d5c0-4ee2-88dc-9f0fbbb6f4cf" alt="image" class="max-w-full h-auto" /></li>
 <li>A new configuration will be attempted, using basic LLM and VLM models to be able to run everything locally and fully leverage the resources of the Zeus computer.</li>
 </ul>
 <doc-anchor-target id="activity-report---13062025">
@@ -818,7 +818,8 @@ It was specified that the compatible GPUs range from H200 up to A100.</li>
 <ul>
 <li>A meeting was held with Lalo to better understand why the SSL error was occurring when running VSS locally on the Zeus computer. We couldn&#x27;t find the exact cause of the error, but we came up with the idea of running tests using NVIDIA&#x27;s notebooks.</li>
 <li>When testing on NVIDIA&#x27;s notebooks, everything worked perfectly with the same configuration used on Zeus, so we continued analyzing other videos with summaries and questions in the chat.</li>
-<li>Finally, I decided to reconfigure the NVIDIA Video Search and Summarization setup from scratch on the Gaia computer, and interestingly, it worked perfectly there. I was able to analyze individual MP4 videos and even the live stream from Nuclea&#x27;s office camera. Although the summaries were generated for the camera stream, the video itself wasn’t displayed — but in the end, the NVIDIA VSS service was successfully executed.<img src="https://github.com/user-attachments/assets/0c4d030f-b5e3-4219-904a-33a2f25ac715" alt="image" /></li>
+<li>Finally, I decided to reconfigure the NVIDIA Video Search and Summarization setup from scratch on the Gaia computer, and interestingly, it worked perfectly there. I was able to analyze individual MP4 videos and even the live stream from Nuclea&#x27;s office camera. Although the summaries were generated for the camera stream, the video itself wasn’t displayed — but in the end, the NVIDIA VSS service was successfully executed.
+<img src="https://github.com/user-attachments/assets/0c4d030f-b5e3-4219-904a-33a2f25ac715" alt="image" class="max-w-full h-auto" /></li>
 </ul>
 
                 
