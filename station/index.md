@@ -125,3 +125,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 09 - 03 - 2026
 
 @jeduardofr: Pruebas con QGIS para curvas de nivel, dejar audio jalando con zeus, review de codigo, junta con posible candidato, contrato de ONVIF.
+
+## 12 - 03 - 2026
+
+@jeduardofr: Presentacion para PAPs en el ITESO y cambios para la prueba del totem en el TEC.
