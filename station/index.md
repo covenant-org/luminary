@@ -118,6 +118,7 @@ de pangolin para abrir plataforma hacia el internet.
 
 @jeduardofr: Pruebas con QGIS para la clasificacion de la nube de puntos
 
+<<<<<<< HEAD
 ## 08 - 03 - 2026
 
 @jeduardofr: Preparando entregables para El Cajon.
@@ -129,3 +130,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 12 - 03 - 2026
 
 @jeduardofr: Presentacion para PAPs en el ITESO y cambios para la prueba del totem en el TEC.
+
+## 20 - 02 - 2026
+
+@jeduardofr: Review deteccion en multiples camaras de Alfonso y visita con AEO.
