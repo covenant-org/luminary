@@ -131,6 +131,10 @@ de pangolin para abrir plataforma hacia el internet.
 
 @jeduardofr: Presentacion para PAPs en el ITESO y cambios para la prueba del totem en el TEC.
 
-## 20 - 02 - 2026
+## 20 - 03 - 2026
 
 @jeduardofr: Review deteccion en multiples camaras de Alfonso y visita con AEO.
+
+## 31 - 03 - 2026
+
+@jeduardofr: Montar circuitos de la jetson en gabinete
