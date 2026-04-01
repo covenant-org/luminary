@@ -138,3 +138,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 31 - 03 - 2026
 
 @jeduardofr: Montar circuitos de la jetson en gabinete
+
+## 01 - 04 - 2026
+
+@jeduardofr: Pruebas de la estacion con Jetson
