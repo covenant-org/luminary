@@ -354,3 +354,6 @@ para posible integracion para extraer las imagenes del dron mas rapido.
 
 ## 28 - ENE - 2025
 @fairbrook: Pruebas optitrack y nimbus 
+
+## 07 - APR - 2026
+@fairbrook: Armado estación 
