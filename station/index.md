@@ -142,3 +142,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 01 - 04 - 2026
 
 @jeduardofr: Pruebas de la estacion con Jetson
+
+## 19 - 04 - 2026
+
+@jeduardofr: Limpieza de R2 de Cloudflare
