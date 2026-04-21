@@ -1,5 +1,9 @@
 # NoeRos22
 
+## 21/04/2026
+
+Pruebas del motor de eventos y control de estabilización para la grúa
+
 ## 09/04/2026
 
 Script de adquisición del stream, decodificación y muestreo de datos completado, testeado y funcional con ffmpeg. 
