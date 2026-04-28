@@ -1,5 +1,9 @@
 # NoeRos22
 
+## 27/04/2026
+
+Pruebas de la grúa en la estación y debugging del modulo crane de la esp32
+
 ## 21/04/2026
 
 Pruebas del motor de eventos y control de estabilización para la grúa
