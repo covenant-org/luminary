@@ -146,3 +146,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 19 - 04 - 2026
 
 @jeduardofr: Limpieza de R2 de Cloudflare
+
+## 10 - 05 - 2026
+
+@jeduardofr: Limpieza en estaciones
