@@ -150,3 +150,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 10 - 05 - 2026
 
 @jeduardofr: Limpieza en estaciones
+
+## 17 - 05 - 2026
+
+@jeduardofr: Pruebas para determinar latencia entre detecciones e historico
