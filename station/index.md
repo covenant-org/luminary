@@ -154,3 +154,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 17 - 05 - 2026
 
 @jeduardofr: Pruebas para determinar latencia entre detecciones e historico
+
+## 18 - 05 - 2026
+
+@jeduardofr: Setup de nueva camara PTZ de 105W (max) y preparacion para demo.
