@@ -46,3 +46,7 @@ Por la complejidad de ese video parece mejor armar el video al momento de enviar
 
 ## 20/02/2026
 Se investigo de nuevas mejoras a agregar en galleon y la jetson
+
+## 27/05/2026
+Se estuvo trabajando en la estacion, en armar las piezas faltantes para tener una primera version.
+Por mi parte estuve trabajando junto a Kevin en el modulo de computacion, de acomodar todo y configurar los modulos para que a cada componente le llegue el voltaje correspondiente
