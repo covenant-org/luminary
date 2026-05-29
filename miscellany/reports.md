@@ -50,3 +50,6 @@ Se investigo de nuevas mejoras a agregar en galleon y la jetson
 ## 27/05/2026
 Se estuvo trabajando en la estacion, en armar las piezas faltantes para tener una primera version.
 Por mi parte estuve trabajando junto a Kevin en el modulo de computacion, de acomodar todo y configurar los modulos para que a cada componente le llegue el voltaje correspondiente
+
+## 28/05/2026
+Se terminaron los ultimos detalles de la estacion y se llevo con el atlas para mostrarlo
