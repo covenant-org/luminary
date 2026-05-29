@@ -357,3 +357,6 @@ para posible integracion para extraer las imagenes del dron mas rapido.
 
 ## 07 - APR - 2026
 @fairbrook: Armado estación 
+
+## 28 - May - 2206
+Presentación estación 
