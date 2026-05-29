@@ -360,3 +360,6 @@ para posible integracion para extraer las imagenes del dron mas rapido.
 
 ## 28 - May - 2206
 Presentación estación 
+
+## 29 - May - 2026
+Pruebas estación
