@@ -363,3 +363,6 @@ Presentación estación
 
 ## 29 - May - 2026
 Pruebas estación
+
+## 05 - Jun - 2026
+@Fairbrook: armado estación 
