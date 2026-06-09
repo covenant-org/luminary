@@ -53,3 +53,6 @@ Por mi parte estuve trabajando junto a Kevin en el modulo de computacion, de aco
 
 ## 28/05/2026
 Se terminaron los ultimos detalles de la estacion y se llevo con el atlas para mostrarlo
+
+## 08/06/2026 
+Llegamos temprano a la oficina para terminar las estaciones y hacer la instalacion. Por contratiempos no se pudo hacer la instalacion del dia de hoy pero no hubo problemas para dejarlo listo para los siguientes dias.
