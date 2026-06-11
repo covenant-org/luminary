@@ -56,3 +56,6 @@ Se terminaron los ultimos detalles de la estacion y se llevo con el atlas para m
 
 ## 08/06/2026 
 Llegamos temprano a la oficina para terminar las estaciones y hacer la instalacion. Por contratiempos no se pudo hacer la instalacion del dia de hoy pero no hubo problemas para dejarlo listo para los siguientes dias.
+
+## 10/06/2026 
+El dia de hoy nos toco llegar temprano otra vez, teniamos casi todo listo, solo era cuestion de validar el flujo completo y hacer la instalacion. Fuimos a las instalaciones del Atlas, Paco hizzo la instalacion mientras nosotros dejabamos la configuracion lista con su sistema, quedaron los streams pendientes de funcionar pero eso se validara hasta el dia de maniana.
