@@ -59,3 +59,6 @@ Llegamos temprano a la oficina para terminar las estaciones y hacer la instalaci
 
 ## 10/06/2026 
 El dia de hoy nos toco llegar temprano otra vez, teniamos casi todo listo, solo era cuestion de validar el flujo completo y hacer la instalacion. Fuimos a las instalaciones del Atlas, Paco hizzo la instalacion mientras nosotros dejabamos la configuracion lista con su sistema, quedaron los streams pendientes de funcionar pero eso se validara hasta el dia de maniana.
+
+## 11/06/2026
+Despues de estar dias trabajando tantas horas extra se decidio tomar el dia libre, aunque estuvimos aun asi validando que los streamings funcionaran durante el dia.
