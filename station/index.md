@@ -158,3 +158,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 18 - 05 - 2026
 
 @jeduardofr: Setup de nueva camara PTZ de 105W (max) y preparacion para demo.
+
+## 11 - 06 - 2026
+
+@jeduardofr: Configuracion de fail-over mas redundancia para el acceso a los routers de manera remota para estaciones en Academia Aga.
