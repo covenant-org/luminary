@@ -118,7 +118,6 @@ de pangolin para abrir plataforma hacia el internet.
 
 @jeduardofr: Pruebas con QGIS para la clasificacion de la nube de puntos
 
-<<<<<<< HEAD
 ## 08 - 03 - 2026
 
 @jeduardofr: Preparando entregables para El Cajon.
@@ -162,3 +161,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 11 - 06 - 2026
 
 @jeduardofr: Configuracion de fail-over mas redundancia para el acceso a los routers de manera remota para estaciones en Academia Aga.
+
+## 12 - 06 - 2026
+
+@jeduardofr: Mejorar streams de las estaciones, mover la estacion Tortuga a zeus para liberar carga en la Jetson.
