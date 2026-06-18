@@ -1,4 +1,4 @@
-# Estación de aterrizaje
+O9# Estación de aterrizaje
 
 La estación de aterrizaje es un proyecto de hardware desarrollado por
 covenant con el propósito de ofrecer una plataforma de aterrizaje, despegue
@@ -169,3 +169,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 12 - 06 - 2026
 
 @jeduardofr: Mejorar streams de las estaciones, mover la estacion Tortuga a zeus para liberar carga en la Jetson.
+
+## 18 - 06 - 2026
+
+@jeduardofr: Visita AEO. 
