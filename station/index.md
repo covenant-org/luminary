@@ -173,3 +173,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 18 - 06 - 2026
 
 @jeduardofr: Visita AEO. 
+
+## 19 - 06 - 2026
+
+@jeduardofr: Investigacion de CAN para componentes que se tienen que conseguir mas pruebas.
