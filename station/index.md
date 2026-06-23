@@ -177,3 +177,7 @@ de pangolin para abrir plataforma hacia el internet.
 ## 19 - 06 - 2026
 
 @jeduardofr: Investigacion de CAN para componentes que se tienen que conseguir mas pruebas.
+
+## 23 - 06 - 2026
+
+@jeduardofr: Revivir Mac con Linux para pruebas en fisico de CAN.
