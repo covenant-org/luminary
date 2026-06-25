@@ -181,3 +181,8 @@ de pangolin para abrir plataforma hacia el internet.
 ## 23 - 06 - 2026
 
 @jeduardofr: Revivir Mac con Linux para pruebas en fisico de CAN.
+
+## 25 - 06 - 2026
+
+@jeduardofr: Macs corriendo con linux para pruebas con CAN, cabana corriendo para visualizar comunicacion
+mas correcciones a nuestro codigo de interaccion.
